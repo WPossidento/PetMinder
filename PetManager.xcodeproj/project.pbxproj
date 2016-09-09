@@ -14,6 +14,33 @@
 		4867EAAC1D831F410067D8FD /* PetManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAAA1D831F410067D8FD /* PetManager.xcdatamodeld */; };
 		4867EAAE1D831F410067D8FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4867EAAD1D831F410067D8FD /* Assets.xcassets */; };
 		4867EAB11D831F410067D8FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4867EAAF1D831F410067D8FD /* LaunchScreen.storyboard */; };
+		4867EABB1D831FCC0067D8FD /* TaskListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAB91D831FCC0067D8FD /* TaskListViewController.m */; };
+		4867EABC1D831FCC0067D8FD /* TaskListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4867EABA1D831FCC0067D8FD /* TaskListViewController.xib */; };
+		4867EAC01D8322DE0067D8FD /* TasksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EABE1D8322DE0067D8FD /* TasksTableViewCell.m */; };
+		4867EAC11D8322DE0067D8FD /* TasksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4867EABF1D8322DE0067D8FD /* TasksTableViewCell.xib */; };
+		4867EAC41D83273B0067D8FD /* Task.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAC31D83273B0067D8FD /* Task.m */; };
+		4867EAC81D8329710067D8FD /* PetListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAC61D8329710067D8FD /* PetListViewController.m */; };
+		4867EAC91D8329710067D8FD /* PetListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4867EAC71D8329710067D8FD /* PetListViewController.xib */; };
+		4867EACE1D8329DD0067D8FD /* PetsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EACC1D8329DD0067D8FD /* PetsTableViewCell.m */; };
+		4867EACF1D8329DD0067D8FD /* PetsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4867EACD1D8329DD0067D8FD /* PetsTableViewCell.xib */; };
+		4867EAD21D832B320067D8FD /* Pet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAD11D832B320067D8FD /* Pet.m */; };
+		4867EAD51D832EF10067D8FD /* AnimalType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAD41D832EF10067D8FD /* AnimalType.m */; };
+		4867EADA1D832FA60067D8FD /* AnimalTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAD81D832FA60067D8FD /* AnimalTypeViewController.m */; };
+		4867EADB1D832FA60067D8FD /* AnimalTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4867EAD91D832FA60067D8FD /* AnimalTypeViewController.xib */; };
+		4867EAE01D8331AB0067D8FD /* PetProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EADE1D8331AB0067D8FD /* PetProfileViewController.m */; };
+		4867EAE11D8331AB0067D8FD /* PetProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4867EADF1D8331AB0067D8FD /* PetProfileViewController.xib */; };
+		4867EAE61D8339CD0067D8FD /* TasksForPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAE41D8339CD0067D8FD /* TasksForPetViewController.m */; };
+		4867EAE71D8339CD0067D8FD /* TasksForPetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4867EAE51D8339CD0067D8FD /* TasksForPetViewController.xib */; };
+		4867EAEC1D833B380067D8FD /* TaskFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAEA1D833B380067D8FD /* TaskFormViewController.m */; };
+		4867EAED1D833B380067D8FD /* TaskFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4867EAEB1D833B380067D8FD /* TaskFormViewController.xib */; };
+		4867EAF11D83408B0067D8FD /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAF01D83408B0067D8FD /* TabBarController.m */; };
+		4867EAF41D834BD00067D8FD /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAF31D834BD00067D8FD /* DAO.m */; };
+		4867EB251D836C300067D8FD /* ManagedTask+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EB1A1D836C300067D8FD /* ManagedTask+CoreDataProperties.m */; };
+		4867EB261D836C300067D8FD /* ManagedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EB1C1D836C300067D8FD /* ManagedTask.m */; };
+		4867EB271D836C300067D8FD /* ManagedPet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EB1E1D836C300067D8FD /* ManagedPet+CoreDataProperties.m */; };
+		4867EB281D836C300067D8FD /* ManagedPet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EB201D836C300067D8FD /* ManagedPet.m */; };
+		4867EB291D836C300067D8FD /* ManagedAnimalType+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EB221D836C300067D8FD /* ManagedAnimalType+CoreDataProperties.m */; };
+		4867EB2A1D836C300067D8FD /* ManagedAnimalType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EB241D836C300067D8FD /* ManagedAnimalType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +55,52 @@
 		4867EAAD1D831F410067D8FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4867EAB01D831F410067D8FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4867EAB21D831F410067D8FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4867EAB81D831FCC0067D8FD /* TaskListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskListViewController.h; sourceTree = "<group>"; };
+		4867EAB91D831FCC0067D8FD /* TaskListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskListViewController.m; sourceTree = "<group>"; };
+		4867EABA1D831FCC0067D8FD /* TaskListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskListViewController.xib; sourceTree = "<group>"; };
+		4867EABD1D8322DE0067D8FD /* TasksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TasksTableViewCell.h; sourceTree = "<group>"; };
+		4867EABE1D8322DE0067D8FD /* TasksTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TasksTableViewCell.m; sourceTree = "<group>"; };
+		4867EABF1D8322DE0067D8FD /* TasksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TasksTableViewCell.xib; sourceTree = "<group>"; };
+		4867EAC21D83273B0067D8FD /* Task.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Task.h; sourceTree = "<group>"; };
+		4867EAC31D83273B0067D8FD /* Task.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Task.m; sourceTree = "<group>"; };
+		4867EAC51D8329710067D8FD /* PetListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetListViewController.h; sourceTree = "<group>"; };
+		4867EAC61D8329710067D8FD /* PetListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetListViewController.m; sourceTree = "<group>"; };
+		4867EAC71D8329710067D8FD /* PetListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PetListViewController.xib; sourceTree = "<group>"; };
+		4867EACB1D8329DD0067D8FD /* PetsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetsTableViewCell.h; sourceTree = "<group>"; };
+		4867EACC1D8329DD0067D8FD /* PetsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetsTableViewCell.m; sourceTree = "<group>"; };
+		4867EACD1D8329DD0067D8FD /* PetsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PetsTableViewCell.xib; sourceTree = "<group>"; };
+		4867EAD01D832B320067D8FD /* Pet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pet.h; sourceTree = "<group>"; };
+		4867EAD11D832B320067D8FD /* Pet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pet.m; sourceTree = "<group>"; };
+		4867EAD31D832EF10067D8FD /* AnimalType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalType.h; sourceTree = "<group>"; };
+		4867EAD41D832EF10067D8FD /* AnimalType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalType.m; sourceTree = "<group>"; };
+		4867EAD71D832FA60067D8FD /* AnimalTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalTypeViewController.h; sourceTree = "<group>"; };
+		4867EAD81D832FA60067D8FD /* AnimalTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalTypeViewController.m; sourceTree = "<group>"; };
+		4867EAD91D832FA60067D8FD /* AnimalTypeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnimalTypeViewController.xib; sourceTree = "<group>"; };
+		4867EADD1D8331AB0067D8FD /* PetProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PetProfileViewController.h; sourceTree = "<group>"; };
+		4867EADE1D8331AB0067D8FD /* PetProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PetProfileViewController.m; sourceTree = "<group>"; };
+		4867EADF1D8331AB0067D8FD /* PetProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PetProfileViewController.xib; sourceTree = "<group>"; };
+		4867EAE31D8339CD0067D8FD /* TasksForPetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TasksForPetViewController.h; sourceTree = "<group>"; };
+		4867EAE41D8339CD0067D8FD /* TasksForPetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TasksForPetViewController.m; sourceTree = "<group>"; };
+		4867EAE51D8339CD0067D8FD /* TasksForPetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TasksForPetViewController.xib; sourceTree = "<group>"; };
+		4867EAE91D833B380067D8FD /* TaskFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskFormViewController.h; sourceTree = "<group>"; };
+		4867EAEA1D833B380067D8FD /* TaskFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskFormViewController.m; sourceTree = "<group>"; };
+		4867EAEB1D833B380067D8FD /* TaskFormViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskFormViewController.xib; sourceTree = "<group>"; };
+		4867EAEF1D83408B0067D8FD /* TabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		4867EAF01D83408B0067D8FD /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
+		4867EAF21D834BD00067D8FD /* DAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAO.h; sourceTree = "<group>"; };
+		4867EAF31D834BD00067D8FD /* DAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAO.m; sourceTree = "<group>"; };
+		4867EB191D836C300067D8FD /* ManagedTask+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ManagedTask+CoreDataProperties.h"; sourceTree = "<group>"; };
+		4867EB1A1D836C300067D8FD /* ManagedTask+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ManagedTask+CoreDataProperties.m"; sourceTree = "<group>"; };
+		4867EB1B1D836C300067D8FD /* ManagedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedTask.h; sourceTree = "<group>"; };
+		4867EB1C1D836C300067D8FD /* ManagedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedTask.m; sourceTree = "<group>"; };
+		4867EB1D1D836C300067D8FD /* ManagedPet+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ManagedPet+CoreDataProperties.h"; sourceTree = "<group>"; };
+		4867EB1E1D836C300067D8FD /* ManagedPet+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ManagedPet+CoreDataProperties.m"; sourceTree = "<group>"; };
+		4867EB1F1D836C300067D8FD /* ManagedPet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedPet.h; sourceTree = "<group>"; };
+		4867EB201D836C300067D8FD /* ManagedPet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedPet.m; sourceTree = "<group>"; };
+		4867EB211D836C300067D8FD /* ManagedAnimalType+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ManagedAnimalType+CoreDataProperties.h"; sourceTree = "<group>"; };
+		4867EB221D836C300067D8FD /* ManagedAnimalType+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ManagedAnimalType+CoreDataProperties.m"; sourceTree = "<group>"; };
+		4867EB231D836C300067D8FD /* ManagedAnimalType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedAnimalType.h; sourceTree = "<group>"; };
+		4867EB241D836C300067D8FD /* ManagedAnimalType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedAnimalType.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +138,32 @@
 				4867EAA41D831F410067D8FD /* ViewController.h */,
 				4867EAA51D831F410067D8FD /* ViewController.m */,
 				4867EAA71D831F410067D8FD /* Main.storyboard */,
+				4867EAEF1D83408B0067D8FD /* TabBarController.h */,
+				4867EAF01D83408B0067D8FD /* TabBarController.m */,
+				4867EAF21D834BD00067D8FD /* DAO.h */,
+				4867EAF31D834BD00067D8FD /* DAO.m */,
+				4867EAD61D832EF70067D8FD /* Task List View Controller */,
+				4867EACA1D83297D0067D8FD /* Pet List View Controller */,
+				4867EADC1D832FB10067D8FD /* AnimalTypeViewController */,
+				4867EAE21D8331C50067D8FD /* PetProfileViewController */,
+				4867EAE81D8339D90067D8FD /* taskForPetViewController */,
+				4867EAEE1D833B450067D8FD /* TaskFormViewController */,
 				4867EAAD1D831F410067D8FD /* Assets.xcassets */,
 				4867EAAF1D831F410067D8FD /* LaunchScreen.storyboard */,
 				4867EAB21D831F410067D8FD /* Info.plist */,
 				4867EAAA1D831F410067D8FD /* PetManager.xcdatamodeld */,
+				4867EB191D836C300067D8FD /* ManagedTask+CoreDataProperties.h */,
+				4867EB1A1D836C300067D8FD /* ManagedTask+CoreDataProperties.m */,
+				4867EB1B1D836C300067D8FD /* ManagedTask.h */,
+				4867EB1C1D836C300067D8FD /* ManagedTask.m */,
+				4867EB1D1D836C300067D8FD /* ManagedPet+CoreDataProperties.h */,
+				4867EB1E1D836C300067D8FD /* ManagedPet+CoreDataProperties.m */,
+				4867EB1F1D836C300067D8FD /* ManagedPet.h */,
+				4867EB201D836C300067D8FD /* ManagedPet.m */,
+				4867EB211D836C300067D8FD /* ManagedAnimalType+CoreDataProperties.h */,
+				4867EB221D836C300067D8FD /* ManagedAnimalType+CoreDataProperties.m */,
+				4867EB231D836C300067D8FD /* ManagedAnimalType.h */,
+				4867EB241D836C300067D8FD /* ManagedAnimalType.m */,
 				4867EA9E1D831F410067D8FD /* Supporting Files */,
 			);
 			path = PetManager;
@@ -80,6 +175,78 @@
 				4867EA9F1D831F410067D8FD /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4867EACA1D83297D0067D8FD /* Pet List View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4867EAD01D832B320067D8FD /* Pet.h */,
+				4867EAD11D832B320067D8FD /* Pet.m */,
+				4867EAC51D8329710067D8FD /* PetListViewController.h */,
+				4867EAC61D8329710067D8FD /* PetListViewController.m */,
+				4867EAC71D8329710067D8FD /* PetListViewController.xib */,
+				4867EACB1D8329DD0067D8FD /* PetsTableViewCell.h */,
+				4867EACC1D8329DD0067D8FD /* PetsTableViewCell.m */,
+				4867EACD1D8329DD0067D8FD /* PetsTableViewCell.xib */,
+			);
+			name = "Pet List View Controller";
+			sourceTree = "<group>";
+		};
+		4867EAD61D832EF70067D8FD /* Task List View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4867EAC21D83273B0067D8FD /* Task.h */,
+				4867EAC31D83273B0067D8FD /* Task.m */,
+				4867EAB81D831FCC0067D8FD /* TaskListViewController.h */,
+				4867EAB91D831FCC0067D8FD /* TaskListViewController.m */,
+				4867EABA1D831FCC0067D8FD /* TaskListViewController.xib */,
+				4867EABD1D8322DE0067D8FD /* TasksTableViewCell.h */,
+				4867EABE1D8322DE0067D8FD /* TasksTableViewCell.m */,
+				4867EABF1D8322DE0067D8FD /* TasksTableViewCell.xib */,
+			);
+			name = "Task List View Controller";
+			sourceTree = "<group>";
+		};
+		4867EADC1D832FB10067D8FD /* AnimalTypeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4867EAD31D832EF10067D8FD /* AnimalType.h */,
+				4867EAD41D832EF10067D8FD /* AnimalType.m */,
+				4867EAD71D832FA60067D8FD /* AnimalTypeViewController.h */,
+				4867EAD81D832FA60067D8FD /* AnimalTypeViewController.m */,
+				4867EAD91D832FA60067D8FD /* AnimalTypeViewController.xib */,
+			);
+			name = AnimalTypeViewController;
+			sourceTree = "<group>";
+		};
+		4867EAE21D8331C50067D8FD /* PetProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4867EADD1D8331AB0067D8FD /* PetProfileViewController.h */,
+				4867EADE1D8331AB0067D8FD /* PetProfileViewController.m */,
+				4867EADF1D8331AB0067D8FD /* PetProfileViewController.xib */,
+			);
+			name = PetProfileViewController;
+			sourceTree = "<group>";
+		};
+		4867EAE81D8339D90067D8FD /* taskForPetViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4867EAE31D8339CD0067D8FD /* TasksForPetViewController.h */,
+				4867EAE41D8339CD0067D8FD /* TasksForPetViewController.m */,
+				4867EAE51D8339CD0067D8FD /* TasksForPetViewController.xib */,
+			);
+			name = taskForPetViewController;
+			sourceTree = "<group>";
+		};
+		4867EAEE1D833B450067D8FD /* TaskFormViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4867EAE91D833B380067D8FD /* TaskFormViewController.h */,
+				4867EAEA1D833B380067D8FD /* TaskFormViewController.m */,
+				4867EAEB1D833B380067D8FD /* TaskFormViewController.xib */,
+			);
+			name = TaskFormViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +307,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4867EADB1D832FA60067D8FD /* AnimalTypeViewController.xib in Resources */,
+				4867EAC91D8329710067D8FD /* PetListViewController.xib in Resources */,
 				4867EAB11D831F410067D8FD /* LaunchScreen.storyboard in Resources */,
+				4867EABC1D831FCC0067D8FD /* TaskListViewController.xib in Resources */,
 				4867EAAE1D831F410067D8FD /* Assets.xcassets in Resources */,
+				4867EAE71D8339CD0067D8FD /* TasksForPetViewController.xib in Resources */,
+				4867EAE11D8331AB0067D8FD /* PetProfileViewController.xib in Resources */,
+				4867EAED1D833B380067D8FD /* TaskFormViewController.xib in Resources */,
+				4867EAC11D8322DE0067D8FD /* TasksTableViewCell.xib in Resources */,
+				4867EACF1D8329DD0067D8FD /* PetsTableViewCell.xib in Resources */,
 				4867EAA91D831F410067D8FD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,10 +328,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4867EAC41D83273B0067D8FD /* Task.m in Sources */,
+				4867EACE1D8329DD0067D8FD /* PetsTableViewCell.m in Sources */,
+				4867EAEC1D833B380067D8FD /* TaskFormViewController.m in Sources */,
+				4867EB261D836C300067D8FD /* ManagedTask.m in Sources */,
+				4867EAF41D834BD00067D8FD /* DAO.m in Sources */,
+				4867EB251D836C300067D8FD /* ManagedTask+CoreDataProperties.m in Sources */,
+				4867EAC01D8322DE0067D8FD /* TasksTableViewCell.m in Sources */,
 				4867EAA61D831F410067D8FD /* ViewController.m in Sources */,
+				4867EB2A1D836C300067D8FD /* ManagedAnimalType.m in Sources */,
 				4867EAA31D831F410067D8FD /* AppDelegate.m in Sources */,
+				4867EAD51D832EF10067D8FD /* AnimalType.m in Sources */,
 				4867EAA01D831F410067D8FD /* main.m in Sources */,
+				4867EABB1D831FCC0067D8FD /* TaskListViewController.m in Sources */,
+				4867EADA1D832FA60067D8FD /* AnimalTypeViewController.m in Sources */,
+				4867EAE61D8339CD0067D8FD /* TasksForPetViewController.m in Sources */,
+				4867EAE01D8331AB0067D8FD /* PetProfileViewController.m in Sources */,
+				4867EB271D836C300067D8FD /* ManagedPet+CoreDataProperties.m in Sources */,
+				4867EAC81D8329710067D8FD /* PetListViewController.m in Sources */,
+				4867EAF11D83408B0067D8FD /* TabBarController.m in Sources */,
 				4867EAAC1D831F410067D8FD /* PetManager.xcdatamodeld in Sources */,
+				4867EAD21D832B320067D8FD /* Pet.m in Sources */,
+				4867EB281D836C300067D8FD /* ManagedPet.m in Sources */,
+				4867EB291D836C300067D8FD /* ManagedAnimalType+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

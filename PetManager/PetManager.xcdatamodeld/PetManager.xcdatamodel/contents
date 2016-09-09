@@ -1,4 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
+    <entity name="ManagedAnimalType" representedClassName="ManagedAnimalType" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedPet" inverseName="animalType" inverseEntity="ManagedPet" syncable="YES"/>
+    </entity>
+    <entity name="ManagedPet" representedClassName="ManagedPet" syncable="YES">
+        <attribute name="birthdate" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="miscDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pet_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="sex" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="animalType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedAnimalType" inverseName="pet" inverseEntity="ManagedAnimalType" syncable="YES"/>
+        <relationship name="tasks" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedTask" inverseName="pet" inverseEntity="ManagedTask" syncable="YES"/>
+    </entity>
+    <entity name="ManagedTask" representedClassName="ManagedTask" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="task_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="pet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedPet" inverseName="tasks" inverseEntity="ManagedPet" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ManagedAnimalType" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="ManagedPet" positionX="-54" positionY="18" width="128" height="180"/>
+        <element name="ManagedTask" positionX="-36" positionY="27" width="128" height="120"/>
+    </elements>
 </model>

@@ -7,8 +7,12 @@
 //
 
 #import "AppDelegate.h"
+#import "TabBarController.h"
+#import "TaskListViewController.h"
 
 @interface AppDelegate ()
+
+@property (strong, nonatomic) UITabBarController *tabBarController;
 
 @end
 
@@ -17,6 +21,33 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // Override point for customization after application launch.
+//    UIViewController *rootController =
+//    [[TaskListViewController alloc]
+//     initWithNibName:@"TaskListViewController" bundle:nil];
+//    
+//    self.window = [[UIWindow alloc]
+//                   initWithFrame:[[UIScreen mainScreen] bounds]];
+//    //  self.window addSubview:self.navigationController.view];
+//    [self.window setRootViewController:rootController];
+//    [self.window makeKeyAndVisible];
+//    return YES;
+//    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    
+    // Creating FOUR different ViewControllers
+//    NSLog(@"Creating FOUR different ViewControllers in application didFinishLaunchingWithOptions");
+    
+    
+    self.tabBarController = [[TabBarController alloc] init];
+    self.window.rootViewController = self.tabBarController;
+    
+    self.tabBarController.moreNavigationController.navigationBar.tintColor = [UIColor blueColor];
+    
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 

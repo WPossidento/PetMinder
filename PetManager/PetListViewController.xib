@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PetListViewController">
+            <connections>
+                <outlet property="petListTableView" destination="NzC-5t-d0f" id="p0b-Qf-FWu"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3IQ-xp-ZGR">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <items>
+                        <navigationItem title="Pets" id="obW-9V-Yeo">
+                            <barButtonItem key="rightBarButtonItem" systemItem="add" id="jOE-5e-aQK">
+                                <connections>
+                                    <action selector="addPetButton:" destination="-1" id="IHz-EU-IBC"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NzC-5t-d0f">
+                    <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3IQ-xp-ZGR" secondAttribute="trailing" id="B8v-nE-yCE"/>
+                <constraint firstAttribute="bottom" secondItem="NzC-5t-d0f" secondAttribute="bottom" id="JtT-Iu-8Du"/>
+                <constraint firstItem="NzC-5t-d0f" firstAttribute="top" secondItem="3IQ-xp-ZGR" secondAttribute="bottom" id="Njw-0c-JvI"/>
+                <constraint firstAttribute="trailing" secondItem="NzC-5t-d0f" secondAttribute="trailing" id="SWi-QZ-lDJ"/>
+                <constraint firstItem="3IQ-xp-ZGR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bnn-hu-fYr"/>
+                <constraint firstItem="3IQ-xp-ZGR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="deQ-3x-Zn4"/>
+                <constraint firstItem="NzC-5t-d0f" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hsB-wQ-LFN"/>
+            </constraints>
+            <point key="canvasLocation" x="597" y="433"/>
+        </view>
+    </objects>
+</document>
