@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pet.h"
+#import "TaskFormViewController.h"
 
 @interface TasksForPetViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITableView *tasksForPetTableView;
+@property (strong, nonatomic) Pet *pet;
+@property (nonatomic, retain) TaskFormViewController *taskFormViewController;
 
 @end

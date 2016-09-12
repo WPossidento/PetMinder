@@ -21,11 +21,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPetButton:)];
+    self.navigationItem.rightBarButtonItem = addBtn;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 
+    self.title = @"Pets";
     self.dao = [DAO sharedInstance];
     [[DAO sharedInstance] loadAllPets];
     self.allPets = self.dao.allPets;
@@ -88,6 +92,25 @@
     
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (self.tasksForPetViewController == nil) {
+        self.tasksForPetViewController = [[TasksForPetViewController alloc] initWithNibName:@"TasksForPetViewController" bundle:nil];
+    }
+    
+    self.tasksForPetViewController.pet = self.allPets[indexPath.row];
+    self.tasksForPetViewController.title = [NSString stringWithFormat:@"Tasks for %@", [self.allPets[indexPath.row] name]];
+    [self.navigationController pushViewController:self.tasksForPetViewController animated:YES];
+    
+//    if (self.petProfileViewController == nil) {
+//        self.petProfileViewController = [[PetProfileViewController alloc] initWithNibName:@"PetProfileViewController" bundle:nil];
+//    }
+//    
+//    self.petProfileViewController.pet = newPet;
+//    [self.navigationController pushViewController:self.petProfileViewController animated:YES];
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
