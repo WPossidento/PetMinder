@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PetProfileViewController.h"
+@class PetProfileViewController;
 
 @interface AnimalTypeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
@@ -15,5 +17,6 @@
 - (IBAction)addAnimalTypeButton:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UITableView *animalTypeTableView;
+@property (nonatomic, retain) PetProfileViewController *petProfileViewController;
 
 @end

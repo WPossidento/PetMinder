@@ -2,7 +2,7 @@
 //  ManagedTask+CoreDataProperties.m
 //  PetManager
 //
-//  Created by Olivia Taylor on 9/9/16.
+//  Created by Olivia Taylor on 9/12/16.
 //  Copyright © 2016 Olivia Taylor. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu

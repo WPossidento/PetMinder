@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		482FDFB91D87364A000A5CCA /* ManagedAnimalType+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDFB61D87364A000A5CCA /* ManagedAnimalType+CoreDataProperties.m */; };
+		482FDFBA1D87364A000A5CCA /* ManagedAnimalType.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDFB81D87364A000A5CCA /* ManagedAnimalType.m */; };
+		482FDFC31D87373C000A5CCA /* ManagedTask+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDFBC1D87373C000A5CCA /* ManagedTask+CoreDataProperties.m */; };
+		482FDFC41D87373C000A5CCA /* ManagedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDFBE1D87373C000A5CCA /* ManagedTask.m */; };
+		482FDFC51D87373C000A5CCA /* ManagedPet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDFC01D87373C000A5CCA /* ManagedPet+CoreDataProperties.m */; };
+		482FDFC61D87373C000A5CCA /* ManagedPet.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDFC21D87373C000A5CCA /* ManagedPet.m */; };
 		4867EAA01D831F410067D8FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EA9F1D831F410067D8FD /* main.m */; };
 		4867EAA31D831F410067D8FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAA21D831F410067D8FD /* AppDelegate.m */; };
 		4867EAA61D831F410067D8FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAA51D831F410067D8FD /* ViewController.m */; };
@@ -35,15 +41,21 @@
 		4867EAED1D833B380067D8FD /* TaskFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4867EAEB1D833B380067D8FD /* TaskFormViewController.xib */; };
 		4867EAF11D83408B0067D8FD /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAF01D83408B0067D8FD /* TabBarController.m */; };
 		4867EAF41D834BD00067D8FD /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAF31D834BD00067D8FD /* DAO.m */; };
-		4867EB251D836C300067D8FD /* ManagedTask+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EB1A1D836C300067D8FD /* ManagedTask+CoreDataProperties.m */; };
-		4867EB261D836C300067D8FD /* ManagedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EB1C1D836C300067D8FD /* ManagedTask.m */; };
-		4867EB271D836C300067D8FD /* ManagedPet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EB1E1D836C300067D8FD /* ManagedPet+CoreDataProperties.m */; };
-		4867EB281D836C300067D8FD /* ManagedPet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EB201D836C300067D8FD /* ManagedPet.m */; };
-		4867EB291D836C300067D8FD /* ManagedAnimalType+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EB221D836C300067D8FD /* ManagedAnimalType+CoreDataProperties.m */; };
-		4867EB2A1D836C300067D8FD /* ManagedAnimalType.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EB241D836C300067D8FD /* ManagedAnimalType.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		482FDFB51D87364A000A5CCA /* ManagedAnimalType+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ManagedAnimalType+CoreDataProperties.h"; sourceTree = "<group>"; };
+		482FDFB61D87364A000A5CCA /* ManagedAnimalType+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ManagedAnimalType+CoreDataProperties.m"; sourceTree = "<group>"; };
+		482FDFB71D87364A000A5CCA /* ManagedAnimalType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedAnimalType.h; sourceTree = "<group>"; };
+		482FDFB81D87364A000A5CCA /* ManagedAnimalType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedAnimalType.m; sourceTree = "<group>"; };
+		482FDFBB1D87373C000A5CCA /* ManagedTask+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ManagedTask+CoreDataProperties.h"; sourceTree = "<group>"; };
+		482FDFBC1D87373C000A5CCA /* ManagedTask+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ManagedTask+CoreDataProperties.m"; sourceTree = "<group>"; };
+		482FDFBD1D87373C000A5CCA /* ManagedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedTask.h; sourceTree = "<group>"; };
+		482FDFBE1D87373C000A5CCA /* ManagedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedTask.m; sourceTree = "<group>"; };
+		482FDFBF1D87373C000A5CCA /* ManagedPet+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ManagedPet+CoreDataProperties.h"; sourceTree = "<group>"; };
+		482FDFC01D87373C000A5CCA /* ManagedPet+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ManagedPet+CoreDataProperties.m"; sourceTree = "<group>"; };
+		482FDFC11D87373C000A5CCA /* ManagedPet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedPet.h; sourceTree = "<group>"; };
+		482FDFC21D87373C000A5CCA /* ManagedPet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedPet.m; sourceTree = "<group>"; };
 		4867EA9B1D831F410067D8FD /* PetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4867EA9F1D831F410067D8FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4867EAA11D831F410067D8FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -89,18 +101,6 @@
 		4867EAF01D83408B0067D8FD /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		4867EAF21D834BD00067D8FD /* DAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAO.h; sourceTree = "<group>"; };
 		4867EAF31D834BD00067D8FD /* DAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAO.m; sourceTree = "<group>"; };
-		4867EB191D836C300067D8FD /* ManagedTask+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ManagedTask+CoreDataProperties.h"; sourceTree = "<group>"; };
-		4867EB1A1D836C300067D8FD /* ManagedTask+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ManagedTask+CoreDataProperties.m"; sourceTree = "<group>"; };
-		4867EB1B1D836C300067D8FD /* ManagedTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedTask.h; sourceTree = "<group>"; };
-		4867EB1C1D836C300067D8FD /* ManagedTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedTask.m; sourceTree = "<group>"; };
-		4867EB1D1D836C300067D8FD /* ManagedPet+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ManagedPet+CoreDataProperties.h"; sourceTree = "<group>"; };
-		4867EB1E1D836C300067D8FD /* ManagedPet+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ManagedPet+CoreDataProperties.m"; sourceTree = "<group>"; };
-		4867EB1F1D836C300067D8FD /* ManagedPet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedPet.h; sourceTree = "<group>"; };
-		4867EB201D836C300067D8FD /* ManagedPet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedPet.m; sourceTree = "<group>"; };
-		4867EB211D836C300067D8FD /* ManagedAnimalType+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ManagedAnimalType+CoreDataProperties.h"; sourceTree = "<group>"; };
-		4867EB221D836C300067D8FD /* ManagedAnimalType+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ManagedAnimalType+CoreDataProperties.m"; sourceTree = "<group>"; };
-		4867EB231D836C300067D8FD /* ManagedAnimalType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedAnimalType.h; sourceTree = "<group>"; };
-		4867EB241D836C300067D8FD /* ManagedAnimalType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedAnimalType.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,18 +152,18 @@
 				4867EAAF1D831F410067D8FD /* LaunchScreen.storyboard */,
 				4867EAB21D831F410067D8FD /* Info.plist */,
 				4867EAAA1D831F410067D8FD /* PetManager.xcdatamodeld */,
-				4867EB191D836C300067D8FD /* ManagedTask+CoreDataProperties.h */,
-				4867EB1A1D836C300067D8FD /* ManagedTask+CoreDataProperties.m */,
-				4867EB1B1D836C300067D8FD /* ManagedTask.h */,
-				4867EB1C1D836C300067D8FD /* ManagedTask.m */,
-				4867EB1D1D836C300067D8FD /* ManagedPet+CoreDataProperties.h */,
-				4867EB1E1D836C300067D8FD /* ManagedPet+CoreDataProperties.m */,
-				4867EB1F1D836C300067D8FD /* ManagedPet.h */,
-				4867EB201D836C300067D8FD /* ManagedPet.m */,
-				4867EB211D836C300067D8FD /* ManagedAnimalType+CoreDataProperties.h */,
-				4867EB221D836C300067D8FD /* ManagedAnimalType+CoreDataProperties.m */,
-				4867EB231D836C300067D8FD /* ManagedAnimalType.h */,
-				4867EB241D836C300067D8FD /* ManagedAnimalType.m */,
+				482FDFBB1D87373C000A5CCA /* ManagedTask+CoreDataProperties.h */,
+				482FDFBC1D87373C000A5CCA /* ManagedTask+CoreDataProperties.m */,
+				482FDFBD1D87373C000A5CCA /* ManagedTask.h */,
+				482FDFBE1D87373C000A5CCA /* ManagedTask.m */,
+				482FDFBF1D87373C000A5CCA /* ManagedPet+CoreDataProperties.h */,
+				482FDFC01D87373C000A5CCA /* ManagedPet+CoreDataProperties.m */,
+				482FDFC11D87373C000A5CCA /* ManagedPet.h */,
+				482FDFC21D87373C000A5CCA /* ManagedPet.m */,
+				482FDFB51D87364A000A5CCA /* ManagedAnimalType+CoreDataProperties.h */,
+				482FDFB61D87364A000A5CCA /* ManagedAnimalType+CoreDataProperties.m */,
+				482FDFB71D87364A000A5CCA /* ManagedAnimalType.h */,
+				482FDFB81D87364A000A5CCA /* ManagedAnimalType.m */,
 				4867EA9E1D831F410067D8FD /* Supporting Files */,
 			);
 			path = PetManager;
@@ -331,26 +331,26 @@
 				4867EAC41D83273B0067D8FD /* Task.m in Sources */,
 				4867EACE1D8329DD0067D8FD /* PetsTableViewCell.m in Sources */,
 				4867EAEC1D833B380067D8FD /* TaskFormViewController.m in Sources */,
-				4867EB261D836C300067D8FD /* ManagedTask.m in Sources */,
 				4867EAF41D834BD00067D8FD /* DAO.m in Sources */,
-				4867EB251D836C300067D8FD /* ManagedTask+CoreDataProperties.m in Sources */,
 				4867EAC01D8322DE0067D8FD /* TasksTableViewCell.m in Sources */,
 				4867EAA61D831F410067D8FD /* ViewController.m in Sources */,
-				4867EB2A1D836C300067D8FD /* ManagedAnimalType.m in Sources */,
+				482FDFBA1D87364A000A5CCA /* ManagedAnimalType.m in Sources */,
+				482FDFC61D87373C000A5CCA /* ManagedPet.m in Sources */,
 				4867EAA31D831F410067D8FD /* AppDelegate.m in Sources */,
 				4867EAD51D832EF10067D8FD /* AnimalType.m in Sources */,
+				482FDFC51D87373C000A5CCA /* ManagedPet+CoreDataProperties.m in Sources */,
 				4867EAA01D831F410067D8FD /* main.m in Sources */,
+				482FDFC41D87373C000A5CCA /* ManagedTask.m in Sources */,
 				4867EABB1D831FCC0067D8FD /* TaskListViewController.m in Sources */,
 				4867EADA1D832FA60067D8FD /* AnimalTypeViewController.m in Sources */,
+				482FDFC31D87373C000A5CCA /* ManagedTask+CoreDataProperties.m in Sources */,
 				4867EAE61D8339CD0067D8FD /* TasksForPetViewController.m in Sources */,
 				4867EAE01D8331AB0067D8FD /* PetProfileViewController.m in Sources */,
-				4867EB271D836C300067D8FD /* ManagedPet+CoreDataProperties.m in Sources */,
 				4867EAC81D8329710067D8FD /* PetListViewController.m in Sources */,
 				4867EAF11D83408B0067D8FD /* TabBarController.m in Sources */,
 				4867EAAC1D831F410067D8FD /* PetManager.xcdatamodeld in Sources */,
 				4867EAD21D832B320067D8FD /* Pet.m in Sources */,
-				4867EB281D836C300067D8FD /* ManagedPet.m in Sources */,
-				4867EB291D836C300067D8FD /* ManagedAnimalType+CoreDataProperties.m in Sources */,
+				482FDFB91D87364A000A5CCA /* ManagedAnimalType+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +501,7 @@
 				4867EAB71D831F410067D8FD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

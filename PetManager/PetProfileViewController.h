@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pet.h"
+#import "PetListViewController.h"
+@class PetListViewController;
 
-@interface PetProfileViewController : UIViewController
+@interface PetProfileViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UIImageView *petImage;
 
@@ -21,6 +24,9 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *petSex;
 
 @property (strong, nonatomic) IBOutlet UIDatePicker *petDateOfBirth;
+
+@property (strong, nonatomic) Pet *pet;
+@property (nonatomic, retain) PetListViewController *petListViewController;
 
 - (IBAction)saveButton:(id)sender;
 

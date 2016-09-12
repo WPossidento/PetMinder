@@ -2,7 +2,7 @@
 //  ManagedPet+CoreDataProperties.h
 //  PetManager
 //
-//  Created by Olivia Taylor on 9/9/16.
+//  Created by Olivia Taylor on 9/12/16.
 //  Copyright © 2016 Olivia Taylor. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ManagedPet (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSNumber *birthdate;
+@property (nullable, nonatomic, retain) NSDate *birthdate;
 @property (nullable, nonatomic, retain) NSString *color;
 @property (nullable, nonatomic, retain) NSString *image;
 @property (nullable, nonatomic, retain) NSString *miscDescription;
@@ -23,7 +23,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *pet_id;
 @property (nullable, nonatomic, retain) NSString *sex;
 @property (nullable, nonatomic, retain) ManagedAnimalType *animalType;
-@property (nullable, nonatomic, retain) ManagedTask *tasks;
+@property (nullable, nonatomic, retain) NSSet<ManagedTask *> *tasks;
+
+@end
+
+@interface ManagedPet (CoreDataGeneratedAccessors)
+
+- (void)addTasksObject:(ManagedTask *)value;
+- (void)removeTasksObject:(ManagedTask *)value;
+- (void)addTasks:(NSSet<ManagedTask *> *)values;
+- (void)removeTasks:(NSSet<ManagedTask *> *)values;
 
 @end
 

@@ -10,7 +10,7 @@
 
 @implementation Pet
 
--(instancetype)initWithPetName:(NSString *)name andPetImage:(NSString *)petImage andAnimalType:(NSString *)animalType andColor:(NSString *)color andPetDescription:(NSString *)petDescription andSex:(NSString *)sex andBirthDate:(NSDate *)birthDate {
+-(instancetype)initWithPetName:(NSString *)name andPetImage:(NSString *)petImage andAnimalType:(AnimalType *)animalType andColor:(NSString *)color andPetDescription:(NSString *)petDescription andSex:(NSString *)sex andBirthDate:(NSDate *)birthDate {
     
     self = [super init];
     if (self) {

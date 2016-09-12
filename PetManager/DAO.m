@@ -8,6 +8,11 @@
 
 #import <CoreData/CoreData.h>
 #import "DAO.h"
+#import "ManagedPet.h"
+#import "ManagedAnimalType.h"
+#import "Pet.h"
+#import "AnimalType.h"
+
 
 @interface DAO ()
 
@@ -35,7 +40,11 @@
     self = [super init];
     if (self) {
         _animalTypes = [[NSMutableArray alloc] init];
-        [self createAnimalTypes];
+        
+        [self loadAllAnimalType];
+        
+        
+   //     [self createAnimalTypes];
     }
     return self;
 }
@@ -43,6 +52,7 @@
 - (AnimalType *)addAnimalTypeWithName:(NSString *)name andImage:(NSString *)image {
     
     AnimalType *newAnimalType = [[AnimalType alloc] initWithAnimalType:name andImage:image];
+    [self createAnimalTypeWithName:name andImage:image];
     [self.animalTypes addObject:newAnimalType];
     
     return newAnimalType;
@@ -50,7 +60,7 @@
 
 -(void)createAnimalTypes {
     
-    /* AnimalType *dog = */ [self addAnimalTypeWithName:@"Dog" andImage:@"pet-dog"];
+    /* AnimalType *dog = */ [self addAnimalTypeWithName:@"Dog" andImage:@"dog-img"];
     [self addAnimalTypeWithName:@"Cat" andImage:@"cat-img"];
     [self addAnimalTypeWithName:@"Bird" andImage:@"bird-img"];
     [self addAnimalTypeWithName:@"Ferret" andImage:@"ferret-img"];
@@ -68,6 +78,72 @@
     [self addAnimalTypeWithName:@"Guinea Pig" andImage:@"guinea-pig-img"];
     [self addAnimalTypeWithName:@"Chicken" andImage:@"chicken-img"];
     
+}
+
+//- (void)loadAllAnimalType {
+//    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedPet"];
+//    [request setEntity:e];
+//    NSError *error = nil;
+//    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
+//    if (error) {
+//        [NSException raise:@"Fetch failed" format:@"Reason: %@", [error localizedDescription]];
+//    } else {
+//        for (ManagedPet *mp in result) {
+//            //            for (ManagedAnimalType *mat in result) {
+//            //                AnimalType *at = [[AnimalType alloc] initWithAnimalType:mat.name andImage:mat.image];
+//            //            }
+//            
+//            NSLog(@"%@ %@",  [mp.animalType id], [mp.animalType name]);
+//            
+//            Pet *pet = [[Pet alloc] initWithPetName:mp.name andPetImage:mp.image andAnimalType:nil andColor:mp.color andPetDescription:mp.miscDescription andSex:mp.sex andBirthDate:mp.birthdate];
+//            [self.allPets addObject:pet];
+//        }
+//    }
+//}
+
+- (void)loadAllAnimalType {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedAnimalType"];
+    [request setEntity:e];
+    NSError *error = nil;
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if (error) {
+        [NSException raise:@"Fetch failed" format:@"Reason: %@", [error localizedDescription]];
+    } else if (result.count==0) {
+        [self createAnimalTypes];
+    } else {
+        for (ManagedAnimalType *mat in result) {
+            AnimalType *at = [[AnimalType alloc] initWithAnimalType:mat.name andImage:mat.image];
+            at.animalTypeId = [mat.id intValue];
+            [self.animalTypes addObject:at];
+        }
+    }
+}
+
+- (void)loadAllPets {
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedPet"];
+    [request setEntity:e];
+    NSError *error = nil;
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if (error) {
+        [NSException raise:@"Fetch failed" format:@"Reason: %@", [error localizedDescription]];
+    } else {
+        
+        self.allPets = [[NSMutableArray alloc]init];
+        
+        for (ManagedPet *mp in result) {
+//            for (ManagedAnimalType *mat in result) {
+//                AnimalType *at = [[AnimalType alloc] initWithAnimalType:mat.name andImage:mat.image];
+//            }
+            
+            NSLog(@"%@ %@",  [mp.animalType id], [mp.animalType name]);
+            
+            Pet *pet = [[Pet alloc] initWithPetName:mp.name andPetImage:mp.image andAnimalType:nil andColor:mp.color andPetDescription:mp.miscDescription andSex:mp.sex andBirthDate:mp.birthdate];
+            [self.allPets addObject:pet];
+        }
+    }
 }
 
 #pragma mark - Core Data stack
@@ -149,12 +225,44 @@
 
 #pragma mark - adding deleting
 
--(void)createPetWithName:(NSString*)name andImage:(NSString*)image andColor:(NSString*)color andMiscDescription:(NSString*)miscDescription andBirthdate:(NSNumber*)birthdate andSex:(NSString*)sex andAnimalType:(AnimalType*)animalType
+-(void)createPetWithName:(NSString*)name andImage:(NSString*)image andColor:(NSString*)color andMiscDescription:(NSString*)miscDescription andBirthdate:(NSDate*)birthdate andSex:(NSString*)sex andAnimalType:(AnimalType*)animalType
 {
     
-    // Create Company
-    NSEntityDescription *entityPet = [NSEntityDescription entityForName:@"Pet" inManagedObjectContext:self.managedObjectContext];
-    NSManagedObject *pet = [[NSManagedObject alloc] initWithEntity:entityPet insertIntoManagedObjectContext:self.managedObjectContext];
+    // Create Pet
+    NSEntityDescription *entityPet = [NSEntityDescription entityForName:@"ManagedPet" inManagedObjectContext:self.managedObjectContext];
+    ManagedPet *pet = [[ManagedPet alloc] initWithEntity:entityPet insertIntoManagedObjectContext:self.managedObjectContext];
+    
+    
+    pet.name = name;
+    
+    [pet setValue:image forKey:@"image"];
+    [pet setValue:color forKey:@"color"];
+    [pet setValue:miscDescription forKey:@"miscDescription"];
+    [pet setValue:birthdate forKey:@"birthdate"];
+    [pet setValue:sex forKey:@"sex"];
+
+    
+    
+    
+    //Fetch an animal type with animalTypeId
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"id == %d", animalType.animalTypeId];
+    [request setPredicate:p];
+    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedAnimalType"];
+    [request setEntity:e];
+    NSError *error = nil;
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    
+    if(error){
+        [NSException raise:@"Fetch Failed" format:@"Reason: %@", [error localizedDescription]];
+    } else if(result.count >= 1){
+        ManagedAnimalType *mat = [result objectAtIndex:0];
+        pet.animalType = mat;
+    }
+
+    
+    
     
     //create pet_id
     int petId;
@@ -168,15 +276,7 @@
     }
     NSNumber *number = [[NSNumber alloc]initWithInt:petId];
     [pet setValue:number forKey:@"pet_id"];
-    [pet setValue:name forKey:@"name"];
-    [pet setValue:image forKey:@"image"];
-    [pet setValue:color forKey:@"color"];
-    [pet setValue:miscDescription forKey:@"miscDescription"];
-    [pet setValue:birthdate forKey:@"birthdate"];
-    [pet setValue:sex forKey:@"sex"];
-    [pet setValue:animalType forKey:@"animalType"];
-    
-    
+
     
     [self saveContext];
 }
@@ -185,7 +285,7 @@
 
 {
     
-    NSEntityDescription *entityAnimalType = [NSEntityDescription entityForName:@"AnimalType" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entityAnimalType = [NSEntityDescription entityForName:@"ManagedAnimalType" inManagedObjectContext:self.managedObjectContext];
     
     NSManagedObject *AnimalType = [[NSManagedObject alloc] initWithEntity:entityAnimalType insertIntoManagedObjectContext:self.managedObjectContext];
     
@@ -233,7 +333,7 @@
 
 {
     
-    NSEntityDescription *entityTask = [NSEntityDescription entityForName:@"Task" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *entityTask = [NSEntityDescription entityForName:@"ManagedTask" inManagedObjectContext:self.managedObjectContext];
     
     NSManagedObject *Task = [[NSManagedObject alloc] initWithEntity:entityTask insertIntoManagedObjectContext:self.managedObjectContext];
     
@@ -296,7 +396,7 @@
     [request setSortDescriptors:[NSArray arrayWithObject:sortByKey]];
     
     
-    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"Pet"];
+    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedPet"];
     [request setEntity:e];
     NSError *error = nil;
     
@@ -333,7 +433,7 @@
     
     [request setSortDescriptors:[NSArray arrayWithObject:sortByKey]];
     
-    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"Pet"];
+    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedPet"];
     [request setEntity:e];
     NSError *error = nil;
     

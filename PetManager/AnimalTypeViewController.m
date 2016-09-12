@@ -9,6 +9,9 @@
 #import "AnimalTypeViewController.h"
 #import "DAO.h"
 #import "PetsTableViewCell.h"
+#import "Pet.h"
+#import "AnimalType.h"
+
 
 @interface AnimalTypeViewController ()
 @property (strong, nonatomic) DAO *dao;
@@ -63,6 +66,41 @@
     return cell;
 }
 
+#pragma mark - Table view delegate
+
+// In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Pet *newPet = [[Pet alloc] init];
+    newPet.animalType = self.dao.animalTypes[indexPath.row];
+    newPet.petImage = newPet.animalType.image;
+    
+    if (self.petProfileViewController == nil) {
+        self.petProfileViewController = [[PetProfileViewController alloc] initWithNibName:@"PetProfileViewController" bundle:nil];
+    }
+    
+    self.petProfileViewController.pet = newPet;
+    [self.navigationController pushViewController:self.petProfileViewController animated:YES];
+    
+    
+//        
+//        ProductViewController *productViewController =
+//        [[ProductViewController alloc]
+//         initWithNibName:@"ProductViewController" bundle:nil];
+//        
+//        // self.productViewController = [[[NSBundle mainBundle] loadNibNamed:@"ProductViewController" owner:self options:nil] objectAtIndex:0];
+//        
+//        productViewController.title = [[self.companyList objectAtIndex:indexPath.row] companyName];
+//        productViewController.company = [self.companyList objectAtIndex:indexPath.row];
+//        self.dao.company = [self.companyList objectAtIndex:indexPath.row];
+//        [self.navigationController pushViewController:productViewController
+//                                             animated:YES];
+//        
+//        [productViewController release];
+//    }
+    
+    
+}
 
 
 

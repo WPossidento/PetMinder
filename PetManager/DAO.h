@@ -14,11 +14,13 @@
 @interface DAO : NSObject
 
 @property (nonatomic, retain) NSMutableArray<AnimalType*> *animalTypes;
-@property (nonatomic, retain) NSMutableArray *allPets;
+@property (nonatomic, retain) NSMutableArray<Pet*> *allPets;
 @property (nonatomic, retain) NSMutableArray *allTasks;
 
 + (instancetype)sharedInstance;
 
 - (AnimalType *)addAnimalTypeWithName:(NSString *)name andImage:(NSString *)image;
+-(void)createPetWithName:(NSString*)name andImage:(NSString*)image andColor:(NSString*)color andMiscDescription:(NSString*)miscDescription andBirthdate:(NSDate*)birthdate andSex:(NSString*)sex andAnimalType:(AnimalType*)animalType;
+- (void)loadAllPets;
 
 @end

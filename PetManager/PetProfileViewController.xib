@@ -24,7 +24,13 @@
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlk-wc-orN">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                     <items>
-                        <navigationItem title="Pet Profile Form" id="dMc-Ng-7A1"/>
+                        <navigationItem title="Pet Profile Form" id="dMc-Ng-7A1">
+                            <barButtonItem key="rightBarButtonItem" systemItem="save" id="ddB-iR-Scn">
+                                <connections>
+                                    <action selector="saveButton:" destination="-1" id="dJ6-Xp-gou"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
                     </items>
                 </navigationBar>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hvA-3l-N0g">
@@ -61,17 +67,10 @@
                         <constraint firstAttribute="width" constant="139" id="Ul0-2W-1xj"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBQ-7G-KKN">
-                    <rect key="frame" x="283" y="550" width="34" height="30"/>
-                    <state key="normal" title="Save"/>
-                    <connections>
-                        <action selector="saveButton:" destination="-1" eventType="touchUpInside" id="8xU-EX-jMB"/>
-                    </connections>
-                </button>
-                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="b4Z-jT-vNU">
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="b4Z-jT-vNU">
                     <rect key="frame" x="8" y="399" width="584" height="108"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="108" id="jMX-DH-E8R"/>
@@ -91,7 +90,6 @@
                 <constraint firstItem="LJe-to-3hv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="MOZ-V0-yq6"/>
                 <constraint firstAttribute="trailing" secondItem="B7J-OY-QsJ" secondAttribute="trailing" constant="8" id="PvH-x3-xG4"/>
                 <constraint firstItem="MUH-eh-Ua1" firstAttribute="top" secondItem="hvA-3l-N0g" secondAttribute="bottom" constant="14" id="RCA-oV-t1E"/>
-                <constraint firstItem="cBQ-7G-KKN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VFx-7L-lMy"/>
                 <constraint firstItem="hvA-3l-N0g" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WPf-ii-6Fk"/>
                 <constraint firstItem="XQ1-V0-xc2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Xn0-VG-eJK"/>
                 <constraint firstAttribute="trailing" secondItem="b4Z-jT-vNU" secondAttribute="trailing" constant="8" id="aBJ-g0-9nA"/>
@@ -102,7 +100,6 @@
                 <constraint firstItem="nlR-zQ-Iss" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="jYP-Zu-26c"/>
                 <constraint firstItem="nlR-zQ-Iss" firstAttribute="top" secondItem="LJe-to-3hv" secondAttribute="bottom" constant="8" id="ksJ-9h-yA1"/>
                 <constraint firstItem="hvA-3l-N0g" firstAttribute="top" secondItem="Rlk-wc-orN" secondAttribute="bottom" constant="11" id="nYh-H2-fMe"/>
-                <constraint firstAttribute="bottom" secondItem="cBQ-7G-KKN" secondAttribute="bottom" constant="20" id="nmC-qc-WdS"/>
                 <constraint firstItem="b4Z-jT-vNU" firstAttribute="top" secondItem="XQ1-V0-xc2" secondAttribute="bottom" constant="8" id="q3s-jl-3eo"/>
                 <constraint firstAttribute="trailing" secondItem="MUH-eh-Ua1" secondAttribute="trailing" constant="8" id="r7k-hW-TL2"/>
                 <constraint firstItem="B7J-OY-QsJ" firstAttribute="top" secondItem="nlR-zQ-Iss" secondAttribute="bottom" constant="29" id="uel-pN-dE6"/>

@@ -31,9 +31,14 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NzC-5t-d0f">
                     <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="wT8-gz-ZCj"/>
+                        <outlet property="delegate" destination="-1" id="mWc-vy-qOi"/>
+                    </connections>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <rect key="contentStretch" x="0.0" y="0.45000000000000001" width="1" height="1"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="3IQ-xp-ZGR" secondAttribute="trailing" id="B8v-nE-yCE"/>
                 <constraint firstAttribute="bottom" secondItem="NzC-5t-d0f" secondAttribute="bottom" id="JtT-Iu-8Du"/>
