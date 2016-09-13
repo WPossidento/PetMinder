@@ -7,8 +7,11 @@
 //
 
 #import "TaskFormViewController.h"
+#import "DAO.h"
 
 @interface TaskFormViewController ()
+
+@property (strong, nonatomic) DAO *dao;
 
 @end
 
@@ -16,7 +19,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+
+    UIBarButtonItem *saveBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButton:)];
+    self.navigationItem.rightBarButtonItem = saveBtn;
+    
+    self.dao = [DAO sharedInstance];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,5 +43,9 @@
 */
 
 - (IBAction)saveButton:(id)sender {
+    [self.dao createTaskWithName:self.taskName.text andNote:self.noteTextField.text andTime:self.datePicker.date andPet:self.pet];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 @end

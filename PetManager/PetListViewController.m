@@ -99,7 +99,12 @@
         self.tasksForPetViewController = [[TasksForPetViewController alloc] initWithNibName:@"TasksForPetViewController" bundle:nil];
     }
     
+    if (self.tasksForPetViewController.pet == nil){
+        self.tasksForPetViewController.pet = [[Pet alloc]init];
+    }
+    
     self.tasksForPetViewController.pet = self.allPets[indexPath.row];
+    NSLog(@"%@", self.tasksForPetViewController.pet.name);
     self.tasksForPetViewController.title = [NSString stringWithFormat:@"Tasks for %@", [self.allPets[indexPath.row] name]];
     [self.navigationController pushViewController:self.tasksForPetViewController animated:YES];
     

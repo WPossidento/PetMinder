@@ -22,6 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIBarButtonItem *saveBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButton:)];
+    self.navigationItem.rightBarButtonItem = saveBtn;
+    
     _petSex.delegate = self;
     _petSex.dataSource = self;
     

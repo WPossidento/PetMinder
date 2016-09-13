@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PetProfileViewController">
@@ -21,60 +22,54 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlk-wc-orN">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                    <items>
-                        <navigationItem title="Pet Profile Form" id="dMc-Ng-7A1">
-                            <barButtonItem key="rightBarButtonItem" systemItem="save" id="ddB-iR-Scn">
-                                <connections>
-                                    <action selector="saveButton:" destination="-1" id="dJ6-Xp-gou"/>
-                                </connections>
-                            </barButtonItem>
-                        </navigationItem>
-                    </items>
-                </navigationBar>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hvA-3l-N0g">
-                    <rect key="frame" x="261" y="55" width="78" height="78"/>
+                    <rect key="frame" x="261" y="92" width="78" height="78"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="78" id="9Zi-W2-w8T"/>
-                        <constraint firstAttribute="width" constant="78" id="iOz-Tl-RRQ"/>
+                        <constraint firstAttribute="width" constant="78" id="6RE-NL-yLu"/>
+                        <constraint firstAttribute="height" constant="78" id="o7S-9s-5Cn"/>
                     </constraints>
                 </imageView>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pet name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MUH-eh-Ua1">
-                    <rect key="frame" x="8" y="147" width="584" height="30"/>
+                    <rect key="frame" x="8" y="184" width="584" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="MTF-mP-nXl"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pet description" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LJe-to-3hv">
-                    <rect key="frame" x="8" y="185" width="584" height="30"/>
+                    <rect key="frame" x="8" y="222" width="584" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="zbC-gV-Enn"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pet color" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nlR-zQ-Iss">
-                    <rect key="frame" x="8" y="223" width="584" height="30"/>
+                    <rect key="frame" x="8" y="260" width="584" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="fDN-yf-okF"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7J-OY-QsJ">
-                    <rect key="frame" x="8" y="282" width="584" height="62"/>
+                    <rect key="frame" x="8" y="319" width="584" height="62"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="62" id="p0B-Ei-QUE"/>
+                        <constraint firstAttribute="height" constant="62" id="qAR-jn-aAa"/>
                     </constraints>
                 </pickerView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Pet's Birth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQ1-V0-xc2">
-                    <rect key="frame" x="231" y="370" width="139" height="21"/>
+                    <rect key="frame" x="231" y="407" width="139" height="21"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="139" id="Ul0-2W-1xj"/>
+                        <constraint firstAttribute="height" constant="21" id="j65-GF-dGH"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="b4Z-jT-vNU">
-                    <rect key="frame" x="8" y="399" width="584" height="108"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="108" id="jMX-DH-E8R"/>
-                    </constraints>
+                    <rect key="frame" x="8" y="436" width="584" height="108"/>
                     <date key="date" timeIntervalSinceReferenceDate="495138032.25426799">
                         <!--2016-09-09 18:20:32 +0000-->
                     </date>
@@ -82,28 +77,26 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Rlk-wc-orN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="8TP-yL-St3"/>
-                <constraint firstItem="b4Z-jT-vNU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="9FV-6q-CNk"/>
-                <constraint firstAttribute="trailing" secondItem="LJe-to-3hv" secondAttribute="trailing" constant="8" id="DTT-HX-7gF"/>
-                <constraint firstAttribute="trailing" secondItem="nlR-zQ-Iss" secondAttribute="trailing" constant="8" id="EaU-OB-9vl"/>
-                <constraint firstItem="XQ1-V0-xc2" firstAttribute="top" secondItem="B7J-OY-QsJ" secondAttribute="bottom" constant="26" id="Jq3-hJ-Lfd"/>
-                <constraint firstItem="LJe-to-3hv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="MOZ-V0-yq6"/>
-                <constraint firstAttribute="trailing" secondItem="B7J-OY-QsJ" secondAttribute="trailing" constant="8" id="PvH-x3-xG4"/>
-                <constraint firstItem="MUH-eh-Ua1" firstAttribute="top" secondItem="hvA-3l-N0g" secondAttribute="bottom" constant="14" id="RCA-oV-t1E"/>
-                <constraint firstItem="hvA-3l-N0g" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WPf-ii-6Fk"/>
-                <constraint firstItem="XQ1-V0-xc2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Xn0-VG-eJK"/>
-                <constraint firstAttribute="trailing" secondItem="b4Z-jT-vNU" secondAttribute="trailing" constant="8" id="aBJ-g0-9nA"/>
-                <constraint firstAttribute="trailing" secondItem="Rlk-wc-orN" secondAttribute="trailing" id="cep-hr-S29"/>
-                <constraint firstItem="MUH-eh-Ua1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="eoE-oR-PG6"/>
-                <constraint firstItem="B7J-OY-QsJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="fY4-IY-QnZ"/>
-                <constraint firstItem="LJe-to-3hv" firstAttribute="top" secondItem="MUH-eh-Ua1" secondAttribute="bottom" constant="8" id="hYp-19-42A"/>
-                <constraint firstItem="nlR-zQ-Iss" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="jYP-Zu-26c"/>
-                <constraint firstItem="nlR-zQ-Iss" firstAttribute="top" secondItem="LJe-to-3hv" secondAttribute="bottom" constant="8" id="ksJ-9h-yA1"/>
-                <constraint firstItem="hvA-3l-N0g" firstAttribute="top" secondItem="Rlk-wc-orN" secondAttribute="bottom" constant="11" id="nYh-H2-fMe"/>
-                <constraint firstItem="b4Z-jT-vNU" firstAttribute="top" secondItem="XQ1-V0-xc2" secondAttribute="bottom" constant="8" id="q3s-jl-3eo"/>
-                <constraint firstAttribute="trailing" secondItem="MUH-eh-Ua1" secondAttribute="trailing" constant="8" id="r7k-hW-TL2"/>
-                <constraint firstItem="B7J-OY-QsJ" firstAttribute="top" secondItem="nlR-zQ-Iss" secondAttribute="bottom" constant="29" id="uel-pN-dE6"/>
-                <constraint firstItem="Rlk-wc-orN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="we4-Rm-JOv"/>
+                <constraint firstItem="MUH-eh-Ua1" firstAttribute="top" secondItem="hvA-3l-N0g" secondAttribute="bottom" constant="14" id="7Za-KK-3kV"/>
+                <constraint firstItem="nlR-zQ-Iss" firstAttribute="trailing" secondItem="B7J-OY-QsJ" secondAttribute="trailing" id="Gku-hL-Yi9"/>
+                <constraint firstItem="hvA-3l-N0g" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="92" id="HWF-7Y-txP"/>
+                <constraint firstItem="LJe-to-3hv" firstAttribute="trailing" secondItem="nlR-zQ-Iss" secondAttribute="trailing" id="LZc-01-MeD"/>
+                <constraint firstItem="b4Z-jT-vNU" firstAttribute="top" secondItem="XQ1-V0-xc2" secondAttribute="bottom" constant="8" symbolic="YES" id="Ngm-pf-nwQ"/>
+                <constraint firstItem="MUH-eh-Ua1" firstAttribute="leading" secondItem="LJe-to-3hv" secondAttribute="leading" id="Stf-ea-D5f"/>
+                <constraint firstAttribute="bottom" secondItem="b4Z-jT-vNU" secondAttribute="bottom" constant="56" id="VsJ-Ot-KWg"/>
+                <constraint firstItem="B7J-OY-QsJ" firstAttribute="leading" secondItem="b4Z-jT-vNU" secondAttribute="leading" id="ZLb-KG-seS"/>
+                <constraint firstItem="B7J-OY-QsJ" firstAttribute="top" secondItem="nlR-zQ-Iss" secondAttribute="bottom" constant="29" id="a1b-D6-YwW"/>
+                <constraint firstItem="MUH-eh-Ua1" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="fbb-eZ-k8r"/>
+                <constraint firstItem="LJe-to-3hv" firstAttribute="top" secondItem="MUH-eh-Ua1" secondAttribute="bottom" constant="8" symbolic="YES" id="hno-Q1-6A5"/>
+                <constraint firstItem="B7J-OY-QsJ" firstAttribute="centerX" secondItem="XQ1-V0-xc2" secondAttribute="centerX" id="i3k-sd-Hdb"/>
+                <constraint firstItem="MUH-eh-Ua1" firstAttribute="trailing" secondItem="LJe-to-3hv" secondAttribute="trailing" id="m7O-rr-VP2"/>
+                <constraint firstItem="B7J-OY-QsJ" firstAttribute="trailing" secondItem="b4Z-jT-vNU" secondAttribute="trailing" id="p0s-c7-NVL"/>
+                <constraint firstItem="nlR-zQ-Iss" firstAttribute="leading" secondItem="B7J-OY-QsJ" secondAttribute="leading" id="qql-dJ-D9U"/>
+                <constraint firstItem="XQ1-V0-xc2" firstAttribute="top" secondItem="B7J-OY-QsJ" secondAttribute="bottom" constant="26" id="sGI-WN-nh4"/>
+                <constraint firstItem="hvA-3l-N0g" firstAttribute="centerX" secondItem="MUH-eh-Ua1" secondAttribute="centerX" id="sgV-Gv-aqX"/>
+                <constraint firstItem="LJe-to-3hv" firstAttribute="leading" secondItem="nlR-zQ-Iss" secondAttribute="leading" id="tuO-qR-TWB"/>
+                <constraint firstItem="MUH-eh-Ua1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="ty4-wT-CJW"/>
+                <constraint firstItem="nlR-zQ-Iss" firstAttribute="top" secondItem="LJe-to-3hv" secondAttribute="bottom" constant="8" symbolic="YES" id="wjh-sr-IB3"/>
             </constraints>
             <point key="canvasLocation" x="591" y="453"/>
         </view>

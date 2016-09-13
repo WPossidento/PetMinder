@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ManagedAnimalType (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSNumber *id;
+@property (nullable, nonatomic, retain) NSNumber *animalType_id;
 @property (nullable, nonatomic, retain) NSString *image;
 @property (nullable, nonatomic, retain) NSString *name;
 @property (nullable, nonatomic, retain) NSSet<ManagedPet *> *pets;

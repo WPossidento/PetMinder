@@ -50,7 +50,7 @@
                 <outlet property="taskTableCellPetName" destination="WdI-Y7-7BS" id="pm5-6s-MAj"/>
                 <outlet property="taskTableCellTaskName" destination="s9O-xA-Zcr" id="y7b-7W-aGW"/>
             </connections>
-            <point key="canvasLocation" x="597" y="345"/>
+            <point key="canvasLocation" x="552" y="309"/>
         </tableViewCell>
         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="9RX-jY-GiO">
             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
