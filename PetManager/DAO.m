@@ -439,18 +439,18 @@
     
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     
-    NSPredicate *p = [NSPredicate predicateWithFormat:@"task_id MATCHES '.*'"];
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"time MATCHES '.*'"];
     [request setPredicate:p];
     
     
     
     //Change ascending  YES/NO and validate
     NSSortDescriptor *sortByKey = [[NSSortDescriptor alloc]
-                                   initWithKey:@"task_id" ascending:YES];
+                                   initWithKey:@"time" ascending:YES];
     
     [request setSortDescriptors:[NSArray arrayWithObject:sortByKey]];
     
-    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedPet"];
+    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedTask"];
     [request setEntity:e];
     NSError *error = nil;
     
@@ -467,19 +467,39 @@
     
     for (NSManagedObject *element in result) {
         
+        ManagedPet *managedPet = [element valueForKey:@"pet"];
+        
+        NSNumber *number = [[NSNumber alloc]init];
+        long longToInt;
+        
         Task *task = [[Task alloc]init];
-        task.taskId = (int)[element valueForKey:@"task_id"];
+        number = [element valueForKey:@"task_id"];
+        longToInt = [number longValue];
+        task.taskId = (int)longToInt;
         task.taskName = [element valueForKey:@"name"];
         task.taskNote = [element valueForKey:@"note"];
-        ManagedPet *pet = [[ManagedPet alloc]init];
-        pet = [element valueForKey:@"color"];
-        task.petId = (int)pet.pet_id;
-                
-        [self.allTasks addObject:pet];
+        //        ManagedPet *pet = [[ManagedPet alloc]init];
+        //        pet = [element valueForKey:@"color"];
+        task.time = [element valueForKey:@"time"];
+        
+        Pet *pet = [[Pet alloc]init];
+        pet.petImage = managedPet.image;
+        pet.name = managedPet.name;
+        pet.color = managedPet.color;
+        pet.petDescription = managedPet.miscDescription;
+        pet.sex = managedPet.sex;
+        pet.birthDate = managedPet.birthdate;
+        
+        task.pet = pet;
+        
+        number = managedPet.pet_id;
+        longToInt = [number longValue];
+        task.petId = (int)longToInt;
+        
+        [self.allTasks addObject:task];
     }
 }
 
-//STILL WORKING ON THIS METHOD
 -(void)fetchTasksForSpecificPet:(Pet*)pet
 {
     NSLog(@"%d, %@", pet.petID, pet.name);
@@ -488,7 +508,7 @@
     
     NSPredicate *p = [NSPredicate predicateWithFormat:@"task_id MATCHES '.*'"];
     [request setPredicate:p];
-//
+    //
     
     
     //Change ascending  YES/NO and validate
@@ -497,11 +517,7 @@
     
     [request setSortDescriptors:[NSArray arrayWithObject:sortByKey]];
     
-//    NSNumber *number = [[NSNumber alloc]initWithInt:pet.petID];
-//    
-//    NSPredicate *p = [NSPredicate predicateWithFormat:@"%K == %d", @"pet.pet_id", number];
-//    [request setPredicate:p];
-//  
+    
     
     NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedTask"];
     [request setEntity:e];
@@ -532,18 +548,18 @@
         
         if (pet.petID == (int)hi){
             Task *task = [[Task alloc]init];
-            task.taskId = (int)[element valueForKey:@"task_id"];
+            number = [element valueForKey:@"task_id"];
+            hi = [number longValue];
+            task.taskId = (int)hi;
             task.petId = pet.petID;
             task.taskName = [element valueForKey:@"name"];
             task.taskNote = [element valueForKey:@"note"];
-//            Pet *pet = [[Pet alloc]init];
-//            pet = [element valueForKey:@"color"];
-//            task.petId = pet.petID;
+            task.time = [element valueForKey:@"time"];
+            
             
             [self.allTasks addObject:task];
         }
     }
-     
 }
 
 

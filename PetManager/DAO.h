@@ -25,6 +25,7 @@
 -(void)createTaskWithName:(NSString*)name andNote:(NSString*)note andTime:(NSDate*)time andPet:(Pet*) pet;
 -(void)fetchTasksForSpecificPet:(Pet*)pet;
 -(void)fetchPets;
+-(void)fetchTasks;
 
 
 @end
