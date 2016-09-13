@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TasksForPetViewController">
+            <connections>
+                <outlet property="tasksForPetTableView" destination="jFF-hG-H23" id="ett-gF-3G0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PwN-ph-58L">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <items>
+                        <navigationItem title="Tasks for PetName" id="5d5-s9-aws"/>
+                    </items>
+                </navigationBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jFF-hG-H23">
+                    <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="jFF-hG-H23" firstAttribute="top" secondItem="PwN-ph-58L" secondAttribute="bottom" id="8Fb-Cm-VA4"/>
+                <constraint firstItem="jFF-hG-H23" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HTX-jI-fHm"/>
+                <constraint firstAttribute="trailing" secondItem="PwN-ph-58L" secondAttribute="trailing" id="PFd-9f-AQ0"/>
+                <constraint firstItem="PwN-ph-58L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dBz-Ro-emA"/>
+                <constraint firstAttribute="bottom" secondItem="jFF-hG-H23" secondAttribute="bottom" id="h1q-v9-b0D"/>
+                <constraint firstAttribute="trailing" secondItem="jFF-hG-H23" secondAttribute="trailing" id="hs8-Y1-XDo"/>
+                <constraint firstItem="PwN-ph-58L" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="nsv-ZF-9s5"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

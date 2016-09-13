@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskListViewController">
+            <connections>
+                <outlet property="tableView" destination="YfU-Ud-krG" id="1ea-zP-TMd"/>
+                <outlet property="view" destination="g2k-PW-0pF" id="DI5-sR-M6E"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="g2k-PW-0pF">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g1K-Bf-FWi">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <items>
+                        <navigationItem title="Tasks" id="XUW-Oi-K82"/>
+                    </items>
+                </navigationBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YfU-Ud-krG">
+                    <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="g1K-Bf-FWi" firstAttribute="top" secondItem="g2k-PW-0pF" secondAttribute="top" id="09w-BJ-Bi0"/>
+                <constraint firstAttribute="trailing" secondItem="YfU-Ud-krG" secondAttribute="trailing" id="6UA-i7-dSS"/>
+                <constraint firstItem="YfU-Ud-krG" firstAttribute="top" secondItem="g1K-Bf-FWi" secondAttribute="bottom" id="Puo-Mf-RgG"/>
+                <constraint firstAttribute="trailing" secondItem="g1K-Bf-FWi" secondAttribute="trailing" id="cee-bC-hOS"/>
+                <constraint firstItem="YfU-Ud-krG" firstAttribute="leading" secondItem="g2k-PW-0pF" secondAttribute="leading" id="mkt-kg-KnY"/>
+                <constraint firstItem="g1K-Bf-FWi" firstAttribute="leading" secondItem="g2k-PW-0pF" secondAttribute="leading" id="p5M-EL-HvP"/>
+                <constraint firstAttribute="bottom" secondItem="YfU-Ud-krG" secondAttribute="bottom" id="yJB-1d-k6k"/>
+            </constraints>
+            <point key="canvasLocation" x="542" y="426"/>
+        </view>
+    </objects>
+</document>
