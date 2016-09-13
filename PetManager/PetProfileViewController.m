@@ -188,7 +188,7 @@
     [alert addAction:selectPhoto];
     [alert addAction:cancel];
     
- [self presentViewController:alert animated:YES completion:NULL];
+    [self presentViewController:alert animated:YES completion:NULL];
 
 }
 

@@ -115,8 +115,28 @@
 */
 
 - (IBAction)addAnimalTypeButton:(id)sender {
+    
+    NSLog(@"Button Tapped!");
+    
+    NSString *animalType = self.animalTypeTextField.text;
+    
+    [[DAO sharedInstance]addAnimalTypeWithName:animalType andImage:@"text-list"];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:animalType message:@"added" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:NULL];
+    
 }
-
 
 
 
