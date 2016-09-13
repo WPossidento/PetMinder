@@ -11,9 +11,11 @@
 #import "PetListViewController.h"
 @class PetListViewController;
 
-@interface PetProfileViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+@interface PetProfileViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *petImage;
+
+- (IBAction)editImage:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UITextField *petName;
 

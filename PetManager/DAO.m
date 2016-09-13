@@ -211,7 +211,7 @@
 
 #pragma mark - adding deleting
 
--(void)createPetWithName:(NSString*)name andImage:(NSString*)image andColor:(NSString*)color andMiscDescription:(NSString*)miscDescription andBirthdate:(NSDate*)birthdate andSex:(NSString*)sex andAnimalType:(AnimalType*)animalType
+-(Pet*)createPetWithName:(NSString*)name andImage:(NSString*)image andColor:(NSString*)color andMiscDescription:(NSString*)miscDescription andBirthdate:(NSDate*)birthdate andSex:(NSString*)sex andAnimalType:(AnimalType*)animalType
 {
     // Create Pet
     NSEntityDescription *entityPet = [NSEntityDescription entityForName:@"ManagedPet" inManagedObjectContext:self.managedObjectContext];
@@ -267,6 +267,8 @@
 
     
     [self saveContext];
+    
+    return newPet;
 }
 
 -(void)createAnimalTypeWithName:(NSString*)name andImage:(NSString*) image

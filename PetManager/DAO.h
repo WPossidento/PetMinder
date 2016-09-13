@@ -20,7 +20,7 @@
 + (instancetype)sharedInstance;
 
 - (AnimalType *)addAnimalTypeWithName:(NSString *)name andImage:(NSString *)image;
--(void)createPetWithName:(NSString*)name andImage:(NSString*)image andColor:(NSString*)color andMiscDescription:(NSString*)miscDescription andBirthdate:(NSDate*)birthdate andSex:(NSString*)sex andAnimalType:(AnimalType*)animalType;
+-(Pet*)createPetWithName:(NSString*)name andImage:(NSString*)image andColor:(NSString*)color andMiscDescription:(NSString*)miscDescription andBirthdate:(NSDate*)birthdate andSex:(NSString*)sex andAnimalType:(AnimalType*)animalType;
 - (void)loadAllPets;
 -(void)createTaskWithName:(NSString*)name andNote:(NSString*)note andTime:(NSDate*)time andPet:(Pet*) pet;
 -(void)fetchTasksForSpecificPet:(Pet*)pet;

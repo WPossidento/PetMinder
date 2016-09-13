@@ -79,11 +79,14 @@
     
     cell.petCellName.text = [NSString stringWithFormat:@"%@", [self.dao.allPets[indexPath.row] name]];
     
-    UIImage *petImage = [UIImage imageNamed:[[self.dao.allPets objectAtIndex:[indexPath row]] petImage]];
+    NSString *petImg = [[self.dao.allPets objectAtIndex:[indexPath row]] petImage];
+    
+    UIImage *petImage = [UIImage imageNamed:petImg];
         if (petImage == nil) {
-            NSFileManager *fileManager = [NSFileManager defaultManager];
-            NSURL *documentsURL = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
-            NSURL *fileURL = [documentsURL URLByAppendingPathComponent:[[self.dao.allPets objectAtIndex:[indexPath row]] petImage]];
+           //NSFileManager *fileManager = [NSFileManager defaultManager];
+           // NSURL *documentsURL = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
+           // NSURL *fileURL = [documentsURL URLByAppendingPathComponent:[[self.dao.allPets objectAtIndex:[indexPath row]] petImage]];
+            NSURL *fileURL = [NSURL fileURLWithPath:petImg ] ;
             NSData *imageData = [NSData dataWithContentsOfURL:fileURL];
             petImage = [UIImage imageWithData:imageData];
         }

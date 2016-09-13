@@ -74,6 +74,16 @@
                         <!--2016-09-09 18:20:32 +0000-->
                     </date>
                 </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nGY-Ru-EJF">
+                    <rect key="frame" x="347" y="140" width="84" height="30"/>
+                    <color key="backgroundColor" red="0.2156862745" green="0.46274509800000002" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Edit Image">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="editImage:" destination="-1" eventType="touchUpInside" id="Y3e-I5-POI"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -94,6 +104,7 @@
                 <constraint firstItem="nlR-zQ-Iss" firstAttribute="leading" secondItem="B7J-OY-QsJ" secondAttribute="leading" id="qql-dJ-D9U"/>
                 <constraint firstItem="XQ1-V0-xc2" firstAttribute="top" secondItem="B7J-OY-QsJ" secondAttribute="bottom" constant="26" id="sGI-WN-nh4"/>
                 <constraint firstItem="hvA-3l-N0g" firstAttribute="centerX" secondItem="MUH-eh-Ua1" secondAttribute="centerX" id="sgV-Gv-aqX"/>
+                <constraint firstItem="nGY-Ru-EJF" firstAttribute="leading" secondItem="hvA-3l-N0g" secondAttribute="trailing" constant="8" id="tMQ-fW-fm3"/>
                 <constraint firstItem="LJe-to-3hv" firstAttribute="leading" secondItem="nlR-zQ-Iss" secondAttribute="leading" id="tuO-qR-TWB"/>
                 <constraint firstItem="MUH-eh-Ua1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="ty4-wT-CJW"/>
                 <constraint firstItem="nlR-zQ-Iss" firstAttribute="top" secondItem="LJe-to-3hv" secondAttribute="bottom" constant="8" symbolic="YES" id="wjh-sr-IB3"/>

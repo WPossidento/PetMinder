@@ -12,6 +12,7 @@
 
 @interface PetProfileViewController ()
 
+
 @property(strong, nonatomic) NSString *pickerViewSex;
 @property (strong, nonatomic) DAO *dao;
 
@@ -28,10 +29,12 @@
     _petSex.delegate = self;
     _petSex.dataSource = self;
     
+    
+    self.petImage.image = [UIImage imageNamed:self.pet.petImage];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    self.petImage.image = [UIImage imageNamed:self.pet.petImage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,12 +56,26 @@
     
     self.pet.name = self.petName.text;
     
-    
  //   NSString *imagestring = [UIImagePNGRepresentation(self.petImage.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
     
-    [[DAO sharedInstance]createPetWithName:self.petName.text andImage:self.pet.petImage  andColor:self.petColor.text andMiscDescription:self.petDescription.text andBirthdate:self.petDateOfBirth.date andSex:self.pickerViewSex andAnimalType:self.pet.animalType];
+    // save image to file in documents directory
+    // set self.pet.petImage to filePath
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *documentsURL = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
+    NSURL *fileURL = [documentsURL URLByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%@.png", self.petName.text]];
+    self.pet.petImage = [fileURL path];
+    NSData *imageData = UIImagePNGRepresentation(self.petImage.image);
+    [imageData writeToFile:self.pet.petImage atomically:YES];
+
+    
+    
+    self.pet = [[DAO sharedInstance]createPetWithName:self.petName.text andImage:self.pet.petImage andColor:self.petColor.text andMiscDescription:self.petDescription.text andBirthdate:self.petDateOfBirth.date andSex:self.pickerViewSex andAnimalType:self.pet.animalType];
     
     [self.dao.allPets addObject:self.pet];
+    
+ 
+ 
+    
     
     if (self.petListViewController == nil) {
         self.petListViewController = [[PetListViewController alloc] init];
@@ -106,6 +123,85 @@
     }
     
 }
+
+- (IBAction)editImage:(id)sender {
+    
+    UIAlertController *alert = [UIAlertController
+                                alertControllerWithTitle:@"Change image" message:@"" preferredStyle:UIAlertControllerStyleActionSheet
+                                ];
+    
+    UIAlertAction *takePhoto = [UIAlertAction
+                                actionWithTitle:@"Take Photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+                                {
+                                    
+                                    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                                    picker.delegate = self;
+                                    picker.allowsEditing = YES;
+                                    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                    
+                                    [self presentViewController:picker animated:YES completion:NULL];
+                                    
+                                    
+                                    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+                                        
+                                        UIAlertController *controller = [UIAlertController alertControllerWithTitle:@"Error!"
+                                                                                                            message:@"Device has no camera"
+                                                                                                     preferredStyle:UIAlertControllerStyleAlert];
+                                        UIAlertAction *alertAction = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                                                              style:UIAlertActionStyleDestructive
+                                                                                            handler:^(UIAlertAction *action) {
+                                                                                                NSLog(@"Dismiss button tapped!");
+                                                                                            }];
+                                        [controller addAction:alertAction];
+                                        [self presentViewController:controller animated:YES completion:nil];
+                                    }
+                                    
+                                }
+                                ];
+ 
+    
+    UIAlertAction *selectPhoto = [UIAlertAction
+                                actionWithTitle:@"Select Photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+                                {
+                                    
+                                    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                                    picker.delegate = self;
+                                    picker.allowsEditing = YES;
+                                    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                    
+                                    [self presentViewController:picker animated:YES completion:NULL];
+                                    
+                                }
+                                ];
+    
+    
+    UIAlertAction *cancel = [UIAlertAction
+                                  actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+                                  {
+
+                                      [alert dismissViewControllerAnimated:YES completion:NULL];
+                                      
+                                  }
+                                  ];
+    
+    [alert addAction:takePhoto];
+    [alert addAction:selectPhoto];
+    [alert addAction:cancel];
+    
+ [self presentViewController:alert animated:YES completion:NULL];
+
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    self.petImage.image = info[UIImagePickerControllerEditedImage];
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+
+
+
 
 @end
 
