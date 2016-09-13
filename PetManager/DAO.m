@@ -12,6 +12,7 @@
 #import "ManagedAnimalType.h"
 #import "Pet.h"
 #import "AnimalType.h"
+#import "Task.h"
 
 
 @interface DAO ()
@@ -40,6 +41,8 @@
     self = [super init];
     if (self) {
         _animalTypes = [[NSMutableArray alloc] init];
+        _allPets = [[NSMutableArray alloc]init];
+        _allTasks = [[NSMutableArray alloc]init];
         
         [self loadAllAnimalType];
         
@@ -141,6 +144,7 @@
             NSLog(@"%@ %@",  [mp.animalType id], [mp.animalType name]);
             
             Pet *pet = [[Pet alloc] initWithPetName:mp.name andPetImage:mp.image andAnimalType:nil andColor:mp.color andPetDescription:mp.miscDescription andSex:mp.sex andBirthDate:mp.birthdate];
+            pet.petID = (int)mp.pet_id;
             [self.allPets addObject:pet];
         }
     }
@@ -460,11 +464,120 @@
         pet.sex = [element valueForKey:@"sex"];
 //        pet.tasks = [element valueForKey:@"tasks"];
         
+        NSLog(@"%@, %d, %@", pet.name, pet.petID, pet.sex);
+        
         [self.allPets addObject:pet];
     }
-    
-    
 }
+
+-(void)fetchTasks
+{
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"task_id MATCHES '.*'"];
+    [request setPredicate:p];
+    
+    
+    
+    //Change ascending  YES/NO and validate
+    NSSortDescriptor *sortByKey = [[NSSortDescriptor alloc]
+                                   initWithKey:@"task_id" ascending:YES];
+    
+    [request setSortDescriptors:[NSArray arrayWithObject:sortByKey]];
+    
+    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedPet"];
+    [request setEntity:e];
+    NSError *error = nil;
+    
+    
+    //This gets data only from context, not from store
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    
+    if(!result)
+    {
+        [NSException raise:@"Fetch Failed" format:@"Reason: %@", [error localizedDescription]];
+    }
+    
+    [self.allTasks removeAllObjects];
+    
+    for (NSManagedObject *element in result) {
+        
+        Task *task = [[Task alloc]init];
+        task.taskId = (int)[element valueForKey:@"task_id"];
+        task.taskName = [element valueForKey:@"name"];
+        task.taskNote = [element valueForKey:@"note"];
+        ManagedPet *pet = [[ManagedPet alloc]init];
+        pet = [element valueForKey:@"color"];
+        task.petId = (int)pet.pet_id;
+                
+        [self.allTasks addObject:pet];
+    }
+}
+
+//STILL WORKING ON THIS METHOD
+-(void)fetchTasksForSpecificPet:(Pet*)pet
+{
+    NSLog(@"%d, %@", pet.petID, pet.name);
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"task_id MATCHES '.*'"];
+    [request setPredicate:p];
+//
+    
+    
+    //Change ascending  YES/NO and validate
+    NSSortDescriptor *sortByKey = [[NSSortDescriptor alloc]
+                                   initWithKey:@"task_id" ascending:YES];
+    
+    [request setSortDescriptors:[NSArray arrayWithObject:sortByKey]];
+    
+//    NSNumber *number = [[NSNumber alloc]initWithInt:pet.petID];
+//    
+//    NSPredicate *p = [NSPredicate predicateWithFormat:@"%K == %d", @"pet.pet_id", number];
+//    [request setPredicate:p];
+//  
+    
+    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedTask"];
+    [request setEntity:e];
+    NSError *error = nil;
+    
+    
+    
+    
+    //This gets data only from context, not from store
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    
+    if(!result)
+    {
+        [NSException raise:@"Fetch Failed" format:@"Reason: %@", [error localizedDescription]];
+    }
+    
+    [self.allTasks removeAllObjects];
+    
+    
+    
+    for (NSManagedObject *element in result) {
+        
+        ManagedPet *managedPet = [element valueForKey:@"pet"];
+        
+        if (pet.petID == (int)managedPet.pet_id){
+            Task *task = [[Task alloc]init];
+            task.taskId = (int)[element valueForKey:@"task_id"];
+            task.petId = pet.petID;
+            task.taskName = [element valueForKey:@"name"];
+            task.taskNote = [element valueForKey:@"note"];
+//            Pet *pet = [[Pet alloc]init];
+//            pet = [element valueForKey:@"color"];
+//            task.petId = pet.petID;
+            
+            [self.allTasks addObject:task];
+        }
+    }
+     
+}
+
 
 
 @end

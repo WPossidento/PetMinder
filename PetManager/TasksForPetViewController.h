@@ -10,7 +10,7 @@
 #import "Pet.h"
 #import "TaskFormViewController.h"
 
-@interface TasksForPetViewController : UIViewController
+@interface TasksForPetViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *tasksForPetTableView;
 @property (strong, nonatomic) Pet *pet;
