@@ -66,7 +66,7 @@
     
     cell.taskTableCellTaskName.text = task.taskName;
     cell.taskTableCellPetName.text = task.taskNote;
-    cell.taskTableCellImage.image = [UIImage imageNamed:self.pet.petImage];
+    cell.taskTableCellImage.image = task.loadedImage;
 
     
     return cell;
@@ -89,6 +89,7 @@
 {
     return 70;
 }
+
 
 
 @end

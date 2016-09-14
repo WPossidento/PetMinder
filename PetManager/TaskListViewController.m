@@ -69,7 +69,7 @@
     
     cell.taskTableCellTaskName.text = task.taskName;
     cell.taskTableCellPetName.text = task.taskNote;
-    cell.taskTableCellImage.image = [UIImage imageNamed:task.pet.petImage];
+    cell.taskTableCellImage.image = task.loadedImage;
     
     //    cell.taskTableCellTaskName.text = [NSString stringWithFormat:@"%@", [self.taskList objectAtIndex:[indexPath row]] taskName];
     

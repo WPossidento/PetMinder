@@ -15,6 +15,7 @@
 
 @property(strong, nonatomic) NSString *pickerViewSex;
 @property (strong, nonatomic) DAO *dao;
+@property BOOL customImage;
 
 @end
 
@@ -22,6 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.petName.delegate = self;
+    self.petDescription.delegate = self;
+    self.petColor.delegate = self;
     
     UIBarButtonItem *saveBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButton:)];
     self.navigationItem.rightBarButtonItem = saveBtn;
@@ -35,6 +40,14 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    if (self.customImage == NO){
+        self.petImage.image = [UIImage imageNamed:self.pet.petImage];
+    }
+
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    self.customImage = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,6 +84,7 @@
     
     self.pet = [[DAO sharedInstance]createPetWithName:self.petName.text andImage:self.pet.petImage andColor:self.petColor.text andMiscDescription:self.petDescription.text andBirthdate:self.petDateOfBirth.date andSex:self.pickerViewSex andAnimalType:self.pet.animalType];
     
+
     [self.dao.allPets addObject:self.pet];
     
  
@@ -195,9 +209,25 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     self.petImage.image = info[UIImagePickerControllerEditedImage];
+    self.customImage = YES;
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
+}
+
+#pragma mark - UITextfieldDelegate
+
+
+-(BOOL) textFieldShouldReturn: (UITextField *) textField{
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.petName endEditing:YES];
+    [self.petDescription endEditing:YES];
+    [self.petColor endEditing:YES];
 }
 
 
