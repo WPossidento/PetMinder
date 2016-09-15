@@ -27,6 +27,10 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    self.petName.text = self.pet.name;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
