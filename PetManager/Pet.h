@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AnimalType.h"
+#import <UIKit/UIKit.h>
 
 @interface Pet : NSObject
 @property (strong, nonatomic) NSString *name;
@@ -19,6 +20,7 @@
 @property (strong, nonatomic) NSString *sex;
 @property (strong, nonatomic) NSDate *birthDate;
 @property (strong, nonatomic) NSMutableArray *arrayOfTasks;
+@property (strong, nonatomic) UIImage *loadedImage;
 
 
 -(instancetype)initWithPetName:(NSString *)name andPetImage:(NSString *)petImage andAnimalType:(AnimalType *)animalType andColor:(NSString *)color andPetDescription:(NSString *)petDescription andSex:(NSString *)sex andBirthDate:(NSDate *)birthDate;

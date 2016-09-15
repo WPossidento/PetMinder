@@ -11,7 +11,7 @@
 #import "PetListViewController.h"
 @class PetListViewController;
 
-@interface PetProfileViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface PetProfileViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *petImage;
 
