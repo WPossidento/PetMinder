@@ -101,7 +101,7 @@
     
     
 }
-
+
 
 
 /*
@@ -120,6 +120,8 @@
     
     NSString *animalType = self.animalTypeTextField.text;
     
+    self.animalTypeTextField.text = @"";
+    
     [[DAO sharedInstance]addAnimalTypeWithName:animalType andImage:@"text-list"];
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:animalType message:@"added" preferredStyle:UIAlertControllerStyleAlert];
@@ -130,15 +132,13 @@
                          handler:^(UIAlertAction * action)
                          {
                              [alert dismissViewControllerAnimated:YES completion:nil];
+                             [self.animalTypeTableView reloadData];
                              
                          }];
     
     [alert addAction:ok];
     [self presentViewController:alert animated:YES completion:NULL];
-    
-}
-
-
+    }
 
 
 @end
