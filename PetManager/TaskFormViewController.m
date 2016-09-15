@@ -19,12 +19,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.noteTextField.delegate = self;
+    self.taskName.delegate = self;
 
     UIBarButtonItem *saveBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButton:)];
     self.navigationItem.rightBarButtonItem = saveBtn;
     
     self.dao = [DAO sharedInstance];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    self.petName.text = self.pet.name;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,4 +55,20 @@
     [self.navigationController popViewControllerAnimated:YES];
     
 }
+
+#pragma mark - UITextfieldDelegate
+
+-(BOOL) textFieldShouldReturn: (UITextField *) textField{
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.taskName endEditing:YES];
+    [self.noteTextField endEditing:YES];
+    
+}
+
+
 @end

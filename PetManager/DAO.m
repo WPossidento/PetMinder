@@ -125,6 +125,20 @@
             long hi = [number longValue];
             pet.petID = (int)hi;
             NSLog(@"%d", pet.petID);
+            
+            NSArray  *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            NSString *documentsDir  = [documentPaths objectAtIndex:0];
+            NSString *imgPath    = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%@.png", pet.name]];
+            
+//            NSFileManager *fileManager = [[NSFileManager alloc] init];
+//            if ([fileManager fileExistsAtPath:imgPath]) {
+//                NSLog(@"FOUND IMG");
+//                NSLog(@"%@", imgPath);
+//            }
+            
+            NSData *imgData = [NSData dataWithContentsOfFile:imgPath];
+            pet.loadedImage = [[UIImage alloc] initWithData:imgData];
+            
             [self.allPets addObject:pet];
         }
     }
@@ -211,7 +225,7 @@
 
 #pragma mark - adding deleting
 
--(Pet*)createPetWithName:(NSString*)name andImage:(NSString*)image andColor:(NSString*)color andMiscDescription:(NSString*)miscDescription andBirthdate:(NSDate*)birthdate andSex:(NSString*)sex andAnimalType:(AnimalType*)animalType
+-(Pet*)createPetWithName:(NSString*)name andImage:(NSString*)image andColor:(NSString*)color andMiscDescription:(NSString*)miscDescription andBirthdate:(NSDate*)birthdate andSex:(NSString*)sex andAnimalType:(AnimalType*)animalType;
 {
     // Create Pet
     NSEntityDescription *entityPet = [NSEntityDescription entityForName:@"ManagedPet" inManagedObjectContext:self.managedObjectContext];
@@ -496,6 +510,19 @@
         longToInt = [number longValue];
         task.petId = (int)longToInt;
         
+        NSArray  *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDir  = [documentPaths objectAtIndex:0];
+        NSString *imgPath    = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%@.png", pet.name]];
+        
+        //            NSFileManager *fileManager = [[NSFileManager alloc] init];
+        //            if ([fileManager fileExistsAtPath:imgPath]) {
+        //                NSLog(@"FOUND IMG");
+        //                NSLog(@"%@", imgPath);
+        //            }
+        
+        NSData *imgData = [NSData dataWithContentsOfFile:imgPath];
+        task.loadedImage = [[UIImage alloc] initWithData:imgData];
+        
         [self.allTasks addObject:task];
     }
 }
@@ -556,6 +583,18 @@
             task.taskNote = [element valueForKey:@"note"];
             task.time = [element valueForKey:@"time"];
             
+            NSArray  *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+            NSString *documentsDir  = [documentPaths objectAtIndex:0];
+            NSString *imgPath    = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%@.png", managedPet.name]];
+            
+            //            NSFileManager *fileManager = [[NSFileManager alloc] init];
+            //            if ([fileManager fileExistsAtPath:imgPath]) {
+            //                NSLog(@"FOUND IMG");
+            //                NSLog(@"%@", imgPath);
+            //            }
+            
+            NSData *imgData = [NSData dataWithContentsOfFile:imgPath];
+            task.loadedImage = [[UIImage alloc] initWithData:imgData];
             
             [self.allTasks addObject:task];
         }

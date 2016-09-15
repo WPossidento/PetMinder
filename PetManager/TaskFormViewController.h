@@ -11,7 +11,7 @@
 #import "TasksForPetViewController.h"
 @class TasksForPetViewController;
 
-@interface TaskFormViewController : UIViewController
+@interface TaskFormViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *petName;
 
