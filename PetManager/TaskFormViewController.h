@@ -22,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *noteTextField;
 
 @property (strong, nonatomic) IBOutlet UISwitch *recurringSwitch;
+@property (strong, nonatomic) IBOutlet UILabel *recurringLabel;
 
 @property (strong, nonatomic) Pet *pet;
 @property (nonatomic, retain) TasksForPetViewController *tasksForPetViewController;

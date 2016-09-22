@@ -20,6 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.recurringSwitch.hidden = YES;
+    self.recurringLabel.hidden = YES;
     self.noteTextField.delegate = self;
     self.taskName.delegate = self;
 
@@ -36,6 +38,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    self.recurringSwitch.hidden = YES;
+    self.recurringLabel.hidden = YES;
     self.petName.text = self.pet.name;
     self.taskName.text = @"";
     self.noteTextField.text = @"";

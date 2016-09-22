@@ -10,6 +10,7 @@
                 <outlet property="datePicker" destination="6FL-3V-zHX" id="eaK-b0-X0Y"/>
                 <outlet property="noteTextField" destination="IFI-0x-scP" id="0zd-Qw-fDG"/>
                 <outlet property="petName" destination="QGj-ZB-UpC" id="qvJ-0M-8ab"/>
+                <outlet property="recurringLabel" destination="StJ-jN-ukv" id="84k-LK-GDP"/>
                 <outlet property="recurringSwitch" destination="2JK-rG-65h" id="jxN-nn-Wg6"/>
                 <outlet property="taskName" destination="spe-hz-2dW" id="Cof-Up-mXF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -49,7 +50,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="add note" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IFI-0x-scP">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Note" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IFI-0x-scP">
                     <rect key="frame" x="8" y="416" width="584" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
