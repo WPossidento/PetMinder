@@ -72,7 +72,7 @@
 
 - (IBAction)saveButton:(id)sender {
     
-    if ([self.petName.text  isEqual: @""]) {
+    if ([self.petName.text isEqual: @""]) {
         self.saveBtn.enabled = NO;
         
         UIAlertController *noName = [UIAlertController

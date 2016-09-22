@@ -16,18 +16,18 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fq2-ff-HE9">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="496"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fq2-ff-HE9">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="513"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xl2-U9-X7v">
-                    <rect key="frame" x="28" y="509" width="131" height="47"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xl2-U9-X7v">
+                    <rect key="frame" x="28" y="526" width="77" height="30"/>
                     <state key="normal" title="Take Photo"/>
                     <connections>
                         <action selector="takePhoto:" destination="-1" eventType="touchUpInside" id="bkN-Sh-Zhb"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c86-ff-zNP">
-                    <rect key="frame" x="441" y="509" width="131" height="47"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c86-ff-zNP">
+                    <rect key="frame" x="484" y="526" width="88" height="30"/>
                     <state key="normal" title="Select Photo"/>
                     <connections>
                         <action selector="selectPhoto:" destination="-1" eventType="touchUpInside" id="GM4-1M-ckA"/>
