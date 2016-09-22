@@ -36,7 +36,9 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    
+    self.petName.text = self.pet.name;
+    self.taskName.text = @"";
+    self.noteTextField.text = @"";
 }
 
 - (IBAction)saveButton:(id)sender {
