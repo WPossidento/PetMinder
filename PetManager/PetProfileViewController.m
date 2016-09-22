@@ -43,6 +43,10 @@
     if (self.customImage == NO){
         self.petImage.image = [UIImage imageNamed:self.pet.petImage];
     }
+    
+    self.petName.text = @"";
+    self.petDescription.text = @"";
+    self.petColor.text = @"";
 
 }
 
