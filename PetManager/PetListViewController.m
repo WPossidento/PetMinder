@@ -34,6 +34,7 @@
     [[DAO sharedInstance] loadAllPets];
     self.allPets = self.dao.allPets;
     [self.petListTableView reloadData];
+    self.navigationItem.hidesBackButton = YES;
 }
 
 

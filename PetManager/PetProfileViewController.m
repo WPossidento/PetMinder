@@ -16,6 +16,7 @@
 @property(strong, nonatomic) NSString *pickerViewSex;
 @property (strong, nonatomic) DAO *dao;
 @property BOOL customImage;
+@property (strong, nonatomic) UIBarButtonItem *saveBtn;
 
 @end
 
@@ -28,8 +29,8 @@
     self.petDescription.delegate = self;
     self.petColor.delegate = self;
     
-    UIBarButtonItem *saveBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButton:)];
-    self.navigationItem.rightBarButtonItem = saveBtn;
+    self.saveBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButton:)];
+    self.navigationItem.rightBarButtonItem = self.saveBtn;
     
     _petSex.delegate = self;
     _petSex.dataSource = self;
@@ -71,36 +72,47 @@
 
 - (IBAction)saveButton:(id)sender {
     
-    self.pet.name = self.petName.text;
-    
- //   NSString *imagestring = [UIImagePNGRepresentation(self.petImage.image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    
-    // save image to file in documents directory
-    // set self.pet.petImage to filePath
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSURL *documentsURL = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
-    NSURL *fileURL = [documentsURL URLByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%@.png", self.petName.text]];
-    self.pet.petImage = [fileURL path];
-    NSData *imageData = UIImagePNGRepresentation(self.petImage.image);
-    [imageData writeToFile:self.pet.petImage atomically:YES];
-
-    
-    
-    self.pet = [[DAO sharedInstance]createPetWithName:self.petName.text andImage:self.pet.petImage andColor:self.petColor.text andMiscDescription:self.petDescription.text andBirthdate:self.petDateOfBirth.date andSex:self.pickerViewSex andAnimalType:self.pet.animalType];
-    
-
-    [self.dao.allPets addObject:self.pet];
-    
- 
- 
-    
-    
-    if (self.petListViewController == nil) {
-        self.petListViewController = [[PetListViewController alloc] init];
+    if ([self.petName.text  isEqual: @""]) {
+        self.saveBtn.enabled = NO;
+        
+        UIAlertController *noName = [UIAlertController
+                                     alertControllerWithTitle:@"OOPS!"
+                                     message:@"Your pet needs a name! Please fill out the 'name' text field."
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *ok = [UIAlertAction
+                             actionWithTitle:@"OK"
+                             style:UIAlertActionStyleDefault
+                             handler:^(UIAlertAction *action) {
+                                 [noName dismissViewControllerAnimated:YES completion:nil];
+                             }];
+        
+        [noName addAction:ok];
+        [self presentViewController:noName animated:YES completion:nil];
+        self.saveBtn.enabled = YES;
+        
+    } else {
+        
+        self.pet.name = self.petName.text;
+        
+        // save image to file in documents directory
+        // set self.pet.petImage to filePath
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSURL *documentsURL = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
+        NSURL *fileURL = [documentsURL URLByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%@.png", self.petName.text]];
+        self.pet.petImage = [fileURL path];
+        NSData *imageData = UIImagePNGRepresentation(self.petImage.image);
+        [imageData writeToFile:self.pet.petImage atomically:YES];
+        
+        self.pet = [[DAO sharedInstance]createPetWithName:self.petName.text andImage:self.pet.petImage andColor:self.petColor.text andMiscDescription:self.petDescription.text andBirthdate:self.petDateOfBirth.date andSex:self.pickerViewSex andAnimalType:self.pet.animalType];
+        
+        [self.dao.allPets addObject:self.pet];
+        
+        if (self.petListViewController == nil) {
+            self.petListViewController = [[PetListViewController alloc] init];
+        }
+        
+        [self.navigationController pushViewController:self.petListViewController animated:YES];
     }
-    
-    [self.navigationController pushViewController:self.petListViewController animated:YES];
-    
 }
 
 -(void)pickerView:(UIPickerView*)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
