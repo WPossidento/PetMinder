@@ -315,10 +315,13 @@
 
 
 
--(void)createTaskWithName:(NSString*)name andNote:(NSString*)note andTime:(NSDate*)time andPet:(Pet*) pet
+-(Task*)createTaskWithName:(NSString*)name andNote:(NSString*)note andTime:(NSDate*)time andPet:(Pet*) pet
 
 {
     NSEntityDescription *entityTask = [NSEntityDescription entityForName:@"ManagedTask" inManagedObjectContext:self.managedObjectContext];
+    
+    Task *newTask = [[Task alloc] initWithTaskName:name andPetId:pet.petID andTaskNote:note];
+    [self.allTasks addObject:newTask];
     NSManagedObject *Task = [[NSManagedObject alloc] initWithEntity:entityTask insertIntoManagedObjectContext:self.managedObjectContext];
     
     int TaskId;
@@ -359,6 +362,7 @@
     
     [self saveContext];
     
+    return newTask;
 }
 
 -(void)deletePetWithPetID:(int)pet_id
