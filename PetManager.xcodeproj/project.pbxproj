@@ -15,8 +15,6 @@
 		482FDFC61D87373C000A5CCA /* ManagedPet.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDFC21D87373C000A5CCA /* ManagedPet.m */; };
 		483B9F721D95834700E2DBFB /* TaskInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483B9F701D95834700E2DBFB /* TaskInfoViewController.m */; };
 		483B9F731D95834700E2DBFB /* TaskInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 483B9F711D95834700E2DBFB /* TaskInfoViewController.xib */; };
-		485E64531D8879EB00BFB7B8 /* AddPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 485E64511D8879EB00BFB7B8 /* AddPhotoViewController.m */; };
-		485E64541D8879EB00BFB7B8 /* AddPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485E64521D8879EB00BFB7B8 /* AddPhotoViewController.xib */; };
 		4867EAA01D831F410067D8FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EA9F1D831F410067D8FD /* main.m */; };
 		4867EAA31D831F410067D8FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAA21D831F410067D8FD /* AppDelegate.m */; };
 		4867EAA61D831F410067D8FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAA51D831F410067D8FD /* ViewController.m */; };
@@ -63,9 +61,6 @@
 		483B9F6F1D95834700E2DBFB /* TaskInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskInfoViewController.h; sourceTree = "<group>"; };
 		483B9F701D95834700E2DBFB /* TaskInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskInfoViewController.m; sourceTree = "<group>"; };
 		483B9F711D95834700E2DBFB /* TaskInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskInfoViewController.xib; sourceTree = "<group>"; };
-		485E64501D8879EB00BFB7B8 /* AddPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPhotoViewController.h; sourceTree = "<group>"; };
-		485E64511D8879EB00BFB7B8 /* AddPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPhotoViewController.m; sourceTree = "<group>"; };
-		485E64521D8879EB00BFB7B8 /* AddPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPhotoViewController.xib; sourceTree = "<group>"; };
 		4867EA9B1D831F410067D8FD /* PetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4867EA9F1D831F410067D8FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4867EAA11D831F410067D8FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -153,9 +148,6 @@
 		4867EA9D1D831F410067D8FD /* PetManager */ = {
 			isa = PBXGroup;
 			children = (
-				485E64501D8879EB00BFB7B8 /* AddPhotoViewController.h */,
-				485E64511D8879EB00BFB7B8 /* AddPhotoViewController.m */,
-				485E64521D8879EB00BFB7B8 /* AddPhotoViewController.xib */,
 				4867EAA11D831F410067D8FD /* AppDelegate.h */,
 				4867EAA21D831F410067D8FD /* AppDelegate.m */,
 				4867EAA41D831F410067D8FD /* ViewController.h */,
@@ -337,7 +329,6 @@
 				4867EABC1D831FCC0067D8FD /* TaskListViewController.xib in Resources */,
 				4867EAAE1D831F410067D8FD /* Assets.xcassets in Resources */,
 				483B9F731D95834700E2DBFB /* TaskInfoViewController.xib in Resources */,
-				485E64541D8879EB00BFB7B8 /* AddPhotoViewController.xib in Resources */,
 				4867EAE71D8339CD0067D8FD /* TasksForPetViewController.xib in Resources */,
 				4867EAE11D8331AB0067D8FD /* PetProfileViewController.xib in Resources */,
 				4867EAED1D833B380067D8FD /* TaskFormViewController.xib in Resources */,
@@ -359,7 +350,6 @@
 				4867EAEC1D833B380067D8FD /* TaskFormViewController.m in Sources */,
 				4867EAF41D834BD00067D8FD /* DAO.m in Sources */,
 				4867EAC01D8322DE0067D8FD /* TasksTableViewCell.m in Sources */,
-				485E64531D8879EB00BFB7B8 /* AddPhotoViewController.m in Sources */,
 				4867EAA61D831F410067D8FD /* ViewController.m in Sources */,
 				482FDFBA1D87364A000A5CCA /* ManagedAnimalType.m in Sources */,
 				482FDFC61D87373C000A5CCA /* ManagedPet.m in Sources */,

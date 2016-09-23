@@ -123,8 +123,6 @@
 
 - (IBAction)addAnimalTypeButton:(id)sender {
     
-    NSLog(@"Button Tapped!");
-    
     NSString *animalType = self.animalTypeTextField.text;
     
     self.animalTypeTextField.text = @"";

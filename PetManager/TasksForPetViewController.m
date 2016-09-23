@@ -64,8 +64,6 @@
     Task *task = [[Task alloc]init];
     task = self.dao.allTasks[indexPath.row];
     
-    NSLog(@"%@", self.pet.petImage);
-    
     cell.taskTableCellTaskName.text = task.taskName;
     cell.taskTableCellPetName.text = task.taskNote;
     cell.taskTableCellImage.image = task.loadedImage;

@@ -28,7 +28,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     self.taskForPetNameInfo.text = [NSString stringWithFormat:@"Task for %@", self.pet.name];
-    self.infoPetImage.image = self.pet.loadedImage;
+    self.infoPetImage.image = self.task.loadedImage;
+//    self.infoPetImage.image = self.pet.loadedImage;
     self.infoTaskName.text = [NSString stringWithFormat:@"%@", self.task.taskName];
     self.infoTaskNote.text = [NSString stringWithFormat:@"%@", self.task.taskNote];
     

@@ -125,7 +125,6 @@
             number = mp.pet_id;
             long hi = [number longValue];
             pet.petID = (int)hi;
-            NSLog(@"%d", pet.petID);
             
             NSArray  *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
             NSString *documentsDir  = [documentPaths objectAtIndex:0];
@@ -274,7 +273,6 @@
     } else {
         newPet.petID = (int)[defaults integerForKey:@"pet_id"] + 1;
         [defaults setInteger:newPet.petID forKey:@"pet_id"];
-        NSLog(@"New pet's ID is %d", newPet.petID);
     }
     NSNumber *number = [[NSNumber alloc]initWithInt:newPet.petID];
 //    [petMO setValue:number forKey:@"pet_id"];
@@ -444,8 +442,6 @@
         pet.sex = [element valueForKey:@"sex"];
 //        pet.tasks = [element valueForKey:@"tasks"];
         
-        NSLog(@"%@, %d, %@", pet.name, pet.petID, pet.sex);
-        
         [self.allPets addObject:pet];
     }
 }
@@ -457,7 +453,6 @@
     
     NSPredicate *p = [NSPredicate predicateWithFormat:@"time MATCHES '.*'"];
     [request setPredicate:p];
-    
     
     
     //Change ascending  YES/NO and validate
@@ -531,8 +526,6 @@
 
 -(void)fetchTasksForSpecificPet:(Pet*)pet
 {
-    NSLog(@"%d, %@", pet.petID, pet.name);
-    
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     
     NSPredicate *p = [NSPredicate predicateWithFormat:@"task_id MATCHES '.*'"];

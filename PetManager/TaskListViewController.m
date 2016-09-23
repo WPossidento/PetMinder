@@ -70,11 +70,10 @@
     //NSLog(@"%@", self.pet.petImage);
     
     cell.taskTableCellTaskName.text = task.taskName;
-    cell.taskTableCellPetName.text = task.taskNote;
+    cell.taskTableCellPetName.text = task.pet.name;
     cell.taskTableCellImage.image = task.loadedImage;
     
     //    cell.taskTableCellTaskName.text = [NSString stringWithFormat:@"%@", [self.taskList objectAtIndex:[indexPath row]] taskName];
-    
     
     //    cell.cellCompanyName.text = [NSString stringWithFormat:@"%@ (%@)", [[self.companyList objectAtIndex:[indexPath row]] companyName], [[self.companyList objectAtIndex:[indexPath row]] stockSymbol]];
     //    cell.cellCompanyStockPrice.text = [NSString stringWithFormat:@"$%@", [[self.companyList objectAtIndex:[indexPath row]] stockPrice]];
@@ -90,8 +89,14 @@
         self.taskInfoViewController = [[TaskInfoViewController alloc] init];
     }
     
-    self.taskInfoViewController.pet = self.task.pet;
-    self.taskInfoViewController.task = self.allTasks[indexPath.row];
+    Task *task = [[Task alloc] init];
+    task = self.dao.allTasks[indexPath.row];
+    
+    self.taskInfoViewController.task = task;
+//    self.taskInfoViewController.task = self.allTasks[indexPath.row];
+    self.taskInfoViewController.pet = task.pet;
+//    self.taskInfoViewController.infoPetImage.image = task.loadedImage;
+    
     [self.navigationController pushViewController:self.taskInfoViewController animated:YES];
     
 }
