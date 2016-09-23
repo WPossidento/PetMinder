@@ -23,6 +23,8 @@
     
     self.dao = [DAO sharedInstance];
     
+    self.allTasks = self.dao.allTasks;
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     // Do any additional setup after loading the view from its nib.
@@ -80,6 +82,18 @@
     
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (self.taskInfoViewController == nil) {
+        self.taskInfoViewController = [[TaskInfoViewController alloc] init];
+    }
+    
+    self.taskInfoViewController.pet = self.task.pet;
+    self.taskInfoViewController.task = self.allTasks[indexPath.row];
+    [self.navigationController pushViewController:self.taskInfoViewController animated:YES];
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

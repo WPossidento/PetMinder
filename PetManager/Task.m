@@ -10,13 +10,13 @@
 
 @implementation Task
 
--(instancetype)initWithTaskName:(NSString *)taskName andPetId:(int)petId andRecurring:(BOOL)isRecurring andTaskNote:(NSString *)taskNote {
+-(instancetype)initWithTaskName:(NSString *)taskName andPetId:(int)petId /*andRecurring:(BOOL)isRecurring*/ andTaskNote:(NSString *)taskNote {
     self = [super init];
     if (self) {
         _taskName = taskName;
 //        _taskId = taskId;
         _petId = petId;
-        _isRecurring = isRecurring;
+//        _isRecurring = isRecurring;
         _taskNote = taskNote;
         return self;
     }

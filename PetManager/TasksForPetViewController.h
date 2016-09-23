@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Pet.h"
 #import "TaskFormViewController.h"
+#import "TaskInfoViewController.h"
 @class TaskFormViewController;
 
 @interface TasksForPetViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
@@ -16,5 +17,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *tasksForPetTableView;
 @property (strong, nonatomic) Pet *pet;
 @property (nonatomic, retain) TaskFormViewController *taskFormViewController;
+@property (nonatomic, retain) TaskInfoViewController *taskInfoViewController;
+
+@property (strong, nonatomic) NSMutableArray<Task*> *allTasks;
 
 @end

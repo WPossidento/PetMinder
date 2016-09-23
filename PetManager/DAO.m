@@ -9,6 +9,7 @@
 #import <CoreData/CoreData.h>
 #import "DAO.h"
 #import "ManagedPet.h"
+#import "ManagedTask.h"
 #import "ManagedAnimalType.h"
 #import "Pet.h"
 #import "AnimalType.h"
@@ -225,7 +226,7 @@
 
 #pragma mark - adding deleting
 
--(Pet*)createPetWithName:(NSString*)name andImage:(NSString*)image andColor:(NSString*)color andMiscDescription:(NSString*)miscDescription andBirthdate:(NSDate*)birthdate andSex:(NSString*)sex andAnimalType:(AnimalType*)animalType;
+-(Pet*)createPetWithName:(NSString*)name andImage:(NSString*)image andColor:(NSString*)color andMiscDescription:(NSString*)miscDescription andBirthdate:(NSDate*)birthdate andSex:(NSString*)sex andAnimalType:(AnimalType*)animalType
 {
     // Create Pet
     NSEntityDescription *entityPet = [NSEntityDescription entityForName:@"ManagedPet" inManagedObjectContext:self.managedObjectContext];
@@ -317,7 +318,6 @@
 -(void)createTaskWithName:(NSString*)name andNote:(NSString*)note andTime:(NSDate*)time andPet:(Pet*) pet
 
 {
-    
     NSEntityDescription *entityTask = [NSEntityDescription entityForName:@"ManagedTask" inManagedObjectContext:self.managedObjectContext];
     NSManagedObject *Task = [[NSManagedObject alloc] initWithEntity:entityTask insertIntoManagedObjectContext:self.managedObjectContext];
     
@@ -337,7 +337,7 @@
     [Task setValue:name forKey:@"name"];
     [Task setValue:note forKey:@"note"];
     [Task setValue:time forKey:@"time"];
-//    [Task setValue:pet forKey:@"pet"];
+    //    [Task setValue:pet forKey:@"pet"];
     
     //Fetch a pet with petId
     
@@ -358,8 +358,6 @@
     
     
     [self saveContext];
-    
-    
     
 }
 

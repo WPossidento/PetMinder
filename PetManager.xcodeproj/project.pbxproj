@@ -13,6 +13,8 @@
 		482FDFC41D87373C000A5CCA /* ManagedTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDFBE1D87373C000A5CCA /* ManagedTask.m */; };
 		482FDFC51D87373C000A5CCA /* ManagedPet+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDFC01D87373C000A5CCA /* ManagedPet+CoreDataProperties.m */; };
 		482FDFC61D87373C000A5CCA /* ManagedPet.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDFC21D87373C000A5CCA /* ManagedPet.m */; };
+		483B9F721D95834700E2DBFB /* TaskInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483B9F701D95834700E2DBFB /* TaskInfoViewController.m */; };
+		483B9F731D95834700E2DBFB /* TaskInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 483B9F711D95834700E2DBFB /* TaskInfoViewController.xib */; };
 		485E64531D8879EB00BFB7B8 /* AddPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 485E64511D8879EB00BFB7B8 /* AddPhotoViewController.m */; };
 		485E64541D8879EB00BFB7B8 /* AddPhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 485E64521D8879EB00BFB7B8 /* AddPhotoViewController.xib */; };
 		4867EAA01D831F410067D8FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EA9F1D831F410067D8FD /* main.m */; };
@@ -58,6 +60,9 @@
 		482FDFC01D87373C000A5CCA /* ManagedPet+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ManagedPet+CoreDataProperties.m"; sourceTree = "<group>"; };
 		482FDFC11D87373C000A5CCA /* ManagedPet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedPet.h; sourceTree = "<group>"; };
 		482FDFC21D87373C000A5CCA /* ManagedPet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ManagedPet.m; sourceTree = "<group>"; };
+		483B9F6F1D95834700E2DBFB /* TaskInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaskInfoViewController.h; sourceTree = "<group>"; };
+		483B9F701D95834700E2DBFB /* TaskInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskInfoViewController.m; sourceTree = "<group>"; };
+		483B9F711D95834700E2DBFB /* TaskInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskInfoViewController.xib; sourceTree = "<group>"; };
 		485E64501D8879EB00BFB7B8 /* AddPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPhotoViewController.h; sourceTree = "<group>"; };
 		485E64511D8879EB00BFB7B8 /* AddPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPhotoViewController.m; sourceTree = "<group>"; };
 		485E64521D8879EB00BFB7B8 /* AddPhotoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPhotoViewController.xib; sourceTree = "<group>"; };
@@ -119,6 +124,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		483B9F6E1D95831E00E2DBFB /* TaskInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				483B9F6F1D95834700E2DBFB /* TaskInfoViewController.h */,
+				483B9F701D95834700E2DBFB /* TaskInfoViewController.m */,
+				483B9F711D95834700E2DBFB /* TaskInfoViewController.xib */,
+			);
+			name = TaskInfoViewController;
+			sourceTree = "<group>";
+		};
 		4867EA921D831F410067D8FD = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +171,7 @@
 				4867EAE21D8331C50067D8FD /* PetProfileViewController */,
 				4867EAE81D8339D90067D8FD /* taskForPetViewController */,
 				4867EAEE1D833B450067D8FD /* TaskFormViewController */,
+				483B9F6E1D95831E00E2DBFB /* TaskInfoViewController */,
 				4867EAAD1D831F410067D8FD /* Assets.xcassets */,
 				4867EAAF1D831F410067D8FD /* LaunchScreen.storyboard */,
 				4867EAB21D831F410067D8FD /* Info.plist */,
@@ -320,6 +336,7 @@
 				4867EAB11D831F410067D8FD /* LaunchScreen.storyboard in Resources */,
 				4867EABC1D831FCC0067D8FD /* TaskListViewController.xib in Resources */,
 				4867EAAE1D831F410067D8FD /* Assets.xcassets in Resources */,
+				483B9F731D95834700E2DBFB /* TaskInfoViewController.xib in Resources */,
 				485E64541D8879EB00BFB7B8 /* AddPhotoViewController.xib in Resources */,
 				4867EAE71D8339CD0067D8FD /* TasksForPetViewController.xib in Resources */,
 				4867EAE11D8331AB0067D8FD /* PetProfileViewController.xib in Resources */,
@@ -354,6 +371,7 @@
 				4867EABB1D831FCC0067D8FD /* TaskListViewController.m in Sources */,
 				4867EADA1D832FA60067D8FD /* AnimalTypeViewController.m in Sources */,
 				482FDFC31D87373C000A5CCA /* ManagedTask+CoreDataProperties.m in Sources */,
+				483B9F721D95834700E2DBFB /* TaskInfoViewController.m in Sources */,
 				4867EAE61D8339CD0067D8FD /* TasksForPetViewController.m in Sources */,
 				4867EAE01D8331AB0067D8FD /* PetProfileViewController.m in Sources */,
 				4867EAC81D8329710067D8FD /* PetListViewController.m in Sources */,

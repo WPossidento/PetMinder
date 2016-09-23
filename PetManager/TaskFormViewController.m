@@ -46,7 +46,9 @@
 }
 
 - (IBAction)saveButton:(id)sender {
-    [self.dao createTaskWithName:self.taskName.text andNote:self.noteTextField.text andTime:self.datePicker.date andPet:self.pet];
+    self.task = [[DAO sharedInstance]createTaskWithName:self.taskName.text andNote:self.noteTextField.text andTime:self.datePicker.date andPet:self.pet];
+    
+    [self.dao.allTasks addObject:self.task];
     
     [self.navigationController popViewControllerAnimated:YES];
     

@@ -23,6 +23,8 @@
     
     self.dao = [DAO sharedInstance];
     
+    self.allTasks = self.dao.allTasks;
+    
     self.tasksForPetTableView.delegate = self;
     self.tasksForPetTableView.dataSource = self;
     
@@ -72,6 +74,17 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (self.taskInfoViewController == nil) {
+        self.taskInfoViewController = [[TaskInfoViewController alloc] init];
+    }
+    
+    self.taskInfoViewController.pet = self.pet;
+    self.taskInfoViewController.task = self.allTasks[indexPath.row];
+    [self.navigationController pushViewController:self.taskInfoViewController animated:YES];
+    
+}
 
 - (void)addNewTask {
     
