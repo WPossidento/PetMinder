@@ -9,9 +9,12 @@
 #import "TaskFormViewController.h"
 #import "DAO.h"
 
+
+
 @interface TaskFormViewController ()
 
 @property (strong, nonatomic) DAO *dao;
+@property CGFloat currentKeyboardHeight;
 
 @end
 
@@ -30,6 +33,41 @@
     
     self.dao = [DAO sharedInstance];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
+    
+}
+
+- (void)keyboardWillShow:(NSNotification*)aNotification {
+    
+    NSDictionary *info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    self.currentKeyboardHeight = kbSize.height;
+    
+    [UIView animateWithDuration:0.25 animations:^
+     {
+         CGRect newFrame = [self.view frame];
+         newFrame.origin.y -= _currentKeyboardHeight; // tweak here to adjust the moving position
+         [self.view setFrame:newFrame];
+         
+     }completion:^(BOOL finished)
+     {
+         
+     }];
+}
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification {
+    [UIView animateWithDuration:0.25 animations:^
+     {
+         CGRect newFrame = [self.view frame];
+         newFrame.origin.y += self.currentKeyboardHeight; // tweak here to adjust the moving position
+         [self.view setFrame:newFrame];
+         
+     }completion:^(BOOL finished)
+     {
+         
+     }];
 }
 
 - (void)didReceiveMemoryWarning {
