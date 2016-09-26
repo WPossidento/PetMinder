@@ -43,12 +43,11 @@
 -(void)viewWillAppear:(BOOL)animated {
     if (self.customImage == NO){
         self.petImage.image = [UIImage imageNamed:self.pet.petImage];
+        
+        self.petName.text = @"";
+        self.petDescription.text = @"";
+        self.petColor.text = @"";
     }
-    
-    self.petName.text = @"";
-    self.petDescription.text = @"";
-    self.petColor.text = @"";
-
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
