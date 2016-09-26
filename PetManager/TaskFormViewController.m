@@ -33,9 +33,6 @@
     
     self.dao = [DAO sharedInstance];
     
-    //Set tag so only noteTextField changes position during keyboard
-    self.noteTextField.tag = 1;
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
