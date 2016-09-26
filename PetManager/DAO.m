@@ -363,12 +363,13 @@
     return newTask;
 }
 
+
 -(void)deletePetWithPetID:(int)pet_id
 {
     
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     
-    NSPredicate *p = [NSPredicate predicateWithFormat:@"Pet MATCHES '.*'"];
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"pet_id = %d", pet_id];
     
     [request setPredicate:p];
     
@@ -397,7 +398,94 @@
             [self.managedObjectContext deleteObject:Pet];
         }
     }
+    
+    [self saveContext];
 }
+
+-(void)deleteTaskWithTaskID:(int)task_id
+
+{
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"task_id = %d", task_id];
+    
+    [request setPredicate:p];
+    
+    NSSortDescriptor *sortByKey = [[NSSortDescriptor alloc]
+                                   
+                                   initWithKey:@"task_id" ascending:YES];
+    
+    [request setSortDescriptors:[NSArray arrayWithObject:sortByKey]];
+    
+    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedTask"];
+    
+    [request setEntity:e];
+    
+    NSError *error = nil;
+    
+    //This gets data only from context, not from store
+    
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    
+    if(!result)
+        
+    {
+        [NSException raise:@"Fetch Failed" format:@"Reason: %@", [error localizedDescription]];
+    }
+    
+    for (NSManagedObject *Task in result){
+        if ([[Task valueForKey:@"task_id"]intValue] == task_id ) {
+            [self.managedObjectContext deleteObject:Task];
+        }
+    }
+    
+    [self saveContext];
+    
+}
+
+-(void)deleteAnimalTypeWithID:(int)animalType_id
+
+{
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"animalType_id = %d", animalType_id];
+    
+    [request setPredicate:p];
+    
+    NSSortDescriptor *sortByKey = [[NSSortDescriptor alloc]
+                                   
+                                   initWithKey:@"animalType_id" ascending:YES];
+    
+    [request setSortDescriptors:[NSArray arrayWithObject:sortByKey]];
+    
+    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedAnimalType"];
+    
+    [request setEntity:e];
+    
+    NSError *error = nil;
+    
+    //This gets data only from context, not from store
+    
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    
+    if(!result)
+        
+    {
+        [NSException raise:@"Fetch Failed" format:@"Reason: %@", [error localizedDescription]];
+    }
+    
+    for (NSManagedObject *animalType in result){
+        if ([[animalType valueForKey:@"animalType_id"]intValue] == animalType_id ) {
+            [self.managedObjectContext deleteObject:animalType];
+        }
+    }
+    
+    [self saveContext];
+    
+}
+
 
 -(void)fetchPets
 {

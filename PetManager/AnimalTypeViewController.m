@@ -73,6 +73,25 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        
+        NSArray *animalTypes = [self.dao animalTypes];
+        
+        AnimalType *animalType = [animalTypes objectAtIndex:indexPath.row];
+        
+        [self.dao deleteAnimalTypeWithID:animalType.animalType_id];
+        
+        [[self.dao animalTypes]removeObjectAtIndex:indexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [tableView reloadData];
+    }
+}
+
 #pragma mark - Table view delegate
 
 // In a xib-based application, navigation from a table can be handled in -tableView:didSelectRowAtIndexPath:

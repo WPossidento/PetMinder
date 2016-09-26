@@ -119,6 +119,25 @@
 //    [self.navigationController pushViewController:self.petProfileViewController animated:YES];
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete){
+        
+        NSArray *pets = [self.dao allPets];
+        
+        Pet *pet = [pets objectAtIndex:indexPath.row];
+        
+        [self.dao deletePetWithPetID:pet.petID];
+        
+        [[self.dao allPets]removeObjectAtIndex:indexPath.row];
+        
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        [tableView reloadData];
+    }
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

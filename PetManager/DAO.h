@@ -26,6 +26,8 @@
 -(void)fetchTasksForSpecificPet:(Pet*)pet;
 -(void)fetchPets;
 -(void)fetchTasks;
-
+-(void)deletePetWithPetID:(int)pet_id;
+-(void)deleteTaskWithTaskID:(int)task_id;
+-(void)deleteAnimalTypeWithID:(int)animalType_id;
 
 @end
