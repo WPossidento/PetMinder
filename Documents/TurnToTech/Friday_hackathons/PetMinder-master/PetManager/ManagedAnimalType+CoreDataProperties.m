@@ -13,7 +13,7 @@
 
 @implementation ManagedAnimalType (CoreDataProperties)
 
-@dynamic id;
+@dynamic animalType_id;
 @dynamic image;
 @dynamic name;
 @dynamic pets;

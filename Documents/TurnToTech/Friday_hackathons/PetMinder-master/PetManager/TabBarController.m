@@ -26,11 +26,12 @@
     UIViewController *petListViewController = [[PetListViewController alloc] initWithNibName:@"PetListViewController" bundle:nil];
     petListViewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Pets" image:[UIImage imageNamed:@"pet-dog"] tag:0];
 
-    UINavigationController *navctl = [[UINavigationController alloc]init];
-    navctl.navigationBar.hidden = YES;
-    [navctl setViewControllers:@[petListViewController]];
+    UINavigationController *navctl1 = [[UINavigationController alloc]init];
+    [navctl1 setViewControllers:@[taskListViewController]];
+    UINavigationController *navctl2 = [[UINavigationController alloc]init];
+    [navctl2 setViewControllers:@[petListViewController]];
 
-    self.viewControllers = @[taskListViewController, navctl];
+    self.viewControllers = @[navctl1, navctl2];
 }
 
 - (void)didReceiveMemoryWarning {

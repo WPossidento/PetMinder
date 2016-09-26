@@ -26,6 +26,13 @@
     self.animalTypeTableView.dataSource = self;
     self.dao = [DAO sharedInstance];
     // Do any additional setup after loading the view from its nib.
+    
+    for (UIView * view in self.view.subviews) {
+        if ([view isKindOfClass:[UITextField class]]) {
+            UITextField * textField = (UITextField*)view;
+            textField.delegate = self;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -101,7 +108,7 @@
     
     
 }
-
+
 
 
 /*
@@ -115,10 +122,45 @@
 */
 
 - (IBAction)addAnimalTypeButton:(id)sender {
+    
+    NSString *animalType = self.animalTypeTextField.text;
+    
+    self.animalTypeTextField.text = @"";
+    
+    [[DAO sharedInstance]addAnimalTypeWithName:animalType andImage:@"text-list"];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:animalType message:@"added" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@"OK"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             [alert dismissViewControllerAnimated:YES completion:nil];
+                             [self.animalTypeTableView reloadData];
+                             
+                         }];
+    
+    [alert addAction:ok];
+    
+    [self.animalTypeTextField endEditing:YES];
+    [self presentViewController:alert animated:YES completion:NULL];
+    
+    }
+
+
+#pragma mark - UITextfieldDelegate
+
+
+-(BOOL) textFieldShouldReturn: (UITextField *) textField{
+    
+    [textField resignFirstResponder];
+    return YES;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.animalTypeTextField endEditing:YES];
 
-
-
+}
 
 @end

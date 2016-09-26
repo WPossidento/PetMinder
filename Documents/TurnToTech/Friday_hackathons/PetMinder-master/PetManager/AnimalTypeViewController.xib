@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimalTypeViewController">
@@ -17,12 +18,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ht-20-Xz0">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                    <items>
-                        <navigationItem title="What type of animal is your pet?" id="Gfa-WT-Gxt"/>
-                    </items>
-                </navigationBar>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gya-PP-yC0">
                     <rect key="frame" x="8" y="65" width="461" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -31,7 +26,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0TV-VJ-XuN">
                     <rect key="frame" x="477" y="65" width="115" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="115" id="wzG-RK-QCT"/>
+                        <constraint firstAttribute="width" constant="115" id="eWF-XW-CHO"/>
                     </constraints>
                     <state key="normal" title="Add animal type "/>
                     <connections>
@@ -39,24 +34,21 @@
                     </connections>
                 </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KO1-eo-heY">
-                    <rect key="frame" x="0.0" y="119" width="600" height="431"/>
+                    <rect key="frame" x="0.0" y="103" width="600" height="447"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="0TV-VJ-XuN" secondAttribute="trailing" constant="8" id="I6j-70-8Ba"/>
-                <constraint firstItem="3ht-20-Xz0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="RNm-EJ-e66"/>
-                <constraint firstItem="KO1-eo-heY" firstAttribute="leading" secondItem="3ht-20-Xz0" secondAttribute="leading" id="SMm-S6-R6Y"/>
-                <constraint firstItem="KO1-eo-heY" firstAttribute="trailing" secondItem="3ht-20-Xz0" secondAttribute="trailing" id="SVp-YF-iJY"/>
-                <constraint firstItem="0TV-VJ-XuN" firstAttribute="top" secondItem="3ht-20-Xz0" secondAttribute="bottom" constant="21" id="Zm1-zo-nao"/>
-                <constraint firstItem="3ht-20-Xz0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cmB-44-Pf5"/>
-                <constraint firstAttribute="bottom" secondItem="KO1-eo-heY" secondAttribute="bottom" constant="50" id="f5p-Lg-RAF"/>
-                <constraint firstAttribute="trailing" secondItem="3ht-20-Xz0" secondAttribute="trailing" id="mAI-VQ-l1R"/>
-                <constraint firstItem="KO1-eo-heY" firstAttribute="top" secondItem="0TV-VJ-XuN" secondAttribute="bottom" constant="24" id="nSw-hE-mrf"/>
-                <constraint firstItem="gya-PP-yC0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="xf6-mM-D7e"/>
-                <constraint firstItem="gya-PP-yC0" firstAttribute="top" secondItem="3ht-20-Xz0" secondAttribute="bottom" constant="21" id="yiJ-aH-FkC"/>
-                <constraint firstItem="0TV-VJ-XuN" firstAttribute="leading" secondItem="gya-PP-yC0" secondAttribute="trailing" constant="8" id="zll-Y6-3dq"/>
+                <constraint firstAttribute="bottom" secondItem="KO1-eo-heY" secondAttribute="bottom" constant="50" id="02I-4j-nbO"/>
+                <constraint firstItem="KO1-eo-heY" firstAttribute="top" secondItem="gya-PP-yC0" secondAttribute="bottom" constant="8" symbolic="YES" id="176-85-jnx"/>
+                <constraint firstItem="gya-PP-yC0" firstAttribute="top" secondItem="0TV-VJ-XuN" secondAttribute="top" id="A9L-y9-ZhZ"/>
+                <constraint firstItem="KO1-eo-heY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Bgf-wx-Bbq"/>
+                <constraint firstItem="0TV-VJ-XuN" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="c6E-TN-wba"/>
+                <constraint firstItem="gya-PP-yC0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="dKF-UT-Llr"/>
+                <constraint firstAttribute="trailing" secondItem="KO1-eo-heY" secondAttribute="trailing" id="ida-29-ADp"/>
+                <constraint firstItem="0TV-VJ-XuN" firstAttribute="leading" secondItem="gya-PP-yC0" secondAttribute="trailing" constant="8" symbolic="YES" id="l2c-ae-1Fh"/>
+                <constraint firstItem="gya-PP-yC0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="65" id="yLa-CO-c0s"/>
             </constraints>
             <point key="canvasLocation" x="610" y="439"/>
         </view>

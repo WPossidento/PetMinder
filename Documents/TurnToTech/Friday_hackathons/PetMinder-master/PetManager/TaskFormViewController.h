@@ -7,16 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Pet.h"
+#import "TasksForPetViewController.h"
+#import "Task.h"
+@class TasksForPetViewController;
 
-@interface TaskFormViewController : UIViewController
+@interface TaskFormViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UILabel *petName;
-
 @property (strong, nonatomic) IBOutlet UITextField *taskName;
-
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
-
+@property (strong, nonatomic) IBOutlet UITextField *noteTextField;
 @property (strong, nonatomic) IBOutlet UISwitch *recurringSwitch;
+@property (strong, nonatomic) IBOutlet UILabel *recurringLabel;
+
+@property (strong, nonatomic) Pet *pet;
+@property (nonatomic, retain) TasksForPetViewController *tasksForPetViewController;
+@property (strong, nonatomic) Task *task;
 
 - (IBAction)saveButton:(id)sender;
 

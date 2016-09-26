@@ -1,3 +1,4 @@
+
 //
 //  Task.h
 //  PetManager
@@ -7,6 +8,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Pet.h"
+#import <UIKit/UIKit.h>
 
 @interface Task : NSObject
 
@@ -14,8 +17,11 @@
 @property int taskId;
 @property int petId;
 @property BOOL isRecurring;
+@property NSDate *time;
 @property (strong, nonatomic) NSString *taskNote;
+@property (strong, nonatomic) Pet *pet;
+@property (strong, nonatomic) UIImage *loadedImage;
 
--(instancetype)initWithTaskName:(NSString *)taskName andPetId:(int)petId andRecurring:(BOOL)isRecurring andTaskNote:(NSString *)taskNote;
+-(instancetype)initWithTaskName:(NSString *)taskName andPetId:(int)petId /*andRecurring:(BOOL)isRecurring*/ andTaskNote:(NSString *)taskNote;
 
 @end

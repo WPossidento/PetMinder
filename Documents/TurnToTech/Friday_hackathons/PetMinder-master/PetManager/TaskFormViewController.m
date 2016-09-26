@@ -7,8 +7,11 @@
 //
 
 #import "TaskFormViewController.h"
+#import "DAO.h"
 
 @interface TaskFormViewController ()
+
+@property (strong, nonatomic) DAO *dao;
 
 @end
 
@@ -16,7 +19,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.recurringSwitch.hidden = YES;
+    self.recurringLabel.hidden = YES;
+    self.noteTextField.delegate = self;
+    self.taskName.delegate = self;
+
+    UIBarButtonItem *saveBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveButton:)];
+    self.navigationItem.rightBarButtonItem = saveBtn;
+    
+    self.dao = [DAO sharedInstance];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,16 +37,36 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)viewWillAppear:(BOOL)animated {
+    self.recurringSwitch.hidden = YES;
+    self.recurringLabel.hidden = YES;
+    self.petName.text = self.pet.name;
+    self.taskName.text = @"";
+    self.noteTextField.text = @"";
 }
-*/
 
 - (IBAction)saveButton:(id)sender {
+    self.task = [[DAO sharedInstance]createTaskWithName:self.taskName.text andNote:self.noteTextField.text andTime:self.datePicker.date andPet:self.pet];
+    
+    [self.dao.allTasks addObject:self.task];
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
+
+#pragma mark - UITextfieldDelegate
+
+-(BOOL) textFieldShouldReturn: (UITextField *) textField{
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.taskName endEditing:YES];
+    [self.noteTextField endEditing:YES];
+    
+}
+
+
 @end

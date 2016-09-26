@@ -21,15 +21,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPetButton:)];
+    self.navigationItem.rightBarButtonItem = addBtn;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
 
+    self.title = @"Pets";
     self.dao = [DAO sharedInstance];
     [[DAO sharedInstance] loadAllPets];
     self.allPets = self.dao.allPets;
     [self.petListTableView reloadData];
+    self.navigationItem.hidesBackButton = YES;
 }
 
 
@@ -75,19 +80,45 @@
     
     cell.petCellName.text = [NSString stringWithFormat:@"%@", [self.dao.allPets[indexPath.row] name]];
     
-    UIImage *petImage = [UIImage imageNamed:[[self.dao.allPets objectAtIndex:[indexPath row]] petImage]];
-        if (petImage == nil) {
-            NSFileManager *fileManager = [NSFileManager defaultManager];
-            NSURL *documentsURL = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
-            NSURL *fileURL = [documentsURL URLByAppendingPathComponent:[[self.dao.allPets objectAtIndex:[indexPath row]] petImage]];
-            NSData *imageData = [NSData dataWithContentsOfURL:fileURL];
-            petImage = [UIImage imageWithData:imageData];
-        }
+//    NSString *petImg = [[self.dao.allPets objectAtIndex:[indexPath row]] petImage];
     
-    cell.petCellImage.image = petImage;
+//    UIImage *petImage = [UIImage imageNamed:petImg];
+//        if (petImage == nil) {
+//           //NSFileManager *fileManager = [NSFileManager defaultManager];
+//           // NSURL *documentsURL = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
+//           // NSURL *fileURL = [documentsURL URLByAppendingPathComponent:[[self.dao.allPets objectAtIndex:[indexPath row]] petImage]];
+//            NSURL *fileURL = [NSURL fileURLWithPath:petImg ] ;
+//            NSData *imageData = [NSData dataWithContentsOfURL:fileURL];
+//            petImage = [UIImage imageWithData:imageData];
+//        }
+    
+    cell.petCellImage.image = [[self.dao.allPets objectAtIndex:[indexPath row]]loadedImage];
     
     return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (self.tasksForPetViewController == nil) {
+        self.tasksForPetViewController = [[TasksForPetViewController alloc] initWithNibName:@"TasksForPetViewController" bundle:nil];
+    }
+    
+    if (self.tasksForPetViewController.pet == nil){
+        self.tasksForPetViewController.pet = [[Pet alloc]init];
+    }
+    
+    self.tasksForPetViewController.pet = self.allPets[indexPath.row];
+    self.tasksForPetViewController.title = [NSString stringWithFormat:@"Tasks for %@", [self.allPets[indexPath.row] name]];
+    [self.navigationController pushViewController:self.tasksForPetViewController animated:YES];
+    
+//    if (self.petProfileViewController == nil) {
+//        self.petProfileViewController = [[PetProfileViewController alloc] initWithNibName:@"PetProfileViewController" bundle:nil];
+//    }
+//    
+//    self.petProfileViewController.pet = newPet;
+//    [self.navigationController pushViewController:self.petProfileViewController animated:YES];
+}
+
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

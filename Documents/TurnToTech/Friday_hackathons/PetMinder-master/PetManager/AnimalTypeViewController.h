@@ -10,7 +10,7 @@
 #import "PetProfileViewController.h"
 @class PetProfileViewController;
 
-@interface AnimalTypeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface AnimalTypeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *animalTypeTextField;
 

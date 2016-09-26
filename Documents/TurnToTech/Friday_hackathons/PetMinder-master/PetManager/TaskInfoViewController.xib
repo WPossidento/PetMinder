@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskInfoViewController">
+            <connections>
+                <outlet property="infoPetImage" destination="7XP-qJ-qVF" id="ZsH-Fb-pWG"/>
+                <outlet property="infoTaskDate" destination="rlJ-cl-SC4" id="CKj-MJ-o2U"/>
+                <outlet property="infoTaskName" destination="bwt-RF-ERG" id="tDp-sC-jPd"/>
+                <outlet property="infoTaskNote" destination="mSH-8G-R8m" id="eHH-vJ-cpU"/>
+                <outlet property="taskForPetNameInfo" destination="HGa-1s-A0X" id="6iY-Lo-Apb"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task for &lt;petname&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HGa-1s-A0X">
+                    <rect key="frame" x="210" y="84" width="180" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7XP-qJ-qVF">
+                    <rect key="frame" x="261" y="125" width="78" height="78"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="78" id="Bxf-As-zUE"/>
+                        <constraint firstAttribute="width" constant="78" id="Lzc-vi-x9G"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;taskname&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwt-RF-ERG">
+                    <rect key="frame" x="249" y="225" width="102" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;tasknote&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSH-8G-R8m">
+                    <rect key="frame" x="254" y="265" width="93" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;taskdate&amp;time&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rlJ-cl-SC4">
+                    <rect key="frame" x="230" y="318" width="140" height="22"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="mSH-8G-R8m" firstAttribute="centerX" secondItem="rlJ-cl-SC4" secondAttribute="centerX" id="9F2-Ur-pGS"/>
+                <constraint firstItem="7XP-qJ-qVF" firstAttribute="centerX" secondItem="bwt-RF-ERG" secondAttribute="centerX" id="E0e-8C-njF"/>
+                <constraint firstItem="bwt-RF-ERG" firstAttribute="centerX" secondItem="mSH-8G-R8m" secondAttribute="centerX" id="Grr-yC-Jfo"/>
+                <constraint firstItem="bwt-RF-ERG" firstAttribute="top" secondItem="7XP-qJ-qVF" secondAttribute="bottom" constant="22" id="RXG-mH-bh1"/>
+                <constraint firstItem="HGa-1s-A0X" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="84" id="SgX-Sm-KQk"/>
+                <constraint firstItem="HGa-1s-A0X" firstAttribute="centerX" secondItem="7XP-qJ-qVF" secondAttribute="centerX" id="Vh2-of-yH7"/>
+                <constraint firstItem="rlJ-cl-SC4" firstAttribute="top" secondItem="mSH-8G-R8m" secondAttribute="bottom" constant="31" id="fVp-QP-NuI"/>
+                <constraint firstItem="7XP-qJ-qVF" firstAttribute="top" secondItem="HGa-1s-A0X" secondAttribute="bottom" constant="17" id="lez-eA-twu"/>
+                <constraint firstItem="HGa-1s-A0X" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qFY-x3-erY"/>
+                <constraint firstItem="mSH-8G-R8m" firstAttribute="top" secondItem="bwt-RF-ERG" secondAttribute="bottom" constant="18" id="tfl-jS-Jm8"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

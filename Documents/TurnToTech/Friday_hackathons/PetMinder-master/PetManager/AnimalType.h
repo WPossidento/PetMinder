@@ -10,7 +10,7 @@
 
 @interface AnimalType : NSObject
 
-@property int animalTypeId;
+@property int animalType_id;
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *image;
 
