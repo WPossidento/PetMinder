@@ -33,6 +33,9 @@
     
     self.dao = [DAO sharedInstance];
     
+    //Set tag so only noteTextField changes position during keyboard
+    self.noteTextField.tag = 1;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardDidShowNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillBeHidden:) name:UIKeyboardWillHideNotification object:nil];
@@ -45,29 +48,34 @@
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
     self.currentKeyboardHeight = kbSize.height;
     
-    [UIView animateWithDuration:0.25 animations:^
-     {
-         CGRect newFrame = [self.view frame];
-         newFrame.origin.y -= _currentKeyboardHeight; // tweak here to adjust the moving position
-         [self.view setFrame:newFrame];
-         
-     }completion:^(BOOL finished)
-     {
-         
-     }];
+    if (self.noteTextField.isEditing == TRUE){
+        [UIView animateWithDuration:0.25 animations:^
+         {
+             CGRect newFrame = [self.view frame];
+             newFrame.origin.y -= _currentKeyboardHeight; // tweak here to adjust the moving position
+             [self.view setFrame:newFrame];
+             
+         }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
 }
 
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification {
-    [UIView animateWithDuration:0.25 animations:^
-     {
-         CGRect newFrame = [self.view frame];
-         newFrame.origin.y += self.currentKeyboardHeight; // tweak here to adjust the moving position
-         [self.view setFrame:newFrame];
-         
-     }completion:^(BOOL finished)
-     {
-         
-     }];
+
+    if (self.noteTextField.isEditing == TRUE){
+        [UIView animateWithDuration:0.25 animations:^
+         {
+             CGRect newFrame = [self.view frame];
+             newFrame.origin.y += self.currentKeyboardHeight; // tweak here to adjust the moving position
+             [self.view setFrame:newFrame];
+             
+         }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
