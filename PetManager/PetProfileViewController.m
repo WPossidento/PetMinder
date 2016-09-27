@@ -93,16 +93,18 @@
         
         self.pet.name = self.petName.text;
         
+        self.pet = [[DAO sharedInstance]createPetWithName:self.petName.text andImage:self.pet.petImage andColor:self.petColor.text andMiscDescription:self.petDescription.text andBirthdate:self.petDateOfBirth.date andSex:self.pickerViewSex andAnimalType:self.pet.animalType];
+        
         // save image to file in documents directory
         // set self.pet.petImage to filePath
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSURL *documentsURL = [fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
-        NSURL *fileURL = [documentsURL URLByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%@.png", self.petName.text]];
+        NSURL *fileURL = [documentsURL URLByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%d.png", self.pet.petID]];
         self.pet.petImage = [fileURL path];
         NSData *imageData = UIImagePNGRepresentation(self.petImage.image);
         [imageData writeToFile:self.pet.petImage atomically:YES];
         
-        self.pet = [[DAO sharedInstance]createPetWithName:self.petName.text andImage:self.pet.petImage andColor:self.petColor.text andMiscDescription:self.petDescription.text andBirthdate:self.petDateOfBirth.date andSex:self.pickerViewSex andAnimalType:self.pet.animalType];
+        
         
         [self.dao.allPets addObject:self.pet];
         

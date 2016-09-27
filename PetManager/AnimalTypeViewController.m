@@ -108,37 +108,8 @@
     self.petProfileViewController.pet = newPet;
     [self.navigationController pushViewController:self.petProfileViewController animated:YES];
     
-    
-//        
-//        ProductViewController *productViewController =
-//        [[ProductViewController alloc]
-//         initWithNibName:@"ProductViewController" bundle:nil];
-//        
-//        // self.productViewController = [[[NSBundle mainBundle] loadNibNamed:@"ProductViewController" owner:self options:nil] objectAtIndex:0];
-//        
-//        productViewController.title = [[self.companyList objectAtIndex:indexPath.row] companyName];
-//        productViewController.company = [self.companyList objectAtIndex:indexPath.row];
-//        self.dao.company = [self.companyList objectAtIndex:indexPath.row];
-//        [self.navigationController pushViewController:productViewController
-//                                             animated:YES];
-//        
-//        [productViewController release];
-//    }
-    
-    
 }
-
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)addAnimalTypeButton:(id)sender {
     

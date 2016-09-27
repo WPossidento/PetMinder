@@ -128,7 +128,7 @@
             
             NSArray  *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
             NSString *documentsDir  = [documentPaths objectAtIndex:0];
-            NSString *imgPath    = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%@.png", pet.name]];
+            NSString *imgPath    = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%d.png", pet.petID]];
             
 //            NSFileManager *fileManager = [[NSFileManager alloc] init];
 //            if ([fileManager fileExistsAtPath:imgPath]) {
@@ -597,7 +597,7 @@
         
         NSArray  *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDir  = [documentPaths objectAtIndex:0];
-        NSString *imgPath    = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%@.png", pet.name]];
+        NSString *imgPath    = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%d.png", pet.petID]];
         
         //            NSFileManager *fileManager = [[NSFileManager alloc] init];
         //            if ([fileManager fileExistsAtPath:imgPath]) {
@@ -668,7 +668,7 @@
             
             NSArray  *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
             NSString *documentsDir  = [documentPaths objectAtIndex:0];
-            NSString *imgPath    = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%@.png", managedPet.name]];
+            NSString *imgPath    = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%@.png", managedPet.pet_id]];
             
             //            NSFileManager *fileManager = [[NSFileManager alloc] init];
             //            if ([fileManager fileExistsAtPath:imgPath]) {
