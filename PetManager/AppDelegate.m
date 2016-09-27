@@ -20,31 +20,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    
-    // Override point for customization after application launch.
-//    UIViewController *rootController =
-//    [[TaskListViewController alloc]
-//     initWithNibName:@"TaskListViewController" bundle:nil];
-//    
-//    self.window = [[UIWindow alloc]
-//                   initWithFrame:[[UIScreen mainScreen] bounds]];
-//    //  self.window addSubview:self.navigationController.view];
-//    [self.window setRootViewController:rootController];
-//    [self.window makeKeyAndVisible];
-//    return YES;
-//    
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    
-    // Creating FOUR different ViewControllers
-//    NSLog(@"Creating FOUR different ViewControllers in application didFinishLaunchingWithOptions");
-    
-    
     self.tabBarController = [[TabBarController alloc] init];
     self.window.rootViewController = self.tabBarController;
     
     self.tabBarController.moreNavigationController.navigationBar.tintColor = [UIColor blueColor];
+    
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
     
     [self.window makeKeyAndVisible];
 
@@ -73,6 +58,26 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    UIApplicationState state = [application applicationState];
+    if (state == UIApplicationStateActive) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Reminder"
+                                                                       message:notification.alertBody
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction *action) {
+                                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                                   }];
+  
+        [alert addAction:ok];
+        
+        [self.tabBarController presentViewController:alert animated:NO completion:nil];
+    }
+    
 }
 
 #pragma mark - Core Data stack

@@ -93,6 +93,18 @@
     
     [self.dao.allTasks addObject:self.task];
     
+    self.task.time = self.datePicker.date;
+    
+    NSString *alertString = [NSString stringWithFormat:@"%@ - %@", self.task.taskName, self.pet.name];
+    NSDate *taskTime = self.datePicker.date;
+    
+    UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = taskTime;
+    localNotification.alertBody = alertString;
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
     [self.navigationController popViewControllerAnimated:YES];
     
 }
