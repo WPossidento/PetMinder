@@ -64,7 +64,7 @@
 		483B9F711D95834700E2DBFB /* TaskInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskInfoViewController.xib; sourceTree = "<group>"; };
 		484E58521D9AE6BF00D55F1F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		484E58541D9AE83800D55F1F /* launch-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch-img.png"; sourceTree = "<group>"; };
-		4867EA9B1D831F410067D8FD /* PetManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4867EA9B1D831F410067D8FD /* Pupkeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pupkeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4867EA9F1D831F410067D8FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4867EAA11D831F410067D8FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4867EAA21D831F410067D8FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -142,7 +142,7 @@
 		4867EA9C1D831F410067D8FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4867EA9B1D831F410067D8FD /* PetManager.app */,
+				4867EA9B1D831F410067D8FD /* Pupkeep.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -285,7 +285,7 @@
 			);
 			name = PetManager;
 			productName = PetManager;
-			productReference = 4867EA9B1D831F410067D8FD /* PetManager.app */;
+			productReference = 4867EA9B1D831F410067D8FD /* Pupkeep.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -482,7 +482,7 @@
 				INFOPLIST_FILE = PetManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.turntotech.PetManager;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pupkeep;
 			};
 			name = Debug;
 		};
@@ -494,7 +494,7 @@
 				INFOPLIST_FILE = PetManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.turntotech.PetManager;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Pupkeep;
 			};
 			name = Release;
 		};
