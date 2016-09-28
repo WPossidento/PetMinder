@@ -23,6 +23,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    
     self.recurringSwitch.hidden = YES;
     self.recurringLabel.hidden = YES;
     self.noteTextField.delegate = self;
@@ -81,17 +83,42 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    self.recurringSwitch.hidden = YES;
-    self.recurringLabel.hidden = YES;
-    self.petName.text = self.pet.name;
-    self.taskName.text = @"";
-    self.noteTextField.text = @"";
+    
+    if(self.isEditMode){
+        self.petName.text = [NSString stringWithFormat:@"Task for %@", self.pet.name];
+        self.taskName.text = [NSString stringWithFormat:@"%@", self.task.taskName];
+        self.noteTextField.text = [NSString stringWithFormat:@"%@", self.task.taskNote];
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"EEEE, MMM d, yyyy @ h:mm a"];
+        NSDate *theDate;
+        theDate = self.task.time;
+        [self.datePicker setDate:theDate];
+        
+   
+    } else {
+
+        self.recurringSwitch.hidden = YES;
+        self.recurringLabel.hidden = YES;
+        self.petName.text = self.pet.name;
+        self.taskName.text = @"";
+        self.noteTextField.text = @"";
+    }
 }
 
 - (IBAction)saveButton:(id)sender {
-    self.task = [[DAO sharedInstance]createTaskWithName:self.taskName.text andNote:self.noteTextField.text andTime:self.datePicker.date andPet:self.pet];
     
-    [self.dao.allTasks addObject:self.task];
+    if(self.isEditMode){
+        self.task.taskName = self.taskName.text;
+        self.task.taskNote = self.noteTextField.text;
+        self.task.time = self.datePicker.date;
+        [[DAO sharedInstance] editTask:self.task];
+    }
+    else {
+        self.task = [[DAO sharedInstance]createTaskWithName:self.taskName.text andNote:self.noteTextField.text andTime:self.datePicker.date andPet:self.pet];
+        [self.dao.allTasks addObject:self.task];
+        
+    }
     
     [self.navigationController popViewControllerAnimated:YES];
     

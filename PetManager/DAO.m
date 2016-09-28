@@ -363,6 +363,28 @@
     return newTask;
 }
 
+-(void)editTask:(Task*)task {
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+   
+    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedTask"];
+    [request setEntity:e];
+
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"task_id == %d", task.taskId];
+    [request setPredicate:p];
+    
+    NSError *error = nil;
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    
+    ManagedTask *taskMO = [result objectAtIndex:0];
+    
+    [taskMO setName:task.taskName];
+    [taskMO setNote:task.taskNote];
+    [taskMO setTime:task.time];
+    
+    [self saveContext];
+}
+
 
 -(void)deletePetWithPetID:(int)pet_id
 {

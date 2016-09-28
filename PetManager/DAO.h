@@ -22,7 +22,11 @@
 - (AnimalType *)addAnimalTypeWithName:(NSString *)name andImage:(NSString *)image;
 -(Pet*)createPetWithName:(NSString*)name andImage:(NSString*)image andColor:(NSString*)color andMiscDescription:(NSString*)miscDescription andBirthdate:(NSDate*)birthdate andSex:(NSString*)sex andAnimalType:(AnimalType*)animalType;
 - (void)loadAllPets;
+
 -(Task*)createTaskWithName:(NSString*)name andNote:(NSString*)note andTime:(NSDate*)time andPet:(Pet*) pet;
+-(void)editTask:(Task*)task;
+
+
 -(void)fetchTasksForSpecificPet:(Pet*)pet;
 -(void)fetchPets;
 -(void)fetchTasks;

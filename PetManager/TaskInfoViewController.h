@@ -11,6 +11,7 @@
 #import "Pet.h"
 #import "DAO.h"
 
+
 @interface TaskInfoViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UILabel *taskForPetNameInfo;
@@ -18,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *infoTaskName;
 @property (strong, nonatomic) IBOutlet UILabel *infoTaskNote;
 @property (strong, nonatomic) IBOutlet UILabel *infoTaskDate;
+
 
 @property (strong, nonatomic) Task *task;
 @property (strong, nonatomic) Pet *pet;

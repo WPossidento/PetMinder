@@ -8,6 +8,7 @@
 
 #import "TaskListViewController.h"
 #import "TasksTableViewCell.h"
+#import "TaskFormViewController.h"
 #import "DAO.h"
 
 @interface TaskListViewController ()
@@ -27,8 +28,12 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+       
     // Do any additional setup after loading the view from its nib.
 }
+
+
 
 
 - (void)didReceiveMemoryWarning {
