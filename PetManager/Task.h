@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSString *taskNote;
 @property (strong, nonatomic) Pet *pet;
 @property (strong, nonatomic) UIImage *loadedImage;
+@property BOOL is_task_complete;
 
 -(instancetype)initWithTaskName:(NSString *)taskName andPetId:(int)petId /*andRecurring:(BOOL)isRecurring*/ andTaskNote:(NSString *)taskNote;
 

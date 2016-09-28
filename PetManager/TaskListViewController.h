@@ -19,5 +19,9 @@
 @property (nonatomic, retain) TaskInfoViewController *taskInfoViewController;
 @property (nonatomic, retain) Task *task;
 @property (nonatomic, strong) NSMutableArray<Task*> *allTasks;
+@property (nonatomic, strong) NSMutableArray<Task*> *incompleteTasks;
+@property (nonatomic, strong) NSMutableArray<Task*> *completedTasks;
+
+
 
 @end

@@ -24,10 +24,10 @@
 - (void)loadAllPets;
 -(Task*)createTaskWithName:(NSString*)name andNote:(NSString*)note andTime:(NSDate*)time andPet:(Pet*) pet;
 -(void)fetchTasksForSpecificPet:(Pet*)pet;
--(void)fetchPets;
 -(void)fetchTasks;
 -(void)deletePetWithPetID:(int)pet_id;
 -(void)deleteTaskWithTaskID:(int)task_id;
 -(void)deleteAnimalTypeWithID:(int)animalType_id;
+-(void)change_is_task_completed_BOOL_in_core_data:(Task*)task;
 
 @end
