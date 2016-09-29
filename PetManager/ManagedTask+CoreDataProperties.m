@@ -18,5 +18,6 @@
 @dynamic task_id;
 @dynamic time;
 @dynamic pet;
+@dynamic is_task_complete;
 
 @end

@@ -22,6 +22,8 @@
     [super viewDidLoad];
     
     self.dao = [DAO sharedInstance];
+    self.incompleteTasks = [[NSMutableArray alloc]init];
+    self.completedTasks = [[NSMutableArray alloc]init];
     
     self.allTasks = self.dao.allTasks;
     
@@ -47,12 +49,26 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.dao.allTasks.count;
+    [self.incompleteTasks removeAllObjects];
+    [self.completedTasks removeAllObjects];
+    for (Task *task in self.dao.allTasks){
+        if (task.is_task_complete == 0){
+            [self.incompleteTasks addObject:task];
+        } else {
+            [self.completedTasks addObject:task];
+        }
+    }
+    //return self.dao.allTasks.count;
+    if (section == 0)
+        return self.incompleteTasks.count;
+    if (section == 1)
+        return self.completedTasks.count;
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -64,14 +80,34 @@
         cell = [nib objectAtIndex:0];
     }
     
-    Task *task = [[Task alloc]init];
-    task = self.dao.allTasks[indexPath.row];
+    //    Task *task = [[Task alloc]init];
+    //    task = self.dao.allTasks[indexPath.row];
+    //
+    //    //NSLog(@"%@", self.pet.petImage);
+    //
+    //    cell.taskTableCellTaskName.text = task.taskName;
+    //    cell.taskTableCellPetName.text = task.pet.name;
+    //    cell.taskTableCellImage.image = task.loadedImage;
     
-    //NSLog(@"%@", self.pet.petImage);
+    if (indexPath.section == 0){
+        Task *task = [[Task alloc]init];
+        task = self.incompleteTasks[indexPath.row];
+        
+        cell.taskTableCellTaskName.text = task.taskName;
+        cell.taskTableCellPetName.text = task.pet.name;
+        cell.taskTableCellImage.image = task.loadedImage;
+    }
     
-    cell.taskTableCellTaskName.text = task.taskName;
-    cell.taskTableCellPetName.text = task.pet.name;
-    cell.taskTableCellImage.image = task.loadedImage;
+    if (indexPath.section == 1){
+        Task *task = [[Task alloc]init];
+        task = self.completedTasks[indexPath.row];
+        
+        cell.taskTableCellTaskName.text = task.taskName;
+        cell.taskTableCellPetName.text = task.pet.name;
+        cell.taskTableCellImage.image = task.loadedImage;
+        cell.backgroundColor = [[UIColor lightGrayColor]colorWithAlphaComponent:.3];
+    }
+    
     
     //    cell.taskTableCellTaskName.text = [NSString stringWithFormat:@"%@", [self.taskList objectAtIndex:[indexPath row]] taskName];
     
@@ -89,13 +125,20 @@
         self.taskInfoViewController = [[TaskInfoViewController alloc] init];
     }
     
-    Task *task = [[Task alloc] init];
-    task = self.dao.allTasks[indexPath.row];
+    if (indexPath.section == 0){
+        Task *task = [[Task alloc] init];
+        task = self.incompleteTasks[indexPath.row];
+        self.task = task;
+    } else {
+        Task *task = [[Task alloc] init];
+        task = self.completedTasks[indexPath.row];
+        self.task = task;
+    }
     
-    self.taskInfoViewController.task = task;
-//    self.taskInfoViewController.task = self.allTasks[indexPath.row];
-    self.taskInfoViewController.pet = task.pet;
-//    self.taskInfoViewController.infoPetImage.image = task.loadedImage;
+    self.taskInfoViewController.task = self.task;
+    //    self.taskInfoViewController.task = self.allTasks[indexPath.row];
+    self.taskInfoViewController.pet = self.task.pet;
+    //    self.taskInfoViewController.infoPetImage.image = task.loadedImage;
     
     [self.navigationController pushViewController:self.taskInfoViewController animated:YES];
     
@@ -123,6 +166,16 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 70;
+}
+
+-(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section == 0){
+        return @"To Do";
+    }
+    if (section == 1){
+        return @"Done";
+    }
+    return 0;
 }
 
 @end

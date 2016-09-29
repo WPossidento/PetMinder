@@ -18,6 +18,7 @@
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ManagedTask" inverseName="pet" inverseEntity="ManagedTask" syncable="YES"/>
     </entity>
     <entity name="ManagedTask" representedClassName="ManagedTask" syncable="YES">
+        <attribute name="is_task_complete" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="note" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="task_id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
@@ -27,6 +28,6 @@
     <elements>
         <element name="ManagedAnimalType" positionX="-63" positionY="-18" width="128" height="105"/>
         <element name="ManagedPet" positionX="-54" positionY="18" width="128" height="180"/>
-        <element name="ManagedTask" positionX="-36" positionY="27" width="128" height="120"/>
+        <element name="ManagedTask" positionX="-36" positionY="27" width="128" height="135"/>
     </elements>
 </model>

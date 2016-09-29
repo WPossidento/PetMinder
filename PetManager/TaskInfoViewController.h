@@ -18,6 +18,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *infoTaskName;
 @property (strong, nonatomic) IBOutlet UILabel *infoTaskNote;
 @property (strong, nonatomic) IBOutlet UILabel *infoTaskDate;
+@property (strong, nonatomic) IBOutlet UIButton *taskCompleteButton;
+- (IBAction)taskComplete:(id)sender;
 
 @property (strong, nonatomic) Task *task;
 @property (strong, nonatomic) Pet *pet;

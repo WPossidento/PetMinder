@@ -130,11 +130,6 @@
             NSString *documentsDir  = [documentPaths objectAtIndex:0];
             NSString *imgPath    = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%d.png", pet.petID]];
             
-//            NSFileManager *fileManager = [[NSFileManager alloc] init];
-//            if ([fileManager fileExistsAtPath:imgPath]) {
-//                NSLog(@"FOUND IMG");
-//                NSLog(@"%@", imgPath);
-//            }
             
             NSData *imgData = [NSData dataWithContentsOfFile:imgPath];
             pet.loadedImage = [[UIImage alloc] initWithData:imgData];
@@ -486,54 +481,6 @@
     
 }
 
-
--(void)fetchPets
-{
-    
-    NSFetchRequest *request = [[NSFetchRequest alloc]init];
-    
-    NSPredicate *p = [NSPredicate predicateWithFormat:@"pet_id MATCHES '.*'"];
-    [request setPredicate:p];
-    
-    
-    
-    //Change ascending  YES/NO and validate
-    NSSortDescriptor *sortByKey = [[NSSortDescriptor alloc]
-                                   initWithKey:@"pet_id" ascending:YES];
-    
-    [request setSortDescriptors:[NSArray arrayWithObject:sortByKey]];
-    
-    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedPet"];
-    [request setEntity:e];
-    NSError *error = nil;
-    
-    
-    //This gets data only from context, not from store
-    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
-    
-    if(!result)
-    {
-        [NSException raise:@"Fetch Failed" format:@"Reason: %@", [error localizedDescription]];
-    }
-    
-    [self.allPets removeAllObjects];
-    
-    for (NSManagedObject *element in result) {
-        
-        Pet *pet = [[Pet alloc]init];
-        pet.petID = (int)[element valueForKey:@"pet_id"];
-        pet.name = [element valueForKey:@"name"];
-        pet.petImage = [element valueForKey:@"image"];
-        pet.color = [element valueForKey:@"color"];
-        pet.petDescription = [element valueForKey:@"miscDescription"];
-        pet.birthDate = [element valueForKey:@"birthdate"];
-        pet.sex = [element valueForKey:@"sex"];
-//        pet.tasks = [element valueForKey:@"tasks"];
-        
-        [self.allPets addObject:pet];
-    }
-}
-
 -(void)fetchTasks
 {
     
@@ -580,6 +527,7 @@
         //        ManagedPet *pet = [[ManagedPet alloc]init];
         //        pet = [element valueForKey:@"color"];
         task.time = [element valueForKey:@"time"];
+        task.is_task_complete = (int)[element valueForKey:@"is_task_complete"];
         
         Pet *pet = [[Pet alloc]init];
         pet.petImage = managedPet.image;
@@ -588,6 +536,7 @@
         pet.petDescription = managedPet.miscDescription;
         pet.sex = managedPet.sex;
         pet.birthDate = managedPet.birthdate;
+        pet.petID = (int)managedPet.pet_id;
         
         task.pet = pet;
         
@@ -597,7 +546,7 @@
         
         NSArray  *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDir  = [documentPaths objectAtIndex:0];
-        NSString *imgPath    = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%d.png", pet.petID]];
+        NSString *imgPath    = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%d.png", task.petId]];
         
         //            NSFileManager *fileManager = [[NSFileManager alloc] init];
         //            if ([fileManager fileExistsAtPath:imgPath]) {
@@ -665,16 +614,13 @@
             task.taskName = [element valueForKey:@"name"];
             task.taskNote = [element valueForKey:@"note"];
             task.time = [element valueForKey:@"time"];
+            task.is_task_complete = (int)[element valueForKey:@"is_task_complete"];
+            
             
             NSArray  *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
             NSString *documentsDir  = [documentPaths objectAtIndex:0];
-            NSString *imgPath    = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%@.png", managedPet.pet_id]];
+            NSString *imgPath    = [documentsDir stringByAppendingPathComponent:[NSString stringWithFormat:@"pet_id_%d.png", pet.petID]];
             
-            //            NSFileManager *fileManager = [[NSFileManager alloc] init];
-            //            if ([fileManager fileExistsAtPath:imgPath]) {
-            //                NSLog(@"FOUND IMG");
-            //                NSLog(@"%@", imgPath);
-            //            }
             
             NSData *imgData = [NSData dataWithContentsOfFile:imgPath];
             task.loadedImage = [[UIImage alloc] initWithData:imgData];
@@ -682,6 +628,47 @@
             [self.allTasks addObject:task];
         }
     }
+}
+
+-(void)change_is_task_completed_BOOL_in_core_data:(Task*)task
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc]init];
+    
+    NSPredicate *p = [NSPredicate predicateWithFormat:@"task_id = %d", task.taskId];
+    
+    [request setPredicate:p];
+    
+    NSSortDescriptor *sortByKey = [[NSSortDescriptor alloc]
+                                   
+                                   initWithKey:@"task_id" ascending:YES];
+    
+    [request setSortDescriptors:[NSArray arrayWithObject:sortByKey]];
+    
+    NSEntityDescription *e = [[self.managedObjectModel entitiesByName] objectForKey:@"ManagedTask"];
+    
+    [request setEntity:e];
+    
+    NSError *error = nil;
+    
+    //This gets data only from context, not from store
+    
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    
+    if(!result)
+        
+    {
+        [NSException raise:@"Fetch Failed" format:@"Reason: %@", [error localizedDescription]];
+    }
+    
+    NSNumber *numberWithBool = [[NSNumber alloc]initWithBool:task.is_task_complete];
+    
+    for (NSManagedObject *Task in result){
+        if ([[Task valueForKey:@"task_id"]intValue] == task.taskId ) {
+            [Task setValue:numberWithBool forKey:@"is_task_complete"];
+        }
+    }
+    
+    [self saveContext];
 }
 
 

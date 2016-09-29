@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSNumber *task_id;
 @property (nullable, nonatomic, retain) NSDate *time;
 @property (nullable, nonatomic, retain) ManagedPet *pet;
+@property BOOL is_task_complete;
 
 @end
 

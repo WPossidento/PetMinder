@@ -19,7 +19,6 @@
 		484E58551D9AE83800D55F1F /* launch-img.png in Resources */ = {isa = PBXBuildFile; fileRef = 484E58541D9AE83800D55F1F /* launch-img.png */; };
 		4867EAA01D831F410067D8FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EA9F1D831F410067D8FD /* main.m */; };
 		4867EAA31D831F410067D8FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAA21D831F410067D8FD /* AppDelegate.m */; };
-		4867EAA61D831F410067D8FD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAA51D831F410067D8FD /* ViewController.m */; };
 		4867EAA91D831F410067D8FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4867EAA71D831F410067D8FD /* Main.storyboard */; };
 		4867EAAC1D831F410067D8FD /* PetManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAAA1D831F410067D8FD /* PetManager.xcdatamodeld */; };
 		4867EAAE1D831F410067D8FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4867EAAD1D831F410067D8FD /* Assets.xcassets */; };
@@ -64,12 +63,10 @@
 		483B9F711D95834700E2DBFB /* TaskInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskInfoViewController.xib; sourceTree = "<group>"; };
 		484E58521D9AE6BF00D55F1F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		484E58541D9AE83800D55F1F /* launch-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch-img.png"; sourceTree = "<group>"; };
-		4867EA9B1D831F410067D8FD /* Pet Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pet Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4867EA9B1D831F410067D8FD /* Pupkeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pupkeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4867EA9F1D831F410067D8FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4867EAA11D831F410067D8FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4867EAA21D831F410067D8FD /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4867EAA41D831F410067D8FD /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4867EAA51D831F410067D8FD /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4867EAA81D831F410067D8FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4867EAAB1D831F410067D8FD /* PetManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PetManager.xcdatamodel; sourceTree = "<group>"; };
 		4867EAAD1D831F410067D8FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,7 +139,7 @@
 		4867EA9C1D831F410067D8FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4867EA9B1D831F410067D8FD /* Pet Manager.app */,
+				4867EA9B1D831F410067D8FD /* Pupkeep.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,8 +149,6 @@
 			children = (
 				4867EAA11D831F410067D8FD /* AppDelegate.h */,
 				4867EAA21D831F410067D8FD /* AppDelegate.m */,
-				4867EAA41D831F410067D8FD /* ViewController.h */,
-				4867EAA51D831F410067D8FD /* ViewController.m */,
 				4867EAA71D831F410067D8FD /* Main.storyboard */,
 				4867EAEF1D83408B0067D8FD /* TabBarController.h */,
 				4867EAF01D83408B0067D8FD /* TabBarController.m */,
@@ -285,7 +280,7 @@
 			);
 			name = PetManager;
 			productName = PetManager;
-			productReference = 4867EA9B1D831F410067D8FD /* Pet Manager.app */;
+			productReference = 4867EA9B1D831F410067D8FD /* Pupkeep.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -354,7 +349,6 @@
 				4867EAEC1D833B380067D8FD /* TaskFormViewController.m in Sources */,
 				4867EAF41D834BD00067D8FD /* DAO.m in Sources */,
 				4867EAC01D8322DE0067D8FD /* TasksTableViewCell.m in Sources */,
-				4867EAA61D831F410067D8FD /* ViewController.m in Sources */,
 				482FDFBA1D87364A000A5CCA /* ManagedAnimalType.m in Sources */,
 				482FDFC61D87373C000A5CCA /* ManagedPet.m in Sources */,
 				4867EAA31D831F410067D8FD /* AppDelegate.m in Sources */,
@@ -482,7 +476,7 @@
 				INFOPLIST_FILE = PetManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.turntotech.PetManager;
-				PRODUCT_NAME = "Pet Manager";
+				PRODUCT_NAME = Pupkeep;
 			};
 			name = Debug;
 		};
@@ -494,7 +488,7 @@
 				INFOPLIST_FILE = PetManager/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.turntotech.PetManager;
-				PRODUCT_NAME = "Pet Manager";
+				PRODUCT_NAME = Pupkeep;
 			};
 			name = Release;
 		};

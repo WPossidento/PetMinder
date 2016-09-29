@@ -7,6 +7,7 @@
 //
 
 #import "TaskInfoViewController.h"
+#import "DAO.h"
 
 @interface TaskInfoViewController ()
 
@@ -18,7 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.dao = [DAO sharedInstance];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,9 +29,16 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    
+    if (self.task.is_task_complete == YES){
+        [self.taskCompleteButton setTitle:@"Task Incomplete" forState:normal];
+    } else {
+        [self.taskCompleteButton setTitle:@"Task Complete" forState:normal];
+    }
+    
     self.taskForPetNameInfo.text = [NSString stringWithFormat:@"Task for %@", self.pet.name];
     self.infoPetImage.image = self.task.loadedImage;
-//    self.infoPetImage.image = self.pet.loadedImage;
+    //    self.infoPetImage.image = self.pet.loadedImage;
     self.infoTaskName.text = [NSString stringWithFormat:@"%@", self.task.taskName];
     self.infoTaskNote.text = [NSString stringWithFormat:@"%@", self.task.taskNote];
     
@@ -41,4 +50,17 @@
     self.infoTaskDate.text = [NSString stringWithFormat:@"%@", [formatter stringFromDate:theDate]];
 }
 
+- (IBAction)taskComplete:(id)sender {
+    if (self.task.is_task_complete == NO){
+        self.task.is_task_complete = YES;
+        //[self.taskCompleteButton setTitle:@"Task Incomplete" forState:normal];
+        [self.dao change_is_task_completed_BOOL_in_core_data:self.task];
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        self.task.is_task_complete = NO;
+        //[self.taskCompleteButton setTitle:@"Task Complete" forState:normal];
+        [self.dao change_is_task_completed_BOOL_in_core_data:self.task];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
 @end
