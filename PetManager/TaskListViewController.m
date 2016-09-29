@@ -64,15 +64,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [self.incompleteTasks removeAllObjects];
-    [self.completedTasks removeAllObjects];
-    for (Task *task in self.dao.allTasks){
-        if (task.is_task_complete == 0){
-            [self.incompleteTasks addObject:task];
-        } else {
-            [self.completedTasks addObject:task];
-        }
-    }
+    
     //return self.dao.allTasks.count;
     if (section == 0)
         return self.incompleteTasks.count;
@@ -159,17 +151,29 @@
     
     if (editingStyle == UITableViewCellEditingStyleDelete){
         
-        NSArray *tasks = [self.dao allTasks];
+        if (indexPath.section == 0){
+            Task *task = [self.incompleteTasks objectAtIndex:indexPath.row];
+            
+            [self.dao deleteTaskWithTaskID:task.taskId];
+
+            [[self.dao allTasks]removeObject:task];
+            
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            
+            [tableView reloadData];
+        }
         
-        Task *task = [tasks objectAtIndex:indexPath.row];
-        
-        [self.dao deleteTaskWithTaskID:task.taskId];
-        
-        [[self.dao allTasks]removeObjectAtIndex:indexPath.row];
-        
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
-        [tableView reloadData];
+        if (indexPath.section == 1){
+            Task *task = [self.completedTasks objectAtIndex:indexPath.row];
+            
+            [self.dao deleteTaskWithTaskID:task.taskId];
+            
+            [[self.dao allTasks]removeObject:task];
+            
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            
+            [tableView reloadData];
+        }
     }
 }
 
@@ -179,11 +183,26 @@
 }
 
 -(NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    if (section == 0){
-        return @"To Do";
+    
+    [self.incompleteTasks removeAllObjects];
+    [self.completedTasks removeAllObjects];
+    for (Task *task in self.dao.allTasks){
+        if (task.is_task_complete == 0){
+            [self.incompleteTasks addObject:task];
+        } else {
+            [self.completedTasks addObject:task];
+        }
     }
-    if (section == 1){
+    
+    if (section == 0 && self.incompleteTasks.count > 0){
+        return @"To Do";
+    } else if (section == 0 && self.incompleteTasks.count == 0){
+        return @"";
+    }
+    if (section == 1 && self.completedTasks.count > 0){
         return @"Done";
+    } else if (section == 1 && self.incompleteTasks.count == 0){
+        return @"";
     }
     return 0;
 }
