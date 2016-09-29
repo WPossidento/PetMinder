@@ -10,6 +10,8 @@
 #import "Pet.h"
 #import "TasksForPetViewController.h"
 #import "Task.h"
+#import "TaskInfoViewController.h"
+
 @class TasksForPetViewController;
 
 @interface TaskFormViewController : UIViewController <UITextFieldDelegate>
@@ -20,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *noteTextField;
 @property (strong, nonatomic) IBOutlet UISwitch *recurringSwitch;
 @property (strong, nonatomic) IBOutlet UILabel *recurringLabel;
+@property (nonatomic) BOOL isEditMode;
 
 @property (strong, nonatomic) Pet *pet;
 @property (nonatomic, retain) TasksForPetViewController *tasksForPetViewController;
