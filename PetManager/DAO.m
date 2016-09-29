@@ -235,14 +235,6 @@
     petMO.birthdate = newPet.birthDate;
     petMO.sex = newPet.sex;
     
-//    [petMO setValue:image forKey:@"image"];
-//    [petMO setValue:color forKey:@"color"];
-//    [petMO setValue:miscDescription forKey:@"miscDescription"];
-//    [petMO setValue:birthdate forKey:@"birthdate"];
-//    [petMO setValue:sex forKey:@"sex"];
-    
-    //Fetch an animal type with animalTypeId
-    
     NSFetchRequest *request = [[NSFetchRequest alloc]init];
     NSPredicate *p = [NSPredicate predicateWithFormat:@"animalType_id == %d", animalType.animalType_id];
     [request setPredicate:p];
