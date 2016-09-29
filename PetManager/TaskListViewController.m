@@ -22,6 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.00 green:0.65 blue:1.00 alpha:1.0];
+    [[UIBarButtonItem appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+//    self.tabBarItem.image = [[UIImage imageNamed:@"text-list"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
     self.dao = [DAO sharedInstance];
     self.incompleteTasks = [[NSMutableArray alloc]init];
     self.completedTasks = [[NSMutableArray alloc]init];

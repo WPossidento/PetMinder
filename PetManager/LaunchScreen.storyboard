@@ -28,11 +28,10 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pupkeep" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUP-JX-VdS">
                                 <rect key="frame" x="227" y="128" width="146" height="64"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="40"/>
-                                <color key="textColor" red="0.0" green="0.42433181821548516" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.65098039220000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fNx-Xa-yk6" firstAttribute="top" secondItem="EUP-JX-VdS" secondAttribute="bottom" constant="8" id="1jI-UK-C7a"/>
                             <constraint firstItem="fNx-Xa-yk6" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="2cG-EM-hDf"/>
