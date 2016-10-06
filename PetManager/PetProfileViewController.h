@@ -29,6 +29,7 @@
 
 @property (strong, nonatomic) Pet *pet;
 @property (nonatomic, retain) PetListViewController *petListViewController;
+@property (nonatomic) BOOL isEditMode;
 
 - (IBAction)saveButton:(id)sender;
 

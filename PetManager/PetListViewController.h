@@ -10,6 +10,7 @@
 #import "AnimalType.h"
 #import "AnimalTypeViewController.h"
 #import "TasksForPetViewController.h"
+@class TasksForPetViewController;
 
 @class AnimalTypeViewController;
 

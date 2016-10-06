@@ -10,6 +10,8 @@
 #import "Pet.h"
 #import "TaskFormViewController.h"
 #import "TaskInfoViewController.h"
+#import "ProfileForPetViewController.h"
+@class ProfileForPetViewController;
 @class TaskFormViewController;
 
 @interface TasksForPetViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
@@ -18,6 +20,7 @@
 @property (strong, nonatomic) Pet *pet;
 @property (nonatomic, retain) TaskFormViewController *taskFormViewController;
 @property (nonatomic, retain) TaskInfoViewController *taskInfoViewController;
+@property (nonatomic, retain) ProfileForPetViewController *profileForPetViewController;
 
 @property (strong, nonatomic) NSMutableArray<Task*> *allTasks;
 @property (nonatomic, strong) NSMutableArray<Task*> *incompleteTasks;

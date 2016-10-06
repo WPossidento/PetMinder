@@ -43,6 +43,8 @@
 		4867EAED1D833B380067D8FD /* TaskFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4867EAEB1D833B380067D8FD /* TaskFormViewController.xib */; };
 		4867EAF11D83408B0067D8FD /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAF01D83408B0067D8FD /* TabBarController.m */; };
 		4867EAF41D834BD00067D8FD /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAF31D834BD00067D8FD /* DAO.m */; };
+		48EB954D1DA6EBCB00583AD8 /* ProfileForPetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48EB954B1DA6EBCB00583AD8 /* ProfileForPetViewController.m */; };
+		48EB954E1DA6EBCB00583AD8 /* ProfileForPetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48EB954C1DA6EBCB00583AD8 /* ProfileForPetViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,6 +107,9 @@
 		4867EAF01D83408B0067D8FD /* TabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 		4867EAF21D834BD00067D8FD /* DAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAO.h; sourceTree = "<group>"; };
 		4867EAF31D834BD00067D8FD /* DAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAO.m; sourceTree = "<group>"; };
+		48EB954A1DA6EBCB00583AD8 /* ProfileForPetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileForPetViewController.h; sourceTree = "<group>"; };
+		48EB954B1DA6EBCB00583AD8 /* ProfileForPetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileForPetViewController.m; sourceTree = "<group>"; };
+		48EB954C1DA6EBCB00583AD8 /* ProfileForPetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileForPetViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +166,7 @@
 				4867EAE81D8339D90067D8FD /* taskForPetViewController */,
 				4867EAEE1D833B450067D8FD /* TaskFormViewController */,
 				483B9F6E1D95831E00E2DBFB /* TaskInfoViewController */,
+				48EB954F1DA6EBCF00583AD8 /* ProfileForPetViewController */,
 				4867EAAD1D831F410067D8FD /* Assets.xcassets */,
 				484E58541D9AE83800D55F1F /* launch-img.png */,
 				484E58521D9AE6BF00D55F1F /* LaunchScreen.storyboard */,
@@ -263,6 +269,16 @@
 			name = TaskFormViewController;
 			sourceTree = "<group>";
 		};
+		48EB954F1DA6EBCF00583AD8 /* ProfileForPetViewController */ = {
+			isa = PBXGroup;
+			children = (
+				48EB954A1DA6EBCB00583AD8 /* ProfileForPetViewController.h */,
+				48EB954B1DA6EBCB00583AD8 /* ProfileForPetViewController.m */,
+				48EB954C1DA6EBCB00583AD8 /* ProfileForPetViewController.xib */,
+			);
+			name = ProfileForPetViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -329,6 +345,7 @@
 				483B9F731D95834700E2DBFB /* TaskInfoViewController.xib in Resources */,
 				4867EAE71D8339CD0067D8FD /* TasksForPetViewController.xib in Resources */,
 				4867EAE11D8331AB0067D8FD /* PetProfileViewController.xib in Resources */,
+				48EB954E1DA6EBCB00583AD8 /* ProfileForPetViewController.xib in Resources */,
 				4867EAED1D833B380067D8FD /* TaskFormViewController.xib in Resources */,
 				4867EAC11D8322DE0067D8FD /* TasksTableViewCell.xib in Resources */,
 				4867EACF1D8329DD0067D8FD /* PetsTableViewCell.xib in Resources */,
@@ -352,6 +369,7 @@
 				482FDFBA1D87364A000A5CCA /* ManagedAnimalType.m in Sources */,
 				482FDFC61D87373C000A5CCA /* ManagedPet.m in Sources */,
 				4867EAA31D831F410067D8FD /* AppDelegate.m in Sources */,
+				48EB954D1DA6EBCB00583AD8 /* ProfileForPetViewController.m in Sources */,
 				4867EAD51D832EF10067D8FD /* AnimalType.m in Sources */,
 				482FDFC51D87373C000A5CCA /* ManagedPet+CoreDataProperties.m in Sources */,
 				4867EAA01D831F410067D8FD /* main.m in Sources */,

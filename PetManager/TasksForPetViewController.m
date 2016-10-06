@@ -31,8 +31,9 @@
     self.tasksForPetTableView.dataSource = self;
     
     UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewTask)];
-    self.navigationItem.rightBarButtonItem = addBtn;
+    UIBarButtonItem *profileButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"wolf-cartoon.png"] style:UIBarButtonItemStylePlain target:self action:@selector(goToPetProfile)];
     
+    self.navigationItem.rightBarButtonItems = @[addBtn, profileButton];
     
 }
 
@@ -117,6 +118,17 @@
     
     [self.navigationController pushViewController:self.taskInfoViewController animated:YES];
     
+}
+
+- (void)goToPetProfile {
+ 
+    if (self.profileForPetViewController == nil) {
+        self.profileForPetViewController = [[ProfileForPetViewController alloc] init];
+    }
+    
+    self.profileForPetViewController.pet = self.pet;
+    
+    [self.navigationController pushViewController:self.profileForPetViewController animated:YES];
 }
 
 - (void)addNewTask {

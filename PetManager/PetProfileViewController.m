@@ -41,6 +41,7 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    
     if (self.customImage == NO){
         self.petImage.image = [UIImage imageNamed:self.pet.petImage];
         
