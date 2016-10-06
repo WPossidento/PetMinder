@@ -106,9 +106,21 @@
         NSData *imageData = UIImagePNGRepresentation(self.petImage.image);
         [imageData writeToFile:self.pet.petImage atomically:YES];
         
-        
-        
         [self.dao.allPets addObject:self.pet];
+        
+        NSString *alertString = [NSString stringWithFormat:@"It's %@'s Birthday!!", self.pet.name];
+        NSDate *birthday = self.petDateOfBirth.date;
+        
+        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = birthday;
+        localNotification.alertBody = alertString;
+        localNotification.soundName = UILocalNotificationDefaultSoundName;
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+        localNotification.repeatInterval = NSCalendarUnitYear;
+        
+        [self.navigationController popViewControllerAnimated:YES];
+        
         
         if (self.petListViewController == nil) {
             self.petListViewController = [[PetListViewController alloc] init];
