@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *labelPetDesc;
 @property (weak, nonatomic) IBOutlet UILabel *labelPetColor;
 @property (weak, nonatomic) IBOutlet UILabel *labelPetDOB;
+@property (weak, nonatomic) IBOutlet UIImageView *iconPetSex;
 
 @property (strong, nonatomic) Pet *pet;
 

@@ -38,6 +38,7 @@
     
     self.petImage.image = [UIImage imageNamed:self.pet.petImage];
     
+    self.pickerViewSex = @"male";
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -118,7 +119,7 @@
 }
 
 -(void)pickerView:(UIPickerView*)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-
+    
     if (row == 0) {
         
         _pickerViewSex = @"male";

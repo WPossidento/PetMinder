@@ -45,6 +45,12 @@
     
     self.labelPetDOB.text = [NSString stringWithFormat:@"Date of birth:\n%@", [formatter stringFromDate:theDate]];
     
+    if ([self.pet.sex isEqualToString:@"male"]) {
+        self.iconPetSex.image = [UIImage imageNamed:@"Male-48.png"];
+    } else {
+        self.iconPetSex.image = [UIImage imageNamed:@"Female-48.png"];
+    }
+    
 }
 
 

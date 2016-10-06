@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileForPetViewController">
             <connections>
+                <outlet property="iconPetSex" destination="GTR-zj-baG" id="lU5-vi-1fv"/>
                 <outlet property="imagePet" destination="Rqd-h3-ZN5" id="z4M-Cc-zbQ"/>
                 <outlet property="labelPetColor" destination="kce-jt-e9Y" id="lCd-Y5-Uqi"/>
                 <outlet property="labelPetDOB" destination="eoA-Ng-w4W" id="LRk-Zx-vkB"/>
@@ -39,26 +40,35 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoA-Ng-w4W">
-                    <rect key="frame" x="280" y="461" width="40" height="32"/>
-                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kce-jt-e9Y">
                     <rect key="frame" x="280" y="421" width="40" height="32"/>
                     <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoA-Ng-w4W">
+                    <rect key="frame" x="280" y="461" width="40" height="32"/>
+                    <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="20"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GTR-zj-baG">
+                    <rect key="frame" x="337" y="85" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="5mp-Gn-X4L"/>
+                        <constraint firstAttribute="width" constant="40" id="6Rs-N4-ZaB"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="eoA-Ng-w4W" firstAttribute="top" secondItem="kce-jt-e9Y" secondAttribute="bottom" constant="8" id="3Mx-B8-Vop"/>
                 <constraint firstItem="kce-jt-e9Y" firstAttribute="top" secondItem="9Tg-kM-9iC" secondAttribute="bottom" constant="8" id="4ZQ-yJ-rPk"/>
+                <constraint firstItem="Rqd-h3-ZN5" firstAttribute="top" secondItem="GTR-zj-baG" secondAttribute="bottom" constant="8" id="7ZV-6A-DSQ"/>
                 <constraint firstItem="9Tg-kM-9iC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="88R-ia-K6g"/>
                 <constraint firstItem="2C6-3l-mSl" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="KRB-3d-5ZZ"/>
                 <constraint firstItem="kce-jt-e9Y" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Kas-lL-8B4"/>
+                <constraint firstItem="GTR-zj-baG" firstAttribute="leading" secondItem="2C6-3l-mSl" secondAttribute="trailing" constant="8" id="Xfh-Yh-zhu"/>
                 <constraint firstItem="2C6-3l-mSl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Zsm-h2-eQk"/>
                 <constraint firstItem="eoA-Ng-w4W" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="nOZ-5w-HAz"/>
                 <constraint firstItem="9Tg-kM-9iC" firstAttribute="top" secondItem="Rqd-h3-ZN5" secondAttribute="bottom" constant="8" id="qVW-Pm-40b"/>
