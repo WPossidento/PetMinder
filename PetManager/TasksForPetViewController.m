@@ -83,7 +83,7 @@
         task = self.incompleteTasks[indexPath.row];
         
         cell.taskTableCellTaskName.text = task.taskName;
-        cell.taskTableCellPetName.text = task.pet.name;
+        cell.taskTableCellPetName.text = task.taskNote;
         cell.taskTableCellImage.image = task.loadedImage;
     }
     
@@ -92,7 +92,7 @@
         task = self.completedTasks[indexPath.row];
         
         cell.taskTableCellTaskName.text = task.taskName;
-        cell.taskTableCellPetName.text = task.pet.name;
+        cell.taskTableCellPetName.text = task.taskNote;
         cell.taskTableCellImage.image = task.loadedImage;
         cell.backgroundColor = [[UIColor lightGrayColor]colorWithAlphaComponent:.3];
     }
