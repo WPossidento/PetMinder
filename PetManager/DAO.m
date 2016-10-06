@@ -550,7 +550,12 @@
         pet.petDescription = managedPet.miscDescription;
         pet.sex = managedPet.sex;
         pet.birthDate = managedPet.birthdate;
-        pet.petID = (int)managedPet.pet_id;
+        
+        number = managedPet.pet_id;
+        longToInt = [number longValue];
+        task.petId = (int)longToInt;
+        
+        pet.petID = (int)longToInt;
         
         task.pet = pet;
         
@@ -630,6 +635,16 @@
             task.time = [element valueForKey:@"time"];
             task.is_task_complete = (int)[element valueForKey:@"is_task_complete"];
             
+            Pet *tasksPet = [[Pet alloc]init];
+            tasksPet.petImage = managedPet.image;
+            tasksPet.name = managedPet.name;
+            tasksPet.color = managedPet.color;
+            tasksPet.petDescription = managedPet.miscDescription;
+            tasksPet.sex = managedPet.sex;
+            tasksPet.birthDate = managedPet.birthdate;
+            tasksPet.petID = (int)hi;
+            
+            task.pet = tasksPet;
             
             NSArray  *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
             NSString *documentsDir  = [documentPaths objectAtIndex:0];

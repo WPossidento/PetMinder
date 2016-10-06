@@ -109,6 +109,18 @@
 - (IBAction)saveButton:(id)sender {
     
     if(self.isEditMode){
+        
+        NSArray *notificationArray = [[UIApplication sharedApplication] scheduledLocalNotifications];
+        for(UILocalNotification *notification in notificationArray){
+            
+            NSString *alertString = [NSString stringWithFormat:@"%@ - %@", self.task.taskName, self.pet.name];
+            
+            if ([notification.alertBody isEqualToString:alertString]  && (notification.fireDate == self.task.time)) {
+                // delete this notification
+                [[UIApplication sharedApplication] cancelLocalNotification:notification] ;
+            }
+        }
+        
         self.task.taskName = self.taskName.text;
         self.task.taskNote = self.noteTextField.text;
         self.task.time = self.datePicker.date;
