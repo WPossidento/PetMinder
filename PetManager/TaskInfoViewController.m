@@ -86,14 +86,26 @@
 - (IBAction)taskComplete:(id)sender {
     if (self.task.is_task_complete == NO){
         self.task.is_task_complete = YES;
-        //[self.taskCompleteButton setTitle:@"Task Incomplete" forState:normal];
+        
+        NSArray *notificationArray = [[UIApplication sharedApplication] scheduledLocalNotifications];
+        for(UILocalNotification *notification in notificationArray){
+            
+            NSString *alertString = [NSString stringWithFormat:@"%@ - %@", self.task.taskName, self.task.pet.name];
+            
+            if ([notification.alertBody isEqualToString:alertString]  && (notification.fireDate == self.task.time)) {
+                // delete this notification
+                [[UIApplication sharedApplication] cancelLocalNotification:notification] ;
+            }
+        }
+        
         [self.dao change_is_task_completed_BOOL_in_core_data:self.task];
-        [self.navigationController popViewControllerAnimated:YES];
+        
     } else {
         self.task.is_task_complete = NO;
-        //[self.taskCompleteButton setTitle:@"Task Complete" forState:normal];
         [self.dao change_is_task_completed_BOOL_in_core_data:self.task];
-        [self.navigationController popViewControllerAnimated:YES];
     }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+
 }
 @end
