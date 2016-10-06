@@ -103,6 +103,16 @@
     } else {
         self.task.is_task_complete = NO;
         [self.dao change_is_task_completed_BOOL_in_core_data:self.task];
+        
+        NSString *alertString = [NSString stringWithFormat:@"%@ - %@", self.task.taskName, self.task.pet.name];
+        NSDate *taskTime = self.task.time;
+        
+        UILocalNotification *localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = taskTime;
+        localNotification.alertBody = alertString;
+        localNotification.soundName = UILocalNotificationDefaultSoundName;
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
     }
     
     [self.navigationController popViewControllerAnimated:YES];
