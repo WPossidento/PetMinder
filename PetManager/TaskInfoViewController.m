@@ -60,6 +60,20 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    
+    [UIView animateWithDuration:0.50 delay:0 options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         
+                         self.infoPetImage.alpha = 0;
+                         self.infoPetImage.alpha = 1;
+                         
+                         self.infoPetImage.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.3, 1.3);}
+                     completion:^(BOOL finished){if (finished){
+        
+    [UIView animateWithDuration:0.25 delay:0 options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+                         self.infoPetImage.transform = CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0);}
+                     completion:NULL];}}];
 
     if (self.task.is_task_complete == YES){
         [self.taskCompleteButton setTitle:@"Task Incomplete" forState:normal];
