@@ -14,6 +14,7 @@
 @interface TaskListViewController ()
 
 @property(strong, nonatomic) DAO *dao;
+@property(strong, nonatomic) UILabel *simpleGuidePhraseIfNoTasks;
 
 @end
 
@@ -50,9 +51,29 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    self.title = @"Tasks";
     [self.dao fetchTasks];
+    
+    self.simpleGuidePhraseIfNoTasks = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 300, 70)];
+    self.simpleGuidePhraseIfNoTasks.textAlignment = NSTextAlignmentCenter;
+    [self.simpleGuidePhraseIfNoTasks sizeToFit];
+    self.simpleGuidePhraseIfNoTasks.numberOfLines = 2;
+    [self.view addSubview:self.simpleGuidePhraseIfNoTasks];
+    CGRect myFrame = CGRectMake(0, 0, 300, 70);
+    self.simpleGuidePhraseIfNoTasks.bounds = myFrame;
+    self.simpleGuidePhraseIfNoTasks.center = self.view.center;
+    
+    if (self.dao.allTasks.count == 0){
+        self.simpleGuidePhraseIfNoTasks.text = @"Click on a specific pet and click + to add task";
+    } else {
+        self.simpleGuidePhraseIfNoTasks.text = @"";
+    }
+    
+    self.title = @"Tasks";
     [self.tableView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.simpleGuidePhraseIfNoTasks.text = @"";
 }
 
 #pragma mark - Table view data source
@@ -174,6 +195,12 @@
             
             [tableView reloadData];
         }
+    }
+    
+    if (self.dao.allTasks.count == 0){
+        self.simpleGuidePhraseIfNoTasks.text = @"Click on a specific pet and click + to add task";
+    } else {
+        self.simpleGuidePhraseIfNoTasks.text = @"";
     }
 }
 

@@ -13,6 +13,7 @@
 @interface TasksForPetViewController ()
 
 @property(strong, nonatomic) DAO *dao;
+@property(strong, nonatomic) UILabel *simpleGuidePhraseIfNoTasks;
 
 @end
 
@@ -40,7 +41,27 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [self.dao fetchTasksForSpecificPet:self.pet];
+    
     [self.tasksForPetTableView reloadData];
+    self.simpleGuidePhraseIfNoTasks = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 300, 70)];
+    self.simpleGuidePhraseIfNoTasks.textAlignment = NSTextAlignmentCenter;
+    [self.view addSubview:self.simpleGuidePhraseIfNoTasks];
+    CGRect myFrame = CGRectMake(0, 0, 300, 70);
+    self.simpleGuidePhraseIfNoTasks.bounds = myFrame;
+
+    if (self.dao.allTasks.count == 0){
+        self.simpleGuidePhraseIfNoTasks.text = @"Click + to add task";
+    } else {
+        self.simpleGuidePhraseIfNoTasks.text = @"";
+    }
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    self.simpleGuidePhraseIfNoTasks.center = self.view.center;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.simpleGuidePhraseIfNoTasks.text = @"";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -188,8 +209,6 @@
             [[self.dao allTasks]removeObject:task];
             
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            
-            [tableView reloadData];
         }
         
         if (indexPath.section == 1){
@@ -200,9 +219,15 @@
             [[self.dao allTasks]removeObject:task];
             
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            
-            [tableView reloadData];
         }
+        
+        if (self.dao.allTasks.count == 0){
+            self.simpleGuidePhraseIfNoTasks.text = @"Click + to add task";
+        } else {
+            self.simpleGuidePhraseIfNoTasks.text = @"";
+        }
+        
+        [tableView reloadData];
     }
 }
 
