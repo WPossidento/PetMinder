@@ -102,16 +102,7 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
-    //    Task *task = [[Task alloc]init];
-    //    task = self.dao.allTasks[indexPath.row];
-    //
-    //    //NSLog(@"%@", self.pet.petImage);
-    //
-    //    cell.taskTableCellTaskName.text = task.taskName;
-    //    cell.taskTableCellPetName.text = task.pet.name;
-    //    cell.taskTableCellImage.image = task.loadedImage;
-    
+        
     if (indexPath.section == 0){
         Task *task = [[Task alloc]init];
         task = self.incompleteTasks[indexPath.row];
@@ -130,14 +121,6 @@
         cell.taskTableCellImage.image = task.loadedImage;
         cell.backgroundColor = [[UIColor lightGrayColor]colorWithAlphaComponent:.3];
     }
-    
-    
-    //    cell.taskTableCellTaskName.text = [NSString stringWithFormat:@"%@", [self.taskList objectAtIndex:[indexPath row]] taskName];
-    
-    //    cell.cellCompanyName.text = [NSString stringWithFormat:@"%@ (%@)", [[self.companyList objectAtIndex:[indexPath row]] companyName], [[self.companyList objectAtIndex:[indexPath row]] stockSymbol]];
-    //    cell.cellCompanyStockPrice.text = [NSString stringWithFormat:@"$%@", [[self.companyList objectAtIndex:[indexPath row]] stockPrice]];
-    //    cell.cellCompanyLogo.image = logoImage;
-    
     
     return cell;
 }
