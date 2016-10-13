@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48233F0B1DB01F2E005D0262 /* launch-img2.png in Resources */ = {isa = PBXBuildFile; fileRef = 48233F0A1DB01F2E005D0262 /* launch-img2.png */; };
 		482FDFB91D87364A000A5CCA /* ManagedAnimalType+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDFB61D87364A000A5CCA /* ManagedAnimalType+CoreDataProperties.m */; };
 		482FDFBA1D87364A000A5CCA /* ManagedAnimalType.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDFB81D87364A000A5CCA /* ManagedAnimalType.m */; };
 		482FDFC31D87373C000A5CCA /* ManagedTask+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 482FDFBC1D87373C000A5CCA /* ManagedTask+CoreDataProperties.m */; };
@@ -16,7 +17,6 @@
 		483B9F721D95834700E2DBFB /* TaskInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 483B9F701D95834700E2DBFB /* TaskInfoViewController.m */; };
 		483B9F731D95834700E2DBFB /* TaskInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 483B9F711D95834700E2DBFB /* TaskInfoViewController.xib */; };
 		484E58531D9AE6BF00D55F1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 484E58521D9AE6BF00D55F1F /* LaunchScreen.storyboard */; };
-		484E58551D9AE83800D55F1F /* launch-img.png in Resources */ = {isa = PBXBuildFile; fileRef = 484E58541D9AE83800D55F1F /* launch-img.png */; };
 		4867EAA01D831F410067D8FD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EA9F1D831F410067D8FD /* main.m */; };
 		4867EAA31D831F410067D8FD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4867EAA21D831F410067D8FD /* AppDelegate.m */; };
 		4867EAA91D831F410067D8FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4867EAA71D831F410067D8FD /* Main.storyboard */; };
@@ -48,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48233F0A1DB01F2E005D0262 /* launch-img2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch-img2.png"; sourceTree = "<group>"; };
 		482FDFB51D87364A000A5CCA /* ManagedAnimalType+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ManagedAnimalType+CoreDataProperties.h"; sourceTree = "<group>"; };
 		482FDFB61D87364A000A5CCA /* ManagedAnimalType+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ManagedAnimalType+CoreDataProperties.m"; sourceTree = "<group>"; };
 		482FDFB71D87364A000A5CCA /* ManagedAnimalType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ManagedAnimalType.h; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		483B9F701D95834700E2DBFB /* TaskInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaskInfoViewController.m; sourceTree = "<group>"; };
 		483B9F711D95834700E2DBFB /* TaskInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TaskInfoViewController.xib; sourceTree = "<group>"; };
 		484E58521D9AE6BF00D55F1F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		484E58541D9AE83800D55F1F /* launch-img.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch-img.png"; sourceTree = "<group>"; };
 		4867EA9B1D831F410067D8FD /* Pupkeep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pupkeep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4867EA9F1D831F410067D8FD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4867EAA11D831F410067D8FD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 				483B9F6E1D95831E00E2DBFB /* TaskInfoViewController */,
 				48EB954F1DA6EBCF00583AD8 /* ProfileForPetViewController */,
 				4867EAAD1D831F410067D8FD /* Assets.xcassets */,
-				484E58541D9AE83800D55F1F /* launch-img.png */,
+				48233F0A1DB01F2E005D0262 /* launch-img2.png */,
 				484E58521D9AE6BF00D55F1F /* LaunchScreen.storyboard */,
 				4867EAB21D831F410067D8FD /* Info.plist */,
 				4867EAAA1D831F410067D8FD /* PetManager.xcdatamodeld */,
@@ -305,7 +305,7 @@
 		4867EA931D831F410067D8FD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Olivia Taylor";
 				TargetAttributes = {
 					4867EA9A1D831F410067D8FD = {
@@ -344,13 +344,13 @@
 				484E58531D9AE6BF00D55F1F /* LaunchScreen.storyboard in Resources */,
 				483B9F731D95834700E2DBFB /* TaskInfoViewController.xib in Resources */,
 				4867EAE71D8339CD0067D8FD /* TasksForPetViewController.xib in Resources */,
+				48233F0B1DB01F2E005D0262 /* launch-img2.png in Resources */,
 				4867EAE11D8331AB0067D8FD /* PetProfileViewController.xib in Resources */,
 				48EB954E1DA6EBCB00583AD8 /* ProfileForPetViewController.xib in Resources */,
 				4867EAED1D833B380067D8FD /* TaskFormViewController.xib in Resources */,
 				4867EAC11D8322DE0067D8FD /* TasksTableViewCell.xib in Resources */,
 				4867EACF1D8329DD0067D8FD /* PetsTableViewCell.xib in Resources */,
 				4867EAA91D831F410067D8FD /* Main.storyboard in Resources */,
-				484E58551D9AE83800D55F1F /* launch-img.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,8 +416,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -461,8 +463,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
