@@ -14,6 +14,7 @@
 @interface PetListViewController ()
 
 @property(strong, nonatomic) DAO *dao;
+@property(strong, nonatomic) UILabel *simpleGuidePhraseIfNoPets;
 
 @end
 
@@ -30,6 +31,7 @@
     UIBarButtonItem *addBtn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPetButton:)];
     self.navigationItem.rightBarButtonItem = addBtn;
     
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -38,10 +40,28 @@
     self.dao = [DAO sharedInstance];
     [[DAO sharedInstance] loadAllPets];
     self.allPets = self.dao.allPets;
+    
+    self.simpleGuidePhraseIfNoPets = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 300, 70)];
+    self.simpleGuidePhraseIfNoPets.textAlignment = NSTextAlignmentCenter;
+    [self.simpleGuidePhraseIfNoPets sizeToFit];
+    [self.view addSubview:self.simpleGuidePhraseIfNoPets];
+    CGRect myFrame = CGRectMake(0, 0, 300, 70);
+    self.simpleGuidePhraseIfNoPets.bounds = myFrame;
+    self.simpleGuidePhraseIfNoPets.center = self.view.center;
+    
+    if (self.dao.allPets.count == 0){
+        self.simpleGuidePhraseIfNoPets.text = @"Click on the + to add your (first) pet";
+    } else {
+        self.simpleGuidePhraseIfNoPets.text = @"";
+    }
+    
     [self.petListTableView reloadData];
     self.navigationItem.hidesBackButton = YES;
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    self.simpleGuidePhraseIfNoPets.text = @"";
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -138,6 +158,12 @@
         [[self.dao allPets]removeObjectAtIndex:indexPath.row];
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        if (self.dao.allPets.count == 0){
+            self.simpleGuidePhraseIfNoPets.text = @"Click on the + to add your (first) pet";
+        } else {
+            self.simpleGuidePhraseIfNoPets.text = @"";
+        }
         
         [tableView reloadData];
     }

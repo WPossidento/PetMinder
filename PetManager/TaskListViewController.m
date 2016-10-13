@@ -14,6 +14,7 @@
 @interface TaskListViewController ()
 
 @property(strong, nonatomic) DAO *dao;
+@property(strong, nonatomic) UILabel *simpleGuidePhraseIfNoTasks;
 
 @end
 
@@ -50,9 +51,29 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    self.title = @"Tasks";
     [self.dao fetchTasks];
+    
+    self.simpleGuidePhraseIfNoTasks = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 300, 70)];
+    self.simpleGuidePhraseIfNoTasks.textAlignment = NSTextAlignmentCenter;
+    [self.simpleGuidePhraseIfNoTasks sizeToFit];
+    self.simpleGuidePhraseIfNoTasks.numberOfLines = 2;
+    [self.view addSubview:self.simpleGuidePhraseIfNoTasks];
+    CGRect myFrame = CGRectMake(0, 0, 300, 70);
+    self.simpleGuidePhraseIfNoTasks.bounds = myFrame;
+    self.simpleGuidePhraseIfNoTasks.center = self.view.center;
+    
+    if (self.dao.allTasks.count == 0){
+        self.simpleGuidePhraseIfNoTasks.text = @"Click on a specific pet and click + to add task";
+    } else {
+        self.simpleGuidePhraseIfNoTasks.text = @"";
+    }
+    
+    self.title = @"Tasks";
     [self.tableView reloadData];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    self.simpleGuidePhraseIfNoTasks.text = @"";
 }
 
 #pragma mark - Table view data source
@@ -81,16 +102,7 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:CellIdentifier owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
-    //    Task *task = [[Task alloc]init];
-    //    task = self.dao.allTasks[indexPath.row];
-    //
-    //    //NSLog(@"%@", self.pet.petImage);
-    //
-    //    cell.taskTableCellTaskName.text = task.taskName;
-    //    cell.taskTableCellPetName.text = task.pet.name;
-    //    cell.taskTableCellImage.image = task.loadedImage;
-    
+        
     if (indexPath.section == 0){
         Task *task = [[Task alloc]init];
         task = self.incompleteTasks[indexPath.row];
@@ -109,14 +121,6 @@
         cell.taskTableCellImage.image = task.loadedImage;
         cell.backgroundColor = [[UIColor lightGrayColor]colorWithAlphaComponent:.3];
     }
-    
-    
-    //    cell.taskTableCellTaskName.text = [NSString stringWithFormat:@"%@", [self.taskList objectAtIndex:[indexPath row]] taskName];
-    
-    //    cell.cellCompanyName.text = [NSString stringWithFormat:@"%@ (%@)", [[self.companyList objectAtIndex:[indexPath row]] companyName], [[self.companyList objectAtIndex:[indexPath row]] stockSymbol]];
-    //    cell.cellCompanyStockPrice.text = [NSString stringWithFormat:@"$%@", [[self.companyList objectAtIndex:[indexPath row]] stockPrice]];
-    //    cell.cellCompanyLogo.image = logoImage;
-    
     
     return cell;
 }
@@ -174,6 +178,12 @@
             
             [tableView reloadData];
         }
+    }
+    
+    if (self.dao.allTasks.count == 0){
+        self.simpleGuidePhraseIfNoTasks.text = @"Click on a specific pet and click + to add task";
+    } else {
+        self.simpleGuidePhraseIfNoTasks.text = @"";
     }
 }
 
